@@ -1,0 +1,5 @@
+C:/Users/Rauf/CLionProjects/HigherGround/cmake-build-release/CMakeFiles/edit_cache.dir
+C:/Users/Rauf/CLionProjects/HigherGround/cmake-build-release/CMakeFiles/rebuild_cache.dir
+C:/Users/Rauf/CLionProjects/HigherGround/cmake-build-release/prj/CMakeFiles/HigherGround.dir
+C:/Users/Rauf/CLionProjects/HigherGround/cmake-build-release/prj/CMakeFiles/edit_cache.dir
+C:/Users/Rauf/CLionProjects/HigherGround/cmake-build-release/prj/CMakeFiles/rebuild_cache.dir
