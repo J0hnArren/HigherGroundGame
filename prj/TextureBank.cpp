@@ -37,7 +37,7 @@ void TextureBank::AddTexture(const std::string& fileType, const std::string& fil
 		CheckFileFormat(fileName);
 	}
 
-	if (!texture.loadFromFile("C:/Users/Rauf/CLionProjects/HigherGround/src/images/" + fileName)){
+	if (!texture.loadFromFile("../../src/images/" + fileName)){
         throw std::runtime_error("Could not load " + fileName);
 	}
 	TextureBank::getInstance().singletonTextures[fileType];

@@ -5,7 +5,11 @@
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(1920, 1080), "Hello there!", sf::Style::Fullscreen);
+    sf::RenderWindow window(
+            sf::VideoMode::getFullscreenModes()[0],
+            "Hello there!",
+            sf::Style::Fullscreen
+            );
     window.setVerticalSyncEnabled(true);
 
     //window size
@@ -14,11 +18,13 @@ int main()
     //main hero sprite
     Player player1("hero.png");
     player1.GetSprite()->setScale(sf::Vector2f(3, 3));
-    player1.GetSprite()->setPosition(windowSize.x / 2 - 80, 830); //выводим спрайт в позицию x y 
+    player1.GetSprite()->setPosition(windowSize.x * 1.0f / 2 - 80, 830); //выводим спрайт в позицию x y
+
+    //platforms.png
+    Platforms platforms;
 
     //background image
     sf::Sprite bgSprite;
-    // (int i = 0; i < 3; i++) { bgtexture.AddTexture("bg", "bg" + std::to_string(i + 1) + ".png"); }
     TextureBank::getInstance().AddTexture("bg", "bg0.png");
     TextureBank::getInstance().AddTexture("bg", "bg1.png");
     bgSprite.setTexture(TextureBank::getInstance().singletonTextures["bg"][1]);
@@ -29,16 +35,13 @@ int main()
     scale.y = windowSize.y * 1.0 / bgSize.y;
     bgSprite.setScale(scale);
 
-    //Platforms
-    Platforms platform(windowSize);
-
     int fps = 0;
     sf::Clock clock;
     sf::Vector2f currPos;
     while (window.isOpen())
     {
         float deltaTime = clock.getElapsedTime().asMicroseconds() / 800;
-        std::cout << deltaTime << "\n";
+        //std::cout << deltaTime << "\n";
         clock.restart();
 
 
@@ -53,15 +56,15 @@ int main()
         window.draw(bgSprite);
         ++fps;
 
-        // Cheking movements
+        // Cheсking movements
         currPos = player1.GetSprite()->sf::Transformable::getPosition();
         player1.Update(deltaTime, windowSize.x, currPos);
         // Updating animation
         player1.UpdatePlayerAnimation(fps);
         window.draw(*player1.GetSprite());
         // Platforms creating
-        platform.PlatformGenerator(window);
-        window.draw(*platform.GetPlatform());
+//        platform.PlatformGenerator(window);
+//        window.draw(*platform.GetPlatform());
         window.display();
     }
 

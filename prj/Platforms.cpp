@@ -1,8 +1,11 @@
 #include "Platforms.h"
 
-Platforms::Platforms(const sf::Vector2u& windowSize) {
-	this->windowSize = windowSize;
-	platform.setPosition(sf::Vector2f(1000, 900));
+Platforms::Platforms(
+        const std::string& File,
+        const int& X, const int& Y,
+        const int& W, const int& H,
+        const int& platformSkin) {
+
 }
 
 void Platforms::PlatformGenerator(sf::RenderWindow& window) {

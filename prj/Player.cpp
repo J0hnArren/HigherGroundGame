@@ -1,6 +1,4 @@
 #include "Player.h"
-#include "TextureBank.h"
-
 
 Player::Player(const std::string& File) : Player(File, 17, 12, 47, 42, 0) {
     this->File = File;
@@ -12,28 +10,24 @@ Player::Player(const std::string& File) : Player(File, 17, 12, 47, 42, 0) {
 
 Player::Player(const std::string& File, const int& X, const int& Y, const int& W, const int& H, const int& playerSkin) {
     this->File = File;
-    x = X;
-    y = Y;
-    w = W;
-    h = H;
     this->playerSkin = playerSkin;
 
     TextureBank::getInstance().AddTexture("player", this->File);
     sprite.setTexture(TextureBank::getInstance().singletonTextures["player"][this->playerSkin]);
     sprite.setTextureRect(sf::IntRect(17, 12, 47, 42));
-    sprite.setTextureRect(sf::IntRect(x, y, h, w));
+    sprite.setTextureRect(sf::IntRect(X, Y, H, W));
 }
 
 void Player::Update(float& deltaTime, const int& width, sf::Vector2f& currPos) {
 
-    // Check posision on the map
+    // Check position on the map
     //left side
     if (currPos.x < -sprite.getTextureRect().width) {
-        sprite.setPosition(width + sprite.getTextureRect().width * 0.8, currPos.y);
+        sprite.setPosition(width + sprite.getTextureRect().width * 0.8f, currPos.y);
     }
     //right side
     else if (currPos.x > width + sprite.getTextureRect().width) {
-        sprite.setPosition(-sprite.getTextureRect().width * 0.8, currPos.y);
+        sprite.setPosition(-sprite.getTextureRect().width * 0.8f, currPos.y);
     }
 
     //Keyboard

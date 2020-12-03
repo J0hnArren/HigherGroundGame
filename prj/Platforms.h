@@ -9,7 +9,7 @@ class Platforms
 public:
 	Platforms() = default;
 	Platforms(const Platforms&) = default;
-	Platforms(const sf::Vector2u& windowSize);
+	Platforms(const std::string& File, const int& X, const int& Y, const int& W, const int& H, const int& platformSkin);
 	~Platforms() = default;
 
 	void PlatformGenerator(sf::RenderWindow& window);

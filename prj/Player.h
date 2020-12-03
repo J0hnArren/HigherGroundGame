@@ -18,7 +18,7 @@ public:
 
     sf::Sprite* GetSprite();
 private:
-    int x, y, w, h, playerSkin = 0;
+    int playerSkin = 0;
     std::string File;
     sf::Sprite sprite;
 };
