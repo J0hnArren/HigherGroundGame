@@ -226,6 +226,7 @@ prj/CMakeFiles/HigherGround.dir/Platforms.cpp.obj
  ../libs/SFML/include/SFML/Window/WindowStyle.hpp
  C:/Users/Rauf/CLionProjects/HigherGround/prj/Platforms.cpp
  C:/Users/Rauf/CLionProjects/HigherGround/prj/Platforms.h
+ C:/Users/Rauf/CLionProjects/HigherGround/prj/TextureBank.h
 prj/CMakeFiles/HigherGround.dir/Player.cpp.obj
  ../libs/SFML/include/SFML/Config.hpp
  ../libs/SFML/include/SFML/Graphics.hpp

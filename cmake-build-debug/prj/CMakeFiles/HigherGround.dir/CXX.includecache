@@ -657,12 +657,10 @@ Platforms.h
 C:/Users/Rauf/CLionProjects/HigherGround/prj/Platforms.h
 
 C:/Users/Rauf/CLionProjects/HigherGround/prj/Platforms.h
-iosfwd
--
-vector
--
 SFML/Graphics.hpp
 -
+TextureBank.h
+C:/Users/Rauf/CLionProjects/HigherGround/prj/TextureBank.h
 
 C:/Users/Rauf/CLionProjects/HigherGround/prj/Player.h
 string

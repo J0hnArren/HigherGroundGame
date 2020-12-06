@@ -5,13 +5,15 @@ Platforms::Platforms(
         const int& X, const int& Y,
         const int& W, const int& H,
         const int& platformSkin) {
+    TextureBank::getInstance().AddTexture("platform", File);
+    sprite.setTexture(TextureBank::getInstance().singletonTextures["platform"][platformSkin]);
+    sprite.setTextureRect(sf::IntRect(X, Y, W, H));
+}
+
+void Platforms::PlatformMover(sf::RenderWindow& window) noexcept(false){
 
 }
 
-void Platforms::PlatformGenerator(sf::RenderWindow& window) {
-	platform.setFillColor(sf::Color::Green);
-}
-
-sf::RectangleShape* Platforms::GetPlatform() {
-	return &platform;
+sf::Sprite* Platforms::GetPlatform() {
+	return &sprite;
 }
