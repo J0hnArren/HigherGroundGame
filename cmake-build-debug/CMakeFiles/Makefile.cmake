@@ -38,6 +38,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.17.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.17.3/CMakeRCCompiler.cmake"
   "CMakeFiles/3.17.3/CMakeSystem.cmake"
+  "../libs/CMakeLists.txt"
   "../modules/FindSFML.cmake"
   "../prj/CMakeLists.txt"
   )
@@ -52,6 +53,7 @@ set(CMAKE_MAKEFILE_OUTPUTS
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "prj/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "libs/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:

@@ -1,14 +1,14 @@
 #include "Player.h"
 
 Player::Player(const std::string& File) : Player(File, 17, 12, 47, 42, 0) {
-    TextureBank::getInstance().AddTexture("player", File);
-    sprite.setTexture(TextureBank::getInstance().singletonTextures["player"][0]);
+    FilesBank::getInstance().AddTexture("player", File);
+    sprite.setTexture(FilesBank::getInstance().singletonTextures["player"][0]);
     sprite.setTextureRect(sf::IntRect(17, 12, 47, 42));
 }
 
 Player::Player(const std::string& File, const int& X, const int& Y, const int& W, const int& H, const int& playerSkin) {
-    TextureBank::getInstance().AddTexture("player", File);
-    sprite.setTexture(TextureBank::getInstance().singletonTextures["player"][playerSkin]);
+    FilesBank::getInstance().AddTexture("player", File);
+    sprite.setTexture(FilesBank::getInstance().singletonTextures["player"][playerSkin]);
     sprite.setTextureRect(sf::IntRect(X, Y, H, W));
 }
 

@@ -3,3 +3,5 @@ C:/Users/Rauf/CLionProjects/HigherGround/cmake-build-debug/CMakeFiles/rebuild_ca
 C:/Users/Rauf/CLionProjects/HigherGround/cmake-build-debug/prj/CMakeFiles/HigherGround.dir
 C:/Users/Rauf/CLionProjects/HigherGround/cmake-build-debug/prj/CMakeFiles/edit_cache.dir
 C:/Users/Rauf/CLionProjects/HigherGround/cmake-build-debug/prj/CMakeFiles/rebuild_cache.dir
+C:/Users/Rauf/CLionProjects/HigherGround/cmake-build-debug/libs/CMakeFiles/edit_cache.dir
+C:/Users/Rauf/CLionProjects/HigherGround/cmake-build-debug/libs/CMakeFiles/rebuild_cache.dir

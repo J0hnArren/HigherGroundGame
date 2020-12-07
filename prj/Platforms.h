@@ -1,7 +1,7 @@
 #ifndef PLATFORMS
 #define PLATFORMS
 #include <SFML/Graphics.hpp>
-#include "TextureBank.h"
+#include "FilesBank.h"
 
 class Platforms
 {

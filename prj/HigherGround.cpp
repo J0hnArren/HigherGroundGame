@@ -1,7 +1,7 @@
 ﻿#include "Player.h"
-#include "TextureBank.h"
 #include "Collision.h"
 #include "Platforms.h"
+#include <SFML/Audio/Music.hpp>
 
 int main()
 {
@@ -15,6 +15,12 @@ int main()
     //window size
     sf::Vector2u windowSize = window.getSize();
 
+    //Music
+    sf::Music music;
+    music.openFromFile("src/audio/Track-01_-Assassin_s-Creed-2-OST-Jesper-Kyd-Earth.ogg");
+    music.play();
+    std::size_t numberOfSongs = 1;
+
     //main hero sprite
     Player player1("hero.png");
     player1.GetSprite()->setScale(sf::Vector2f(3, 3));
@@ -26,11 +32,11 @@ int main()
 
     //background image
     sf::Sprite bgSprite;
-    TextureBank::getInstance().AddTexture("bg", "bg0.png");
-    TextureBank::getInstance().AddTexture("bg", "bg1.png");
-    TextureBank::getInstance().AddTexture("bg", "bg2.png");
-    bgSprite.setTexture(TextureBank::getInstance().singletonTextures["bg"][2]);
-    sf::Vector2u bgSize = TextureBank::getInstance().singletonTextures["bg"][2].getSize();
+    FilesBank::getInstance().AddTexture("bg", "bg0.png");
+    FilesBank::getInstance().AddTexture("bg", "bg1.png");
+    FilesBank::getInstance().AddTexture("bg", "bg2.png");
+    bgSprite.setTexture(FilesBank::getInstance().singletonTextures["bg"][2]);
+    sf::Vector2u bgSize = FilesBank::getInstance().singletonTextures["bg"][2].getSize();
 
     sf::Vector2f scale;
     scale.x = windowSize.x * 1.0f / bgSize.x,
@@ -46,6 +52,10 @@ int main()
         //std::cout << deltaTime << "\n";
         clock.restart();
 
+//        if (!FilesBank::soundTracks[numberOfSongs].getStatus()){
+//            --numberOfSongs;
+//            FilesBank::soundTracks[numberOfSongs].play();
+//        }
 
         sf::Event event;
         while (window.pollEvent(event))

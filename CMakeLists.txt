@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.10)
 set(PROJECT_NAME HigherGround)
 
+set(EXECUTABLE_OUTPUT_PATH "${CMAKE_SOURCE_DIR}")
+
 project(${PROJECT_NAME})
 set(CMAKE_CXX_STANDARD 17)
 
@@ -8,9 +10,7 @@ include_directories(prj)
 include_directories(libs)
 
 add_subdirectory(prj)
-#add_subdirectory(libs)
-
-
+add_subdirectory(libs)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 set_property(GLOBAL PROPERTY PREDEFINED_TARGETS_FOLDER "cmake")

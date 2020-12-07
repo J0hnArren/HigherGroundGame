@@ -132,19 +132,19 @@ prj/CMakeFiles/HigherGround.dir/Player.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HigherGround.dir/Player.cpp.s"
 	cd /d C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-release\prj && C:\PROGRA~1\JETBRA~1\Colpiler\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Rauf\CLionProjects\HigherGround\prj\Player.cpp -o CMakeFiles\HigherGround.dir\Player.cpp.s
 
-prj/CMakeFiles/HigherGround.dir/TextureBank.cpp.obj: prj/CMakeFiles/HigherGround.dir/flags.make
-prj/CMakeFiles/HigherGround.dir/TextureBank.cpp.obj: prj/CMakeFiles/HigherGround.dir/includes_CXX.rsp
-prj/CMakeFiles/HigherGround.dir/TextureBank.cpp.obj: ../prj/TextureBank.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object prj/CMakeFiles/HigherGround.dir/TextureBank.cpp.obj"
-	cd /d C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-release\prj && C:\PROGRA~1\JETBRA~1\Colpiler\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\HigherGround.dir\TextureBank.cpp.obj -c C:\Users\Rauf\CLionProjects\HigherGround\prj\TextureBank.cpp
+prj/CMakeFiles/HigherGround.dir/FilesBank.cpp.obj: prj/CMakeFiles/HigherGround.dir/flags.make
+prj/CMakeFiles/HigherGround.dir/FilesBank.cpp.obj: prj/CMakeFiles/HigherGround.dir/includes_CXX.rsp
+prj/CMakeFiles/HigherGround.dir/FilesBank.cpp.obj: ../prj/FilesBank.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object prj/CMakeFiles/HigherGround.dir/FilesBank.cpp.obj"
+	cd /d C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-release\prj && C:\PROGRA~1\JETBRA~1\Colpiler\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\HigherGround.dir\FilesBank.cpp.obj -c C:\Users\Rauf\CLionProjects\HigherGround\prj\FilesBank.cpp
 
-prj/CMakeFiles/HigherGround.dir/TextureBank.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HigherGround.dir/TextureBank.cpp.i"
-	cd /d C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-release\prj && C:\PROGRA~1\JETBRA~1\Colpiler\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Rauf\CLionProjects\HigherGround\prj\TextureBank.cpp > CMakeFiles\HigherGround.dir\TextureBank.cpp.i
+prj/CMakeFiles/HigherGround.dir/FilesBank.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HigherGround.dir/FilesBank.cpp.i"
+	cd /d C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-release\prj && C:\PROGRA~1\JETBRA~1\Colpiler\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Rauf\CLionProjects\HigherGround\prj\FilesBank.cpp > CMakeFiles\HigherGround.dir\FilesBank.cpp.i
 
-prj/CMakeFiles/HigherGround.dir/TextureBank.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HigherGround.dir/TextureBank.cpp.s"
-	cd /d C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-release\prj && C:\PROGRA~1\JETBRA~1\Colpiler\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Rauf\CLionProjects\HigherGround\prj\TextureBank.cpp -o CMakeFiles\HigherGround.dir\TextureBank.cpp.s
+prj/CMakeFiles/HigherGround.dir/FilesBank.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HigherGround.dir/FilesBank.cpp.s"
+	cd /d C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-release\prj && C:\PROGRA~1\JETBRA~1\Colpiler\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Rauf\CLionProjects\HigherGround\prj\FilesBank.cpp -o CMakeFiles\HigherGround.dir\FilesBank.cpp.s
 
 # Object files for target HigherGround
 HigherGround_OBJECTS = \
@@ -152,43 +152,43 @@ HigherGround_OBJECTS = \
 "CMakeFiles/HigherGround.dir/HigherGround.cpp.obj" \
 "CMakeFiles/HigherGround.dir/Platforms.cpp.obj" \
 "CMakeFiles/HigherGround.dir/Player.cpp.obj" \
-"CMakeFiles/HigherGround.dir/TextureBank.cpp.obj"
+"CMakeFiles/HigherGround.dir/FilesBank.cpp.obj"
 
 # External object files for target HigherGround
 HigherGround_EXTERNAL_OBJECTS =
 
-prj/HigherGround.exe: prj/CMakeFiles/HigherGround.dir/Collision.cpp.obj
-prj/HigherGround.exe: prj/CMakeFiles/HigherGround.dir/HigherGround.cpp.obj
-prj/HigherGround.exe: prj/CMakeFiles/HigherGround.dir/Platforms.cpp.obj
-prj/HigherGround.exe: prj/CMakeFiles/HigherGround.dir/Player.cpp.obj
-prj/HigherGround.exe: prj/CMakeFiles/HigherGround.dir/TextureBank.cpp.obj
-prj/HigherGround.exe: prj/CMakeFiles/HigherGround.dir/build.make
-prj/HigherGround.exe: ../libs/SFML/lib/libsfml-audio-s.a
-prj/HigherGround.exe: ../libs/SFML/lib/libsfml-graphics-s.a
-prj/HigherGround.exe: ../libs/SFML/lib/libsfml-window-s.a
-prj/HigherGround.exe: ../libs/SFML/lib/libsfml-system-s.a
-prj/HigherGround.exe: ../libs/SFML/lib/libfreetype.a
-prj/HigherGround.exe: ../libs/SFML/lib/libjpeg.a
-prj/HigherGround.exe: ../libs/SFML/lib/libopenal32.a
-prj/HigherGround.exe: ../libs/SFML/lib/libFLAC.a
-prj/HigherGround.exe: ../libs/SFML/lib/libvorbisenc.a
-prj/HigherGround.exe: ../libs/SFML/lib/libvorbisfile.a
-prj/HigherGround.exe: ../libs/SFML/lib/libvorbis.a
-prj/HigherGround.exe: ../libs/SFML/lib/libogg.a
-prj/HigherGround.exe: ../libs/SFML/lib/libopenal32.a
-prj/HigherGround.exe: ../libs/SFML/lib/libFLAC.a
-prj/HigherGround.exe: ../libs/SFML/lib/libvorbisenc.a
-prj/HigherGround.exe: ../libs/SFML/lib/libvorbisfile.a
-prj/HigherGround.exe: ../libs/SFML/lib/libvorbis.a
-prj/HigherGround.exe: ../libs/SFML/lib/libogg.a
-prj/HigherGround.exe: prj/CMakeFiles/HigherGround.dir/linklibs.rsp
-prj/HigherGround.exe: prj/CMakeFiles/HigherGround.dir/objects1.rsp
-prj/HigherGround.exe: prj/CMakeFiles/HigherGround.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable HigherGround.exe"
+../HigherGround.exe: prj/CMakeFiles/HigherGround.dir/Collision.cpp.obj
+../HigherGround.exe: prj/CMakeFiles/HigherGround.dir/HigherGround.cpp.obj
+../HigherGround.exe: prj/CMakeFiles/HigherGround.dir/Platforms.cpp.obj
+../HigherGround.exe: prj/CMakeFiles/HigherGround.dir/Player.cpp.obj
+../HigherGround.exe: prj/CMakeFiles/HigherGround.dir/FilesBank.cpp.obj
+../HigherGround.exe: prj/CMakeFiles/HigherGround.dir/build.make
+../HigherGround.exe: ../libs/SFML/lib/libsfml-audio-s.a
+../HigherGround.exe: ../libs/SFML/lib/libsfml-graphics-s.a
+../HigherGround.exe: ../libs/SFML/lib/libsfml-window-s.a
+../HigherGround.exe: ../libs/SFML/lib/libsfml-system-s.a
+../HigherGround.exe: ../libs/SFML/lib/libfreetype.a
+../HigherGround.exe: ../libs/SFML/lib/libjpeg.a
+../HigherGround.exe: ../libs/SFML/lib/libopenal32.a
+../HigherGround.exe: ../libs/SFML/lib/libFLAC.a
+../HigherGround.exe: ../libs/SFML/lib/libvorbisenc.a
+../HigherGround.exe: ../libs/SFML/lib/libvorbisfile.a
+../HigherGround.exe: ../libs/SFML/lib/libvorbis.a
+../HigherGround.exe: ../libs/SFML/lib/libogg.a
+../HigherGround.exe: ../libs/SFML/lib/libopenal32.a
+../HigherGround.exe: ../libs/SFML/lib/libFLAC.a
+../HigherGround.exe: ../libs/SFML/lib/libvorbisenc.a
+../HigherGround.exe: ../libs/SFML/lib/libvorbisfile.a
+../HigherGround.exe: ../libs/SFML/lib/libvorbis.a
+../HigherGround.exe: ../libs/SFML/lib/libogg.a
+../HigherGround.exe: prj/CMakeFiles/HigherGround.dir/linklibs.rsp
+../HigherGround.exe: prj/CMakeFiles/HigherGround.dir/objects1.rsp
+../HigherGround.exe: prj/CMakeFiles/HigherGround.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ..\..\HigherGround.exe"
 	cd /d C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-release\prj && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\HigherGround.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-prj/CMakeFiles/HigherGround.dir/build: prj/HigherGround.exe
+prj/CMakeFiles/HigherGround.dir/build: ../HigherGround.exe
 
 .PHONY : prj/CMakeFiles/HigherGround.dir/build
 

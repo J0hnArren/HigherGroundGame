@@ -5,7 +5,7 @@
 		<Option title="HigherGround"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\prj\;CMake Files\modules\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\prj\;CMake Files\modules\;CMake Files\libs\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="C:/Users/Rauf/CLionProjects/HigherGround/cmake-build-release"/>
@@ -38,8 +38,8 @@
 				</MakeCommands>
 			</Target>
 			<Target title="HigherGround">
-				<Option output="C:/Users/Rauf/CLionProjects/HigherGround/cmake-build-release/prj/HigherGround.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Rauf/CLionProjects/HigherGround/cmake-build-release/prj"/>
+				<Option output="C:/Users/Rauf/CLionProjects/HigherGround/HigherGround.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Rauf/CLionProjects/HigherGround"/>
 				<Option object_output="./"/>
 				<Option type="0"/>
 				<Option compiler="gcc"/>
@@ -63,8 +63,8 @@
 				</MakeCommands>
 			</Target>
 			<Target title="HigherGround/fast">
-				<Option output="C:/Users/Rauf/CLionProjects/HigherGround/cmake-build-release/prj/HigherGround.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Rauf/CLionProjects/HigherGround/cmake-build-release/prj"/>
+				<Option output="C:/Users/Rauf/CLionProjects/HigherGround/HigherGround.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Rauf/CLionProjects/HigherGround"/>
 				<Option object_output="./"/>
 				<Option type="0"/>
 				<Option compiler="gcc"/>
@@ -94,6 +94,12 @@
 		<Unit filename="C:/Users/Rauf/CLionProjects/HigherGround/prj/Collision.h">
 			<Option target="HigherGround"/>
 		</Unit>
+		<Unit filename="C:/Users/Rauf/CLionProjects/HigherGround/prj/FilesBank.cpp">
+			<Option target="HigherGround"/>
+		</Unit>
+		<Unit filename="C:/Users/Rauf/CLionProjects/HigherGround/prj/FilesBank.h">
+			<Option target="HigherGround"/>
+		</Unit>
 		<Unit filename="C:/Users/Rauf/CLionProjects/HigherGround/prj/HigherGround.cpp">
 			<Option target="HigherGround"/>
 		</Unit>
@@ -109,12 +115,6 @@
 		<Unit filename="C:/Users/Rauf/CLionProjects/HigherGround/prj/Player.h">
 			<Option target="HigherGround"/>
 		</Unit>
-		<Unit filename="C:/Users/Rauf/CLionProjects/HigherGround/prj/TextureBank.cpp">
-			<Option target="HigherGround"/>
-		</Unit>
-		<Unit filename="C:/Users/Rauf/CLionProjects/HigherGround/prj/TextureBank.h">
-			<Option target="HigherGround"/>
-		</Unit>
 		<Unit filename="C:/Users/Rauf/CLionProjects/HigherGround/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
@@ -123,6 +123,9 @@
 		</Unit>
 		<Unit filename="C:/Users/Rauf/CLionProjects/HigherGround/modules/FindSFML.cmake">
 			<Option virtualFolder="CMake Files\modules\"/>
+		</Unit>
+		<Unit filename="C:/Users/Rauf/CLionProjects/HigherGround/libs/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\libs\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

@@ -35,6 +35,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("C:/Users/Rauf/CLionProjects/HigherGround/cmake-build-release/prj/cmake_install.cmake")
+  include("C:/Users/Rauf/CLionProjects/HigherGround/cmake-build-release/libs/cmake_install.cmake")
 
 endif()
 

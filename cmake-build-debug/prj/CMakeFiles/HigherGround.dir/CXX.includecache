@@ -640,39 +640,11 @@ SFML/Config.hpp
 
 ../libs/SFML/include/SFML/Window/WindowStyle.hpp
 
-C:/Users/Rauf/CLionProjects/HigherGround/prj/Collision.h
-iosfwd
--
-SFML/Graphics.hpp
--
+C:/Users/Rauf/CLionProjects/HigherGround/prj/FilesBank.cpp
+FilesBank.h
+C:/Users/Rauf/CLionProjects/HigherGround/prj/FilesBank.h
 
-C:/Users/Rauf/CLionProjects/HigherGround/prj/HigherGround.cpp
-Player.h
-C:/Users/Rauf/CLionProjects/HigherGround/prj/Player.h
-TextureBank.h
-C:/Users/Rauf/CLionProjects/HigherGround/prj/TextureBank.h
-Collision.h
-C:/Users/Rauf/CLionProjects/HigherGround/prj/Collision.h
-Platforms.h
-C:/Users/Rauf/CLionProjects/HigherGround/prj/Platforms.h
-
-C:/Users/Rauf/CLionProjects/HigherGround/prj/Platforms.h
-SFML/Graphics.hpp
--
-TextureBank.h
-C:/Users/Rauf/CLionProjects/HigherGround/prj/TextureBank.h
-
-C:/Users/Rauf/CLionProjects/HigherGround/prj/Player.h
-string
--
-SFML/Graphics.hpp
--
-iosfwd
--
-TextureBank.h
-C:/Users/Rauf/CLionProjects/HigherGround/prj/TextureBank.h
-
-C:/Users/Rauf/CLionProjects/HigherGround/prj/TextureBank.h
+C:/Users/Rauf/CLionProjects/HigherGround/prj/FilesBank.h
 iosfwd
 -
 SFML/Graphics.hpp

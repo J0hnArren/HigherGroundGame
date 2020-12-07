@@ -171,6 +171,33 @@ Collision.cpp.s:
 	cd /d C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-debug && $(MAKE) $(MAKESILENT) -f prj\CMakeFiles\HigherGround.dir\build.make prj/CMakeFiles/HigherGround.dir/Collision.cpp.s
 .PHONY : Collision.cpp.s
 
+FilesBank.obj: FilesBank.cpp.obj
+
+.PHONY : FilesBank.obj
+
+# target to build an object file
+FilesBank.cpp.obj:
+	cd /d C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-debug && $(MAKE) $(MAKESILENT) -f prj\CMakeFiles\HigherGround.dir\build.make prj/CMakeFiles/HigherGround.dir/FilesBank.cpp.obj
+.PHONY : FilesBank.cpp.obj
+
+FilesBank.i: FilesBank.cpp.i
+
+.PHONY : FilesBank.i
+
+# target to preprocess a source file
+FilesBank.cpp.i:
+	cd /d C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-debug && $(MAKE) $(MAKESILENT) -f prj\CMakeFiles\HigherGround.dir\build.make prj/CMakeFiles/HigherGround.dir/FilesBank.cpp.i
+.PHONY : FilesBank.cpp.i
+
+FilesBank.s: FilesBank.cpp.s
+
+.PHONY : FilesBank.s
+
+# target to generate assembly for a file
+FilesBank.cpp.s:
+	cd /d C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-debug && $(MAKE) $(MAKESILENT) -f prj\CMakeFiles\HigherGround.dir\build.make prj/CMakeFiles/HigherGround.dir/FilesBank.cpp.s
+.PHONY : FilesBank.cpp.s
+
 HigherGround.obj: HigherGround.cpp.obj
 
 .PHONY : HigherGround.obj
@@ -252,33 +279,6 @@ Player.cpp.s:
 	cd /d C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-debug && $(MAKE) $(MAKESILENT) -f prj\CMakeFiles\HigherGround.dir\build.make prj/CMakeFiles/HigherGround.dir/Player.cpp.s
 .PHONY : Player.cpp.s
 
-TextureBank.obj: TextureBank.cpp.obj
-
-.PHONY : TextureBank.obj
-
-# target to build an object file
-TextureBank.cpp.obj:
-	cd /d C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-debug && $(MAKE) $(MAKESILENT) -f prj\CMakeFiles\HigherGround.dir\build.make prj/CMakeFiles/HigherGround.dir/TextureBank.cpp.obj
-.PHONY : TextureBank.cpp.obj
-
-TextureBank.i: TextureBank.cpp.i
-
-.PHONY : TextureBank.i
-
-# target to preprocess a source file
-TextureBank.cpp.i:
-	cd /d C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-debug && $(MAKE) $(MAKESILENT) -f prj\CMakeFiles\HigherGround.dir\build.make prj/CMakeFiles/HigherGround.dir/TextureBank.cpp.i
-.PHONY : TextureBank.cpp.i
-
-TextureBank.s: TextureBank.cpp.s
-
-.PHONY : TextureBank.s
-
-# target to generate assembly for a file
-TextureBank.cpp.s:
-	cd /d C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-debug && $(MAKE) $(MAKESILENT) -f prj\CMakeFiles\HigherGround.dir\build.make prj/CMakeFiles/HigherGround.dir/TextureBank.cpp.s
-.PHONY : TextureBank.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -291,6 +291,9 @@ help:
 	@echo ... Collision.obj
 	@echo ... Collision.i
 	@echo ... Collision.s
+	@echo ... FilesBank.obj
+	@echo ... FilesBank.i
+	@echo ... FilesBank.s
 	@echo ... HigherGround.obj
 	@echo ... HigherGround.i
 	@echo ... HigherGround.s
@@ -300,9 +303,6 @@ help:
 	@echo ... Player.obj
 	@echo ... Player.i
 	@echo ... Player.s
-	@echo ... TextureBank.obj
-	@echo ... TextureBank.i
-	@echo ... TextureBank.s
 .PHONY : help
 
 

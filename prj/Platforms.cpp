@@ -8,13 +8,13 @@ Platforms::Platforms(
         const int& platformSkin) {
     window = windowSize;
 
-    TextureBank::getInstance().AddTexture("platform", File);
-    sprite.setTexture(TextureBank::getInstance().singletonTextures["platform"][platformSkin]);
+    FilesBank::getInstance().AddTexture("platform", File);
+    sprite.setTexture(FilesBank::getInstance().singletonTextures["platform"][platformSkin]);
     sprite.setTextureRect(sf::IntRect(X, Y, W, H));
 }
 
 void Platforms::PlatformMover(const float &deltaTime) noexcept(false){
-    sprite.move(0, deltaTime / 10.f);
+    sprite.move(0, deltaTime / 40.f);
 }
 
 sf::Sprite* Platforms::GetPlatform() {

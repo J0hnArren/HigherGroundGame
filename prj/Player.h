@@ -3,7 +3,7 @@
 #include <string>
 #include <SFML/Graphics.hpp>
 #include <iosfwd>
-#include "TextureBank.h"
+#include "FilesBank.h"
 
 class Player {
 public:
