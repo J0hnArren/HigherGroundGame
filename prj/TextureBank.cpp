@@ -5,51 +5,49 @@ TextureBank& TextureBank::getInstance() {
 	return instance;
 }
 
-TextureBank::TextureBank(const std::string& FileName) {
-	this->FileName = FileName;
-
-	try {
-		CheckFileFormat(FileName);
-	}
-	catch (std::invalid_argument e) {
-		std::cout << e.what() << "/n" << FileName << "/n";
-	}
-	isChecked = true;
-	AddTexture(FileType, FileName);
-}
-
-TextureBank::TextureBank(const std::string& FileType, const std::string& FileName){
-	this->FileType = FileType;
-	this->FileName = FileName;
-
-	try {
-		CheckFileFormat(FileName);
-	}catch (std::invalid_argument e) {
-		std::cout << e.what() << "/n" << this->FileName << "/n";
-	}
-	isChecked = true;
-	AddTexture(this->FileType, this->FileName);
-}
-
-void TextureBank::AddTexture(const std::string& fileType, const std::string& fileName) noexcept(false){
-
-	if (!isChecked) {
-		CheckFileFormat(fileName);
-	}
-
-	if (!texture.loadFromFile("../../src/images/" + fileName)){
-        throw std::runtime_error("Could not load " + fileName);
-	}
-	TextureBank::getInstance().singletonTextures[fileType];
-	TextureBank::getInstance().singletonTextures[fileType].push_back(texture);
-}
-
-void TextureBank::CheckFileFormat(const std::string& fileName) {
+void TextureBank::FileFormatCheck(const std::string& fileName) {
 	int size = fileName.size();
 	std::string fileFormat = fileName;
 	fileFormat.erase(0, size - 3);
 
 	if (fileFormat != "png" && fileFormat != "jpg") {
-		throw std::invalid_argument("Wrong file format!");
+		throw std::invalid_argument("Wrong file format! Added file format: " + fileFormat);
 	}
+}
+
+void TextureBank::FileTypeCheck(const std::string &ST_FileType){
+    if (ST_FileType != "player" && ST_FileType != "bg" && ST_FileType != "platform"){
+        throw std::invalid_argument(
+                "Wrong type for singletonTextures!"
+                "\nIt can contain only 'player', 'bg' and 'platform'."
+                "\nYou added: " + ST_FileType + ". Check for the typo."
+                );
+    }
+}
+
+void TextureBank::FileLoadCheck(const std::string& fileName){
+    throw std::runtime_error("Could not load from file: " + fileName);
+}
+
+void TextureBank::AddTexture(const std::string& fileType, const std::string& fileName) noexcept(false){
+
+    try {
+        FileTypeCheck(fileType);
+        FileFormatCheck(fileName);
+        if (!texture.loadFromFile("../../src/images/" + fileName)) {
+            FileLoadCheck(fileName);
+        }
+    }
+    catch (std::invalid_argument &e) {
+        std::cout << e.what() << "\n";
+    }
+    catch (std::runtime_error &e) {
+        std::cout << e.what() << "\n";
+    }
+    catch (...) {
+        std::cout << "Something went wrong with in TextureBank::AddTexture()" << "\n";
+    }
+
+    TextureBank::getInstance().singletonTextures[fileType];
+    TextureBank::getInstance().singletonTextures[fileType].push_back(texture);
 }

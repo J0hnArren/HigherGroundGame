@@ -18,12 +18,11 @@ int main()
     //main hero sprite
     Player player1("hero.png");
     player1.GetSprite()->setScale(sf::Vector2f(3, 3));
-    player1.GetSprite()->setPosition(windowSize.x * 1.0f / 2 - 80, 830); //выводим спрайт в позицию x y
+    player1.GetSprite()->setPosition(windowSize.x * 1.f / 2 - 80, 830); //выводим спрайт в позицию x y
 
     //Platforms
-    Platforms platforms("platforms.png", 0, 128, 192, 32, 0); // first stone platform
-    platforms.GetPlatform()->setScale(sf::Vector2f(1, 1));
-    platforms.GetPlatform()->setPosition(windowSize.x * 1.0f / 2 - 80, 500);
+    Platforms platforms(windowSize, "platforms.png", 0, 128, 192, 32, 0); // first stone platform
+    platforms.GetPlatform()->setPosition(windowSize.x * 1.f / 2 - 80, 500);
 
     //background image
     sf::Sprite bgSprite;
@@ -44,7 +43,7 @@ int main()
     while (window.isOpen())
     {
         float deltaTime = clock.getElapsedTime().asMicroseconds() / 750;
-        std::cout << deltaTime << "\n";
+        //std::cout << deltaTime << "\n";
         clock.restart();
 
 
@@ -67,8 +66,8 @@ int main()
         player1.UpdatePlayerAnimation(fps);
         window.draw(*player1.GetSprite());
         // Platforms creating
+        platforms.PlatformMover(deltaTime);
         window.draw(*platforms.GetPlatform());
-
 
         window.display();
     }
