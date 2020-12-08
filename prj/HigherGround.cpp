@@ -28,7 +28,7 @@ int main()
 
     //Platforms
     Platforms platforms(windowSize, "platforms.png", 0, 128, 192, 32, 0); // first stone platform
-    platforms.GetPlatform()->setPosition(windowSize.x * 1.f / 2 - 80, 500);
+    //platforms.GetPlatform()->setPosition(windowSize.x * 1.f / 2 - 80, 500);
 
     //background image
     sf::Sprite bgSprite;
@@ -52,12 +52,7 @@ int main()
         //std::cout << deltaTime << "\n";
         clock.restart();
 
-//        if (!FilesBank::soundTracks[numberOfSongs].getStatus()){
-//            --numberOfSongs;
-//            FilesBank::soundTracks[numberOfSongs].play();
-//        }
-
-        sf::Event event;
+        sf::Event event{};
         while (window.pollEvent(event))
         {
             if (event.type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
@@ -69,14 +64,14 @@ int main()
         ++fps;
         //std::cout << fps << "\n";
 
-        // Cheсks movements
+        // Cheсking movements
         currPos = player1.GetSprite()->sf::Transformable::getPosition();
         player1.Update(deltaTime, windowSize.x, currPos);
         // Updating animation
         player1.UpdatePlayerAnimation(fps);
         window.draw(*player1.GetSprite());
         // Platforms creating
-        platforms.PlatformMover(deltaTime);
+        platforms.PlatformMover(deltaTime, const_cast<sf::Vector2f &>(*platforms.GetPlatformPos()));
         window.draw(*platforms.GetPlatform());
 
         window.display();

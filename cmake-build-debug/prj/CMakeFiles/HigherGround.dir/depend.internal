@@ -76,6 +76,23 @@ prj/CMakeFiles/HigherGround.dir/Collision.cpp.obj
  C:/Users/Rauf/CLionProjects/HigherGround/prj/Collision.cpp
  C:/Users/Rauf/CLionProjects/HigherGround/prj/Collision.h
 prj/CMakeFiles/HigherGround.dir/FilesBank.cpp.obj
+ ../libs/SFML/include/SFML/Audio.hpp
+ ../libs/SFML/include/SFML/Audio/AlResource.hpp
+ ../libs/SFML/include/SFML/Audio/Export.hpp
+ ../libs/SFML/include/SFML/Audio/InputSoundFile.hpp
+ ../libs/SFML/include/SFML/Audio/Listener.hpp
+ ../libs/SFML/include/SFML/Audio/Music.hpp
+ ../libs/SFML/include/SFML/Audio/OutputSoundFile.hpp
+ ../libs/SFML/include/SFML/Audio/Sound.hpp
+ ../libs/SFML/include/SFML/Audio/SoundBuffer.hpp
+ ../libs/SFML/include/SFML/Audio/SoundBufferRecorder.hpp
+ ../libs/SFML/include/SFML/Audio/SoundFileFactory.hpp
+ ../libs/SFML/include/SFML/Audio/SoundFileFactory.inl
+ ../libs/SFML/include/SFML/Audio/SoundFileReader.hpp
+ ../libs/SFML/include/SFML/Audio/SoundFileWriter.hpp
+ ../libs/SFML/include/SFML/Audio/SoundRecorder.hpp
+ ../libs/SFML/include/SFML/Audio/SoundSource.hpp
+ ../libs/SFML/include/SFML/Audio/SoundStream.hpp
  ../libs/SFML/include/SFML/Config.hpp
  ../libs/SFML/include/SFML/Graphics.hpp
  ../libs/SFML/include/SFML/Graphics/BlendMode.hpp
@@ -150,10 +167,21 @@ prj/CMakeFiles/HigherGround.dir/FilesBank.cpp.obj
  C:/Users/Rauf/CLionProjects/HigherGround/prj/FilesBank.cpp
  C:/Users/Rauf/CLionProjects/HigherGround/prj/FilesBank.h
 prj/CMakeFiles/HigherGround.dir/HigherGround.cpp.obj
+ ../libs/SFML/include/SFML/Audio.hpp
  ../libs/SFML/include/SFML/Audio/AlResource.hpp
  ../libs/SFML/include/SFML/Audio/Export.hpp
  ../libs/SFML/include/SFML/Audio/InputSoundFile.hpp
+ ../libs/SFML/include/SFML/Audio/Listener.hpp
  ../libs/SFML/include/SFML/Audio/Music.hpp
+ ../libs/SFML/include/SFML/Audio/OutputSoundFile.hpp
+ ../libs/SFML/include/SFML/Audio/Sound.hpp
+ ../libs/SFML/include/SFML/Audio/SoundBuffer.hpp
+ ../libs/SFML/include/SFML/Audio/SoundBufferRecorder.hpp
+ ../libs/SFML/include/SFML/Audio/SoundFileFactory.hpp
+ ../libs/SFML/include/SFML/Audio/SoundFileFactory.inl
+ ../libs/SFML/include/SFML/Audio/SoundFileReader.hpp
+ ../libs/SFML/include/SFML/Audio/SoundFileWriter.hpp
+ ../libs/SFML/include/SFML/Audio/SoundRecorder.hpp
  ../libs/SFML/include/SFML/Audio/SoundSource.hpp
  ../libs/SFML/include/SFML/Audio/SoundStream.hpp
  ../libs/SFML/include/SFML/Config.hpp
@@ -233,6 +261,23 @@ prj/CMakeFiles/HigherGround.dir/HigherGround.cpp.obj
  C:/Users/Rauf/CLionProjects/HigherGround/prj/Platforms.h
  C:/Users/Rauf/CLionProjects/HigherGround/prj/Player.h
 prj/CMakeFiles/HigherGround.dir/Platforms.cpp.obj
+ ../libs/SFML/include/SFML/Audio.hpp
+ ../libs/SFML/include/SFML/Audio/AlResource.hpp
+ ../libs/SFML/include/SFML/Audio/Export.hpp
+ ../libs/SFML/include/SFML/Audio/InputSoundFile.hpp
+ ../libs/SFML/include/SFML/Audio/Listener.hpp
+ ../libs/SFML/include/SFML/Audio/Music.hpp
+ ../libs/SFML/include/SFML/Audio/OutputSoundFile.hpp
+ ../libs/SFML/include/SFML/Audio/Sound.hpp
+ ../libs/SFML/include/SFML/Audio/SoundBuffer.hpp
+ ../libs/SFML/include/SFML/Audio/SoundBufferRecorder.hpp
+ ../libs/SFML/include/SFML/Audio/SoundFileFactory.hpp
+ ../libs/SFML/include/SFML/Audio/SoundFileFactory.inl
+ ../libs/SFML/include/SFML/Audio/SoundFileReader.hpp
+ ../libs/SFML/include/SFML/Audio/SoundFileWriter.hpp
+ ../libs/SFML/include/SFML/Audio/SoundRecorder.hpp
+ ../libs/SFML/include/SFML/Audio/SoundSource.hpp
+ ../libs/SFML/include/SFML/Audio/SoundStream.hpp
  ../libs/SFML/include/SFML/Config.hpp
  ../libs/SFML/include/SFML/Graphics.hpp
  ../libs/SFML/include/SFML/Graphics/BlendMode.hpp
@@ -308,6 +353,23 @@ prj/CMakeFiles/HigherGround.dir/Platforms.cpp.obj
  C:/Users/Rauf/CLionProjects/HigherGround/prj/Platforms.cpp
  C:/Users/Rauf/CLionProjects/HigherGround/prj/Platforms.h
 prj/CMakeFiles/HigherGround.dir/Player.cpp.obj
+ ../libs/SFML/include/SFML/Audio.hpp
+ ../libs/SFML/include/SFML/Audio/AlResource.hpp
+ ../libs/SFML/include/SFML/Audio/Export.hpp
+ ../libs/SFML/include/SFML/Audio/InputSoundFile.hpp
+ ../libs/SFML/include/SFML/Audio/Listener.hpp
+ ../libs/SFML/include/SFML/Audio/Music.hpp
+ ../libs/SFML/include/SFML/Audio/OutputSoundFile.hpp
+ ../libs/SFML/include/SFML/Audio/Sound.hpp
+ ../libs/SFML/include/SFML/Audio/SoundBuffer.hpp
+ ../libs/SFML/include/SFML/Audio/SoundBufferRecorder.hpp
+ ../libs/SFML/include/SFML/Audio/SoundFileFactory.hpp
+ ../libs/SFML/include/SFML/Audio/SoundFileFactory.inl
+ ../libs/SFML/include/SFML/Audio/SoundFileReader.hpp
+ ../libs/SFML/include/SFML/Audio/SoundFileWriter.hpp
+ ../libs/SFML/include/SFML/Audio/SoundRecorder.hpp
+ ../libs/SFML/include/SFML/Audio/SoundSource.hpp
+ ../libs/SFML/include/SFML/Audio/SoundStream.hpp
  ../libs/SFML/include/SFML/Config.hpp
  ../libs/SFML/include/SFML/Graphics.hpp
  ../libs/SFML/include/SFML/Graphics/BlendMode.hpp
