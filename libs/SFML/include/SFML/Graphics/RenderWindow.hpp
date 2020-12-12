@@ -119,9 +119,9 @@ public:
     /// Use a sf::Texture and its sf::Texture::update(const Window&)
     /// function and copy its contents into an sf::Image instead.
     /// \code
-    /// sf::Vector2u windowSize = winSize.getSize();
+    /// sf::Vector2u winSize = winSize.getSize();
     /// sf::Texture texture;
-    /// texture.create(windowSize.x, windowSize.y);
+    /// texture.create(winSize.x, winSize.y);
     /// texture.update(winSize);
     /// sf::Image screenshot = texture.copyToImage();
     /// \endcode

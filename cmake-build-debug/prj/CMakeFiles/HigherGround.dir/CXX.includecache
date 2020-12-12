@@ -812,6 +812,12 @@ SFML/Config.hpp
 
 ../libs/SFML/include/SFML/Window/WindowStyle.hpp
 
+C:/Users/Rauf/CLionProjects/HigherGround/prj/Collision.h
+iosfwd
+-
+SFML/Graphics.hpp
+-
+
 C:/Users/Rauf/CLionProjects/HigherGround/prj/FilesBank.h
 iosfwd
 -
@@ -824,6 +830,28 @@ vector
 map
 -
 stdexcept
+-
+iostream
+-
+
+C:/Users/Rauf/CLionProjects/HigherGround/prj/HigherGround.cpp
+Player.h
+C:/Users/Rauf/CLionProjects/HigherGround/prj/Player.h
+Collision.h
+C:/Users/Rauf/CLionProjects/HigherGround/prj/Collision.h
+Platforms.h
+C:/Users/Rauf/CLionProjects/HigherGround/prj/Platforms.h
+SFML/Audio/Music.hpp
+-
+
+C:/Users/Rauf/CLionProjects/HigherGround/prj/Platforms.h
+SFML/Graphics.hpp
+-
+FilesBank.h
+C:/Users/Rauf/CLionProjects/HigherGround/prj/FilesBank.h
+random
+-
+ctime
 -
 iostream
 -

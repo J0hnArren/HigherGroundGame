@@ -30,5 +30,6 @@ private:
     sf::Sprite sprite;
 	sf::Vector2u winSize;
 	std::vector<sf::Sprite> platformsList;
+	const int numPlatforms = 10;
 };
 #endif // PLATFORMS

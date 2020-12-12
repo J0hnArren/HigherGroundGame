@@ -39,9 +39,9 @@
 <dt><a class="anchor" id="_deprecated000001"></a>Member <a class="el" href="group__graphics.html#gga5ee56ac1339984909610713096283b1ba5b09910f5d0f39641342184ccd0d1de3">sf::LinesStrip</a>  </dt>
 <dd>Use LineStrip instead  </dd>
 <dt><a class="anchor" id="_deprecated000004"></a>Member <a class="el" href="classsf_1_1RenderWindow.html#a9bd8655d0bac83145bfc329ea7a6d538">sf::RenderWindow::capture</a>  () const </dt>
-<dd>Use a <a class="el" href="classsf_1_1Texture.html" title="Image living on the graphics card that can be used for drawing. ">sf::Texture</a> and its <a class="el" href="classsf_1_1Texture.html#ad3cceef238f7d5d2108a98dd38c17fc5" title="Update the texture from the contents of a winSize. ">sf::Texture::update(const Window&amp;)</a> function and copy its contents into an <a class="el" href="classsf_1_1Image.html" title="Class for loading, manipulating and saving images. ">sf::Image</a> instead. <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;sf::Vector2u windowSize = winSize.getSize();</div>
+<dd>Use a <a class="el" href="classsf_1_1Texture.html" title="Image living on the graphics card that can be used for drawing. ">sf::Texture</a> and its <a class="el" href="classsf_1_1Texture.html#ad3cceef238f7d5d2108a98dd38c17fc5" title="Update the texture from the contents of a winSize. ">sf::Texture::update(const Window&amp;)</a> function and copy its contents into an <a class="el" href="classsf_1_1Image.html" title="Class for loading, manipulating and saving images. ">sf::Image</a> instead. <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;sf::Vector2u winSize = winSize.getSize();</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;sf::Texture texture;</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;texture.create(windowSize.x, windowSize.y);</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;texture.create(winSize.x, winSize.y);</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;texture.update(winSize);</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;sf::Image screenshot = texture.copyToImage();</div>
 </div><!-- fragment --> </dd>

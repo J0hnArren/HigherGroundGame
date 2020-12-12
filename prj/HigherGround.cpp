@@ -19,11 +19,11 @@ int main()
     //Music
     sf::Music music;
     music.openFromFile("src/audio/Track-01_-Assassin_s-Creed-2-OST-Jesper-Kyd-Earth.ogg");
-    //music.play();
+    music.play();
     //std::size_t numberOfSongs = 1;
 
     //main hero sprite
-    Player player1(windowSize, "hero.png");
+    Player player1(windowSize, "hero.png", "hero1.png");
     player1.GetSprite()->setScale(sf::Vector2f(3, 3));
 
     //Platforms

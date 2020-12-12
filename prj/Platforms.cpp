@@ -4,7 +4,7 @@ Platforms::Platforms(const sf::Vector2u &windowSize, const std::string& File) {
     winSize = windowSize;
 
     AddTextures(File, sprite, 0, 128, 192, 32, 0);
-    for (std::size_t i = 0; i < 3; ++i) {
+    for (std::size_t i = 0; i < numPlatforms; ++i) {
         sprite.setPosition(RandCoordinateX(winSize.x), RandCoordinateY(winSize.y));
         platformsList.push_back(sprite);
         std::cout << platformsList[i].getPosition().x << " " <<  platformsList[i].getPosition().y << "\n";
