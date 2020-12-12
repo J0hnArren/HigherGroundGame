@@ -1,39 +1,68 @@
 #include "Player.h"
 
-Player::Player(const std::string& File) : Player(File, 17, 12, 47, 42, 0) {
+Player::Player(const sf::Vector2u &windowSize, const std::string& File)
+    : Player(windowSize, File, 17, 12, 47, 42, 0) {
+    this->windowSize = windowSize;
+
     FilesBank::getInstance().AddTexture("player", File);
     sprite.setTexture(FilesBank::getInstance().singletonTextures["player"][0]);
     sprite.setTextureRect(sf::IntRect(17, 12, 47, 42));
+    sprite.setPosition(windowSize.x * 2.3f / 5.f, windowSize.y * 4.f / 5.f);
 }
 
-Player::Player(const std::string& File, const int& X, const int& Y, const int& W, const int& H, const int& playerSkin) {
+Player::Player(
+        const sf::Vector2u &windowSize,
+        const std::string& File,
+        const int& X, const int& Y,
+        const int& W, const int& H,
+        const int& playerSkin) {
+    this->windowSize = windowSize;
+
     FilesBank::getInstance().AddTexture("player", File);
     sprite.setTexture(FilesBank::getInstance().singletonTextures["player"][playerSkin]);
     sprite.setTextureRect(sf::IntRect(X, Y, H, W));
+    sprite.setPosition(windowSize.x * 2.3f / 5.f, windowSize.y * 4.f / 5.f);
 }
 
-void Player::Update(float& deltaTime, const int& width, sf::Vector2f& currPos) {
-
-    // Check position on the map
-    //left side
-    if (currPos.x < -sprite.getTextureRect().width) {
-        sprite.setPosition(width + sprite.getTextureRect().width * 0.8f, currPos.y);
-    }
-    //right side
-    else if (currPos.x > width * 1.0 + sprite.getTextureRect().width) {
-        sprite.setPosition(-sprite.getTextureRect().width * 0.8f, currPos.y);
-    }
-
-    //Keyboard
+void Player::Controls(float& deltaTime, sf::Vector2f& currPos) {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) || sf::Keyboard::isKeyPressed(sf::Keyboard::A))
     {
+        currPos.x -= deltaTime;
         sprite.setScale(-3, 3);
-        sprite.move(-deltaTime, 0);
+        sprite.setPosition(currPos.x + 147, currPos.y);
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) || sf::Keyboard::isKeyPressed(sf::Keyboard::D))
     {
+        currPos.x += deltaTime;
         sprite.setScale(3, 3);
-        sprite.move(deltaTime, 0);
+        sprite.setOrigin(currPos.x - 147, currPos.y);
+    }
+}
+
+void Player::Update(float& deltaTime, sf::Vector2f& currPos) {
+    // Keyboard
+    Controls(deltaTime, currPos);
+
+    Jump(currPos.x, currPos.y);
+    sprite.setPosition(currPos.x, currPos.y);
+
+    // Checks player's position at the both borders of the map
+    // left side
+    if (currPos.x < -sprite.getTextureRect().width) {
+        sprite.setPosition(windowSize.x + sprite.getTextureRect().width * 0.8f, currPos.y);
+    }
+    // right side
+    else if (currPos.x > windowSize.x * 1.f + sprite.getTextureRect().width) {
+        sprite.setPosition(-sprite.getTextureRect().width * 0.8f, currPos.y);
+    }
+}
+
+void Player::Jump(float& x, float& y){
+    accY += 0.5f; // acceleration
+    std::cout << accY << std::endl;
+    y += accY;
+    if (y > windowSize.y - sprite.getTextureRect().width * 3.f){
+        accY = -15; // high
     }
 }
 
@@ -54,4 +83,8 @@ void Player::UpdatePlayerAnimation(int& fps, const int& X_, const int& Y_, const
 
 sf::Sprite* Player::GetSprite() {
     return &sprite;
+}
+
+float* Player::GetAcceleration(){
+    return &accY;
 }

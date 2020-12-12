@@ -237,7 +237,7 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structsf_1_1ContextSettings.html#af2e91e57e8d26c40afe2ec8efaa32a2cabf868dcb751b909bf031484ed42a93bb"><param name="Name" value="sf::ContextSettings"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classsf_1_1RenderStates.html#ad29672df29f19ce50c3021d95f2bb062"><param name="Name" value="sf::RenderStates"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="group__window.html#gga8d7a3b8425c907a2872cb57e32cea5b8a5597cd420fc461807e4a201c92adea37"><param name="Name" value="window"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="group__window.html#gga8d7a3b8425c907a2872cb57e32cea5b8a5597cd420fc461807e4a201c92adea37"><param name="Name" value="winSize"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classsf_1_1Http_1_1Request.html#a620f8bff6f43e1378f321bf53fbf5598abc9555b94c1b896185015ec3990999f9"><param name="Name" value="Delete"></OBJECT>
   <UL>
@@ -1124,7 +1124,7 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classsf_1_1IpAddress.html#a4619b4abbe3c8fef056e7299db967404"><param name="Name" value="None"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classsf_1_1IpAddress.html#a4619b4abbe3c8fef056e7299db967404"><param name="Name" value="sf::IpAddress"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="group__window.html#gga8d7a3b8425c907a2872cb57e32cea5b8a8c35a9c8507559e455387fc4a83ce422"><param name="Name" value="window"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="group__window.html#gga8d7a3b8425c907a2872cb57e32cea5b8a8c35a9c8507559e455387fc4a83ce422"><param name="Name" value="winSize"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classsf_1_1Texture.html#aa6fd3bbe3c334b3c4428edfb2765a82ea69d6228950882e4d68be4ba4dbe7df73"><param name="Name" value="Normalized"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classsf_1_1Ftp_1_1Response.html#af81738f06b6f571761696291276acb3baf418e54753e0b8f9cb0325dd618acd14"><param name="Name" value="NotEnoughMemory"></OBJECT>
@@ -3919,7 +3919,7 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classsf_1_1VideoMode.html#a9b3b2ad2cac6b9c266823fb5ed506d90"><param name="Name" value="sf::VideoMode"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="group__window.html"><param name="Name" value="Window module"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="group__window.html"><param name="Name" value="window"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="group__window.html"><param name="Name" value="winSize"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="group__window.html#gga8d7a3b8425c907a2872cb57e32cea5b8ae07a7d411d5acf28f4a9a4b76a3a9493"><param name="Name" value="Close"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="group__window.html#gga8d7a3b8425c907a2872cb57e32cea5b8a5597cd420fc461807e4a201c92adea37"><param name="Name" value="Default"></OBJECT>
@@ -3928,7 +3928,7 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="group__window.html#gga8d7a3b8425c907a2872cb57e32cea5b8accff967648ebcd5db2007eff7352b50f"><param name="Name" value="Resize"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classsf_1_1Window.html#a5359122166b4dc492c3d25caf08ccfc4"><param name="Name" value="Window"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="group__window.html"><param name="Name" value="window"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="group__window.html"><param name="Name" value="winSize"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="group__window.html#gga8d7a3b8425c907a2872cb57e32cea5b8ab4c8b32b05ed715928513787cb1e85b6"><param name="Name" value="Titlebar"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="group__window.html#gaed947028b0698a812cad2f97bfe9caa3"><param name="Name" value="WindowHandle"></OBJECT>

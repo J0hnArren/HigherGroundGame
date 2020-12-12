@@ -448,7 +448,7 @@ private:
 /// text.setColor(sf::Color::Red);
 ///
 /// // Draw it
-/// window.draw(text);
+/// winSize.draw(text);
 /// \endcode
 ///
 /// \see sf::Font, sf::Transformable

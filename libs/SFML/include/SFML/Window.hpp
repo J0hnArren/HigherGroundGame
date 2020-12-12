@@ -48,7 +48,7 @@
 #endif // SFML_SFML_WINDOW_HPP
 
 ////////////////////////////////////////////////////////////
-/// \defgroup window Window module
+/// \defgroup winSize Window module
 ///
 /// Provides OpenGL-based windows, and abstractions for
 /// events and input handling.

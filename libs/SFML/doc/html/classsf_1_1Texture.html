@@ -119,11 +119,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a87f916490b757fe900798eedf3abf3ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1Texture.html#a87f916490b757fe900798eedf3abf3ba">update</a> (const <a class="el" href="classsf_1_1Image.html">Image</a> &amp;image, unsigned int x, unsigned int y)</td></tr>
 <tr class="memdesc:a87f916490b757fe900798eedf3abf3ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update a part of the texture from an image.  <a href="#a87f916490b757fe900798eedf3abf3ba">More...</a><br /></td></tr>
 <tr class="separator:a87f916490b757fe900798eedf3abf3ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3cceef238f7d5d2108a98dd38c17fc5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1Texture.html#ad3cceef238f7d5d2108a98dd38c17fc5">update</a> (const <a class="el" href="classsf_1_1Window.html">Window</a> &amp;window)</td></tr>
-<tr class="memdesc:ad3cceef238f7d5d2108a98dd38c17fc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the texture from the contents of a window.  <a href="#ad3cceef238f7d5d2108a98dd38c17fc5">More...</a><br /></td></tr>
+<tr class="memitem:ad3cceef238f7d5d2108a98dd38c17fc5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1Texture.html#ad3cceef238f7d5d2108a98dd38c17fc5">update</a> (const <a class="el" href="classsf_1_1Window.html">Window</a> &amp;winSize)</td></tr>
+<tr class="memdesc:ad3cceef238f7d5d2108a98dd38c17fc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the texture from the contents of a winSize.  <a href="#ad3cceef238f7d5d2108a98dd38c17fc5">More...</a><br /></td></tr>
 <tr class="separator:ad3cceef238f7d5d2108a98dd38c17fc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a154f246eb8059b602076009ab1cfd175"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1Texture.html#a154f246eb8059b602076009ab1cfd175">update</a> (const <a class="el" href="classsf_1_1Window.html">Window</a> &amp;window, unsigned int x, unsigned int y)</td></tr>
-<tr class="memdesc:a154f246eb8059b602076009ab1cfd175"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update a part of the texture from the contents of a window.  <a href="#a154f246eb8059b602076009ab1cfd175">More...</a><br /></td></tr>
+<tr class="memitem:a154f246eb8059b602076009ab1cfd175"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1Texture.html#a154f246eb8059b602076009ab1cfd175">update</a> (const <a class="el" href="classsf_1_1Window.html">Window</a> &amp;winSize, unsigned int x, unsigned int y)</td></tr>
+<tr class="memdesc:a154f246eb8059b602076009ab1cfd175"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update a part of the texture from the contents of a winSize.  <a href="#a154f246eb8059b602076009ab1cfd175">More...</a><br /></td></tr>
 <tr class="separator:a154f246eb8059b602076009ab1cfd175"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c3bd6825b9a99714f10d44179d74324"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1Texture.html#a0c3bd6825b9a99714f10d44179d74324">setSmooth</a> (bool smooth)</td></tr>
 <tr class="memdesc:a0c3bd6825b9a99714f10d44179d74324"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable the smooth filter.  <a href="#a0c3bd6825b9a99714f10d44179d74324">More...</a><br /></td></tr>
@@ -199,7 +199,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>RenderTarget</b></td
 <div class="line">sprite.<a class="code" href="classsf_1_1Sprite.html#a3729c88d88ac38c19317c18e87242560">setTexture</a>(texture);</div>
 <div class="line"></div>
 <div class="line"><span class="comment">// Draw the textured sprite</span></div>
-<div class="line">window.draw(sprite);</div>
+<div class="line">winSize.draw(sprite);</div>
 </div><!-- fragment --><div class="fragment"><div class="line"><span class="comment">// This example shows another common use of sf::Texture:</span></div>
 <div class="line"><span class="comment">// streaming real-time data, like video frames</span></div>
 <div class="line"></div>
@@ -220,7 +220,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>RenderTarget</b></td
 <div class="line">    texture.<a class="code" href="classsf_1_1Texture.html#ae4eab5c6781316840b0c50ad08370963">update</a>(pixels);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// draw it</span></div>
-<div class="line">    window.draw(sprite);</div>
+<div class="line">    winSize.draw(sprite);</div>
 <div class="line"></div>
 <div class="line">    ...</div>
 <div class="line">}</div>
@@ -837,7 +837,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>RenderTarget</b></td
 <p>Enable or disable conversion from sRGB. </p>
 <p>When providing texture data from an image file or memory, it can either be stored in a linear color space or an sRGB color space. Most digital images account for gamma correction already, so they would need to be "uncorrected" back to linear color space before being processed by the hardware. The hardware can automatically convert it from the sRGB color space to a linear color space when it gets sampled. When the rendered image gets output to the final framebuffer, it gets converted back to sRGB.</p>
 <p>After enabling or disabling sRGB conversion, make sure to reload the texture data in order for the setting to take effect.</p>
-<p>This option is only useful in conjunction with an sRGB capable framebuffer. This can be requested during window creation.</p>
+<p>This option is only useful in conjunction with an sRGB capable framebuffer. This can be requested during winSize creation.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">sRgb</td><td>True to enable sRGB conversion, false to disable it</td></tr>
@@ -1013,19 +1013,19 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>RenderTarget</b></td
           <td class="memname">void sf::Texture::update </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classsf_1_1Window.html">Window</a> &amp;&#160;</td>
-          <td class="paramname"><em>window</em></td><td>)</td>
+          <td class="paramname"><em>winSize</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Update the texture from the contents of a window. </p>
-<p>Although the source window can be smaller than the texture, this function is usually used for updating the whole texture. The other overload, which has (x, y) additional arguments, is more convenient for updating a sub-area of the texture.</p>
-<p>No additional check is performed on the size of the window, passing a window bigger than the texture will lead to an undefined behavior.</p>
-<p>This function does nothing if either the texture or the window was not previously created.</p>
+<p>Update the texture from the contents of a winSize. </p>
+<p>Although the source winSize can be smaller than the texture, this function is usually used for updating the whole texture. The other overload, which has (x, y) additional arguments, is more convenient for updating a sub-area of the texture.</p>
+<p>No additional check is performed on the size of the winSize, passing a winSize bigger than the texture will lead to an undefined behavior.</p>
+<p>This function does nothing if either the texture or the winSize was not previously created.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">window</td><td><a class="el" href="classsf_1_1Window.html" title="Window that serves as a target for OpenGL rendering. ">Window</a> to copy to the texture </td></tr>
+    <tr><td class="paramname">winSize</td><td><a class="el" href="classsf_1_1Window.html" title="Window that serves as a target for OpenGL rendering. ">Window</a> to copy to the texture </td></tr>
   </table>
   </dd>
 </dl>
@@ -1040,7 +1040,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>RenderTarget</b></td
           <td class="memname">void sf::Texture::update </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classsf_1_1Window.html">Window</a> &amp;&#160;</td>
-          <td class="paramname"><em>window</em>, </td>
+          <td class="paramname"><em>winSize</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1062,14 +1062,14 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>RenderTarget</b></td
       </table>
 </div><div class="memdoc">
 
-<p>Update a part of the texture from the contents of a window. </p>
-<p>No additional check is performed on the size of the window, passing an invalid combination of window size and offset will lead to an undefined behavior.</p>
-<p>This function does nothing if either the texture or the window was not previously created.</p>
+<p>Update a part of the texture from the contents of a winSize. </p>
+<p>No additional check is performed on the size of the winSize, passing an invalid combination of winSize size and offset will lead to an undefined behavior.</p>
+<p>This function does nothing if either the texture or the winSize was not previously created.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">window</td><td><a class="el" href="classsf_1_1Window.html" title="Window that serves as a target for OpenGL rendering. ">Window</a> to copy to the texture </td></tr>
-    <tr><td class="paramname">x</td><td>X offset in the texture where to copy the source window </td></tr>
-    <tr><td class="paramname">y</td><td>Y offset in the texture where to copy the source window </td></tr>
+    <tr><td class="paramname">winSize</td><td><a class="el" href="classsf_1_1Window.html" title="Window that serves as a target for OpenGL rendering. ">Window</a> to copy to the texture </td></tr>
+    <tr><td class="paramname">x</td><td>X offset in the texture where to copy the source winSize </td></tr>
+    <tr><td class="paramname">y</td><td>Y offset in the texture where to copy the source winSize </td></tr>
   </table>
   </dd>
 </dl>

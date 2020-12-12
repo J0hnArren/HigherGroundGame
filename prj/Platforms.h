@@ -11,22 +11,24 @@ class Platforms
 public:
 	Platforms() = default;
 	Platforms(const Platforms&) = default;
-	Platforms(const sf::Vector2u &windowSize, const std::string& File,
-           const int& X, const int& Y, const int& W, const int& H,
-           const int& platformSkin);
+	Platforms(const sf::Vector2u &windowSize, const std::string& File);
 	~Platforms() = default;
 
-	void PlatformMover(const float &deltaTime, sf::Vector2f &pos) noexcept(false);
-    static float RandCoordinates(const float &coord);
+	void PlatformMover(const float &deltaTime) noexcept(false);
+    float RandCoordinateX(const float &coord);
+    float RandCoordinateY(const float &coord);
 
-	sf::Sprite* GetPlatform();
-    const sf::Vector2f * GetPlatformPos();
+    const std::vector<sf::Sprite>* GetPlatform() const;
 
 private:
-	sf::RectangleShape platform;
-	sf::Vector2u window;
-    sf::Vector2u randCoord;
-	std::vector<sf::RectangleShape> platformsList;
+    void AddTextures(const std::string& File, sf::Sprite &spr,
+                     const int& X, const int& Y, const int& W, const int& H,
+                     const int& platformSkin
+                     );
+
+    std::random_device rd;
     sf::Sprite sprite;
+	sf::Vector2u winSize;
+	std::vector<sf::Sprite> platformsList;
 };
 #endif // PLATFORMS

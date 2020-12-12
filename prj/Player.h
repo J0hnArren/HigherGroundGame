@@ -9,16 +9,27 @@ class Player {
 public:
     Player() = default;
     Player(const Player&) = default;
-    Player(const std::string& File);
-    Player(const std::string& File, const int& X, const int& Y, const int& W, const int& H, const int& playerSkin);
+    Player(const sf::Vector2u &windowSize, const std::string& File);
+    Player(
+            const sf::Vector2u &windowSize,
+            const std::string& File,
+            const int& X, const int& Y,
+            const int& W, const int& H,
+            const int& playerSkin
+            );
     ~Player() = default;
 
     void UpdatePlayerAnimation(int& fps, const int& X_ = 17, const int& Y_ = 12, const int& W_ = 47, const int& H_ = 42);
-    void Update(float& deltaTime, const int& width, sf::Vector2f& currPos);
+    void Update(float& deltaTime, sf::Vector2f& currPos);
+    void Jump(float& x, float& y);
 
     sf::Sprite* GetSprite();
+    float* GetAcceleration();
 private:
-    int playerSkin = 0;
+    void Controls(float& deltaTime, sf::Vector2f& currPos); //Keyboard
+
+    float accX = 0, accY = 0;
     sf::Sprite sprite;
+    sf::Vector2u windowSize = {0, 0};
 };
 #endif

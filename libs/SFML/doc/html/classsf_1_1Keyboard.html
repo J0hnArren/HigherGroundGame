@@ -204,7 +204,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="textblock"><p>Give access to the real-time state of the keyboard. </p>
 <p><a class="el" href="classsf_1_1Keyboard.html" title="Give access to the real-time state of the keyboard. ">sf::Keyboard</a> provides an interface to the state of the keyboard.</p>
 <p>It only contains static functions (a single keyboard is assumed), so it's not meant to be instantiated.</p>
-<p>This class allows users to query the keyboard state at any time and directly, without having to deal with a window and its events. Compared to the KeyPressed and KeyReleased events, <a class="el" href="classsf_1_1Keyboard.html" title="Give access to the real-time state of the keyboard. ">sf::Keyboard</a> can retrieve the state of a key at any time (you don't need to store and update a boolean on your side in order to know if a key is pressed or released), and you always get the real state of the keyboard, even if keys are pressed or released when your window is out of focus and no event is triggered.</p>
+<p>This class allows users to query the keyboard state at any time and directly, without having to deal with a winSize and its events. Compared to the KeyPressed and KeyReleased events, <a class="el" href="classsf_1_1Keyboard.html" title="Give access to the real-time state of the keyboard. ">sf::Keyboard</a> can retrieve the state of a key at any time (you don't need to store and update a boolean on your side in order to know if a key is pressed or released), and you always get the real state of the keyboard, even if keys are pressed or released when your winSize is out of focus and no event is triggered.</p>
 <p>Usage example: </p><div class="fragment"><div class="line"><span class="keywordflow">if</span> (<a class="code" href="classsf_1_1Keyboard.html#a80a04b2f53005886957f49eee3531599">sf::Keyboard::isKeyPressed</a>(<a class="code" href="classsf_1_1Keyboard.html#acb4cacd7cc5802dec45724cf3314a142ac3fe5df11d15b57317c053a2ae13d9a9">sf::Keyboard::Left</a>))</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// move left...</span></div>
@@ -357,7 +357,7 @@ Static Public Member Functions</h2></td></tr>
 <p>The left Alt key. </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="acb4cacd7cc5802dec45724cf3314a142a718171426307a0f5f26b4ae82a322b24"></a>LSystem&#160;</td><td class="fielddoc">
-<p>The left OS specific key: window (Windows and Linux), apple (MacOS X), ... </p>
+<p>The left OS specific key: winSize (Windows and Linux), apple (MacOS X), ... </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="acb4cacd7cc5802dec45724cf3314a142a275d3fd207a9c0b22ce404012c71dc17"></a>RControl&#160;</td><td class="fielddoc">
 <p>The right Control key. </p>
@@ -369,7 +369,7 @@ Static Public Member Functions</h2></td></tr>
 <p>The right Alt key. </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="acb4cacd7cc5802dec45724cf3314a142ac1b3fd7424feeda242cedbb64f3f5a7f"></a>RSystem&#160;</td><td class="fielddoc">
-<p>The right OS specific key: window (Windows and Linux), apple (MacOS X), ... </p>
+<p>The right OS specific key: winSize (Windows and Linux), apple (MacOS X), ... </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="acb4cacd7cc5802dec45724cf3314a142a4aac50ce7c4923f96323fe84d592b139"></a>Menu&#160;</td><td class="fielddoc">
 <p>The Menu key. </p>

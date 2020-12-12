@@ -45,8 +45,8 @@ Short example</h1>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">int</span> main()</div>
 <div class="line">{</div>
-<div class="line">    <span class="comment">// Create the main window</span></div>
-<div class="line">    <a class="code" href="classsf_1_1RenderWindow.html">sf::RenderWindow</a> window(<a class="code" href="classsf_1_1VideoMode.html">sf::VideoMode</a>(800, 600), <span class="stringliteral">&quot;SFML window&quot;</span>);</div>
+<div class="line">    <span class="comment">// Create the main winSize</span></div>
+<div class="line">    <a class="code" href="classsf_1_1RenderWindow.html">sf::RenderWindow</a> winSize(<a class="code" href="classsf_1_1VideoMode.html">sf::VideoMode</a>(800, 600), <span class="stringliteral">&quot;SFML winSize&quot;</span>);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Load a sprite to display</span></div>
 <div class="line">    <a class="code" href="classsf_1_1Texture.html">sf::Texture</a> texture;</div>
@@ -69,28 +69,28 @@ Short example</h1>
 <div class="line">    music.<a class="code" href="classsf_1_1SoundStream.html#afdc08b69cab5f243d9324940a85a1144">play</a>();</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Start the game loop</span></div>
-<div class="line">    <span class="keywordflow">while</span> (window.<a class="code" href="classsf_1_1Window.html#a5aa9c2b2b0e51d3423c2b66c80253337">isOpen</a>())</div>
+<div class="line">    <span class="keywordflow">while</span> (winSize.<a class="code" href="classsf_1_1Window.html#a5aa9c2b2b0e51d3423c2b66c80253337">isOpen</a>())</div>
 <div class="line">    {</div>
 <div class="line">        <span class="comment">// Process events</span></div>
 <div class="line">        <a class="code" href="classsf_1_1Event.html">sf::Event</a> event;</div>
-<div class="line">        <span class="keywordflow">while</span> (window.<a class="code" href="classsf_1_1Window.html#a338e996585faf82e93069858e3b531b7">pollEvent</a>(event))</div>
+<div class="line">        <span class="keywordflow">while</span> (winSize.<a class="code" href="classsf_1_1Window.html#a338e996585faf82e93069858e3b531b7">pollEvent</a>(event))</div>
 <div class="line">        {</div>
-<div class="line">            <span class="comment">// Close window: exit</span></div>
+<div class="line">            <span class="comment">// Close winSize: exit</span></div>
 <div class="line">            <span class="keywordflow">if</span> (event.<a class="code" href="classsf_1_1Event.html#adf2f8044f713fd9d6019077b0d1ffe0a">type</a> == <a class="code" href="classsf_1_1Event.html#af41fa9ed45c02449030699f671331d4aa316e4212e083f1dce79efd8d9e9c0a95">sf::Event::Closed</a>)</div>
-<div class="line">                window.<a class="code" href="classsf_1_1Window.html#a99d1e030387b0c26f5995670504fe7b5">close</a>();</div>
+<div class="line">                winSize.<a class="code" href="classsf_1_1Window.html#a99d1e030387b0c26f5995670504fe7b5">close</a>();</div>
 <div class="line">        }</div>
 <div class="line"></div>
 <div class="line">        <span class="comment">// Clear screen</span></div>
-<div class="line">        window.<a class="code" href="classsf_1_1RenderTarget.html#a6bb6f0ba348f2b1e2f46114aeaf60f26">clear</a>();</div>
+<div class="line">        winSize.<a class="code" href="classsf_1_1RenderTarget.html#a6bb6f0ba348f2b1e2f46114aeaf60f26">clear</a>();</div>
 <div class="line"></div>
 <div class="line">        <span class="comment">// Draw the sprite</span></div>
-<div class="line">        window.<a class="code" href="classsf_1_1RenderTarget.html#a12417a3bcc245c41d957b29583556f39">draw</a>(sprite);</div>
+<div class="line">        winSize.<a class="code" href="classsf_1_1RenderTarget.html#a12417a3bcc245c41d957b29583556f39">draw</a>(sprite);</div>
 <div class="line"></div>
 <div class="line">        <span class="comment">// Draw the string</span></div>
-<div class="line">        window.<a class="code" href="classsf_1_1RenderTarget.html#a12417a3bcc245c41d957b29583556f39">draw</a>(text);</div>
+<div class="line">        winSize.<a class="code" href="classsf_1_1RenderTarget.html#a12417a3bcc245c41d957b29583556f39">draw</a>(text);</div>
 <div class="line"></div>
-<div class="line">        <span class="comment">// Update the window</span></div>
-<div class="line">        window.<a class="code" href="classsf_1_1Window.html#adabf839cb103ac96cfc82f781638772a">display</a>();</div>
+<div class="line">        <span class="comment">// Update the winSize</span></div>
+<div class="line">        winSize.<a class="code" href="classsf_1_1Window.html#adabf839cb103ac96cfc82f781638772a">display</a>();</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">return</span> EXIT_SUCCESS;</div>

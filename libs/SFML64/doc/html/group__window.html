@@ -47,7 +47,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class holding a valid drawing context.  <a href="classsf_1_1Context.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsf_1_1ContextSettings.html">sf::ContextSettings</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure defining the settings of the OpenGL context attached to a window.  <a href="structsf_1_1ContextSettings.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure defining the settings of the OpenGL context attached to a winSize.  <a href="structsf_1_1ContextSettings.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1Event.html">sf::Event</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a system event and its parameters.  <a href="classsf_1_1Event.html#details">More...</a><br /></td></tr>
@@ -80,7 +80,7 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:gaed947028b0698a812cad2f97bfe9caa3"><td class="memItemLeft" align="right" valign="top">typedef platform–specific&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__window.html#gaed947028b0698a812cad2f97bfe9caa3">sf::WindowHandle</a></td></tr>
-<tr class="memdesc:gaed947028b0698a812cad2f97bfe9caa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a low-level window handle type, specific to each platform.  <a href="#gaed947028b0698a812cad2f97bfe9caa3">More...</a><br /></td></tr>
+<tr class="memdesc:gaed947028b0698a812cad2f97bfe9caa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a low-level winSize handle type, specific to each platform.  <a href="#gaed947028b0698a812cad2f97bfe9caa3">More...</a><br /></td></tr>
 <tr class="separator:gaed947028b0698a812cad2f97bfe9caa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
@@ -95,7 +95,7 @@ Enumerations</h2></td></tr>
 <a class="el" href="group__window.html#gga8d7a3b8425c907a2872cb57e32cea5b8a5597cd420fc461807e4a201c92adea37">sf::Style::Default</a> = Titlebar | Resize | Close
 <br />
  }</td></tr>
-<tr class="memdesc:ga8d7a3b8425c907a2872cb57e32cea5b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of the window styles.  <a href="group__window.html#ga8d7a3b8425c907a2872cb57e32cea5b8">More...</a><br /></td></tr>
+<tr class="memdesc:ga8d7a3b8425c907a2872cb57e32cea5b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of the winSize styles.  <a href="group__window.html#ga8d7a3b8425c907a2872cb57e32cea5b8">More...</a><br /></td></tr>
 <tr class="separator:ga8d7a3b8425c907a2872cb57e32cea5b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -111,7 +111,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Define a low-level window handle type, specific to each platform. </p>
+<p>Define a low-level winSize handle type, specific to each platform. </p>
 <table class="doxtable">
 <tr>
 <th>Platform </th><th>Type  </th></tr>
@@ -127,7 +127,7 @@ Enumerations</h2></td></tr>
 <td>Android </td><td><code>ANativeWindow*</code> </td></tr>
 </table>
 <dl class="section user"><dt>Mac OS X Specification</dt><dd></dd></dl>
-<p>On Mac OS X, a <a class="el" href="classsf_1_1Window.html" title="Window that serves as a target for OpenGL rendering. ">sf::Window</a> can be created either from an existing <code>NSWindow*</code> or an <code>NSView*</code>. When the window is created from a window, SFML will use its content view as the OpenGL area. <a class="el" href="classsf_1_1Window.html#a26368e7162229f8637c34d80ab0f138e" title="Get the OS-specific handle of the window. ">sf::Window::getSystemHandle()</a> will return the handle that was used to create the window, which is a <code>NSWindow*</code> by default. </p>
+<p>On Mac OS X, a <a class="el" href="classsf_1_1Window.html" title="Window that serves as a target for OpenGL rendering. ">sf::Window</a> can be created either from an existing <code>NSWindow*</code> or an <code>NSView*</code>. When the winSize is created from a winSize, SFML will use its content view as the OpenGL area. <a class="el" href="classsf_1_1Window.html#a26368e7162229f8637c34d80ab0f138e" title="Get the OS-specific handle of the winSize. ">sf::Window::getSystemHandle()</a> will return the handle that was used to create the winSize, which is a <code>NSWindow*</code> by default. </p>
 
 <p>Definition at line <a class="el" href="WindowHandle_8hpp_source.html#l00068">68</a> of file <a class="el" href="WindowHandle_8hpp_source.html">WindowHandle.hpp</a>.</p>
 
@@ -144,7 +144,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Enumeration of the window styles. </p>
+<p>Enumeration of the winSize styles. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="gga8d7a3b8425c907a2872cb57e32cea5b8a8c35a9c8507559e455387fc4a83ce422"></a>None&#160;</td><td class="fielddoc">
 <p>No border / title bar (this flag and all others are mutually exclusive) </p>
@@ -162,7 +162,7 @@ Enumerations</h2></td></tr>
 <p>Fullscreen mode (this flag and all others are mutually exclusive) </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="gga8d7a3b8425c907a2872cb57e32cea5b8a5597cd420fc461807e4a201c92adea37"></a>Default&#160;</td><td class="fielddoc">
-<p>Default window style. </p>
+<p>Default winSize style. </p>
 </td></tr>
 </table>
 

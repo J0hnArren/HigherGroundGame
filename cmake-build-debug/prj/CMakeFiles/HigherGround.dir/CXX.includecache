@@ -828,19 +828,17 @@ stdexcept
 iostream
 -
 
-C:/Users/Rauf/CLionProjects/HigherGround/prj/Platforms.cpp
-Platforms.h
-C:/Users/Rauf/CLionProjects/HigherGround/prj/Platforms.h
+C:/Users/Rauf/CLionProjects/HigherGround/prj/Player.cpp
+Player.h
+C:/Users/Rauf/CLionProjects/HigherGround/prj/Player.h
 
-C:/Users/Rauf/CLionProjects/HigherGround/prj/Platforms.h
+C:/Users/Rauf/CLionProjects/HigherGround/prj/Player.h
+string
+-
 SFML/Graphics.hpp
+-
+iosfwd
 -
 FilesBank.h
 C:/Users/Rauf/CLionProjects/HigherGround/prj/FilesBank.h
-random
--
-ctime
--
-iostream
--
 

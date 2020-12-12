@@ -11,24 +11,23 @@ int main()
             sf::Style::Fullscreen
             );
     window.setVerticalSyncEnabled(true);
+    window.setFramerateLimit(60);
 
-    //window size
+    //winSize size
     sf::Vector2u windowSize = window.getSize();
 
     //Music
     sf::Music music;
     music.openFromFile("src/audio/Track-01_-Assassin_s-Creed-2-OST-Jesper-Kyd-Earth.ogg");
-    music.play();
-    std::size_t numberOfSongs = 1;
+    //music.play();
+    //std::size_t numberOfSongs = 1;
 
     //main hero sprite
-    Player player1("hero.png");
+    Player player1(windowSize, "hero.png");
     player1.GetSprite()->setScale(sf::Vector2f(3, 3));
-    player1.GetSprite()->setPosition(windowSize.x * 1.f / 2 - 80, 830); //выводим спрайт в позицию x y
 
     //Platforms
-    Platforms platforms(windowSize, "platforms.png", 0, 128, 192, 32, 0); // first stone platform
-    //platforms.GetPlatform()->setPosition(windowSize.x * 1.f / 2 - 80, 500);
+    Platforms platforms(windowSize, "platforms.png"); // stone platform
 
     //background image
     sf::Sprite bgSprite;
@@ -43,12 +42,15 @@ int main()
     scale.y = windowSize.y * 1.0f / bgSize.y;
     bgSprite.setScale(scale);
 
+    // Collision
+    Collision collision;
+
     int fps = 0; // need for player animation update
     sf::Clock clock;
     sf::Vector2f currPos;
     while (window.isOpen())
     {
-        float deltaTime = clock.getElapsedTime().asMicroseconds() / 750;
+        float deltaTime = clock.getElapsedTime().asMicroseconds() / 750.f;
         //std::cout << deltaTime << "\n";
         clock.restart();
 
@@ -64,15 +66,21 @@ int main()
         ++fps;
         //std::cout << fps << "\n";
 
-        // Cheсking movements
+        // Platforms creating
+        platforms.PlatformMover(deltaTime);
+        for (const sf::Sprite &sp : *platforms.GetPlatform()) {
+            window.draw(sp);
+        }
+
+        // Checking for movements
         currPos = player1.GetSprite()->sf::Transformable::getPosition();
-        player1.Update(deltaTime, windowSize.x, currPos);
+        player1.Update(deltaTime, currPos);
         // Updating animation
         player1.UpdatePlayerAnimation(fps);
         window.draw(*player1.GetSprite());
-        // Platforms creating
-        platforms.PlatformMover(deltaTime, const_cast<sf::Vector2f &>(*platforms.GetPlatformPos()));
-        window.draw(*platforms.GetPlatform());
+
+        // Checking for collisions
+        collision.CollisionCheck(*player1.GetSprite(), *player1.GetAcceleration(), *platforms.GetPlatform());
 
         window.display();
     }

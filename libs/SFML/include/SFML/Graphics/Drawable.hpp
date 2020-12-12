@@ -86,8 +86,8 @@ protected:
 /// draw virtual function.
 ///
 /// Note that inheriting from sf::Drawable is not mandatory,
-/// but it allows this nice syntax "window.draw(object)" rather
-/// than "object.draw(window)", which is more consistent with other
+/// but it allows this nice syntax "winSize.draw(object)" rather
+/// than "object.draw(winSize)", which is more consistent with other
 /// SFML classes.
 ///
 /// Example:

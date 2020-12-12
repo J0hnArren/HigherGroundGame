@@ -15,7 +15,7 @@ void FilesBank::AddTexture(const std::string& fileType, const std::string& fileN
         std::cout << e.what() << "\n";
     }
     catch (...) {
-        std::cout << "Something went wrong with in FilesBank::AddTexture()" << "\n";
+        std::cout << "Something went wrong in FilesBank.cpp FilesBank::AddTexture()" << "\n";
     }
 
     FilesBank::getInstance().singletonTextures[fileType];

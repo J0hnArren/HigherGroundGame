@@ -45,7 +45,7 @@ namespace sf
 class Drawable;
 
 ////////////////////////////////////////////////////////////
-/// \brief Base class for all render targets (window, texture, ...)
+/// \brief Base class for all render targets (winSize, texture, ...)
 ///
 ////////////////////////////////////////////////////////////
 class SFML_GRAPHICS_API RenderTarget : NonCopyable
@@ -268,10 +268,10 @@ public:
     /// calls Draw functions. Example:
     /// \code
     /// // OpenGL code here...
-    /// window.pushGLStates();
-    /// window.draw(...);
-    /// window.draw(...);
-    /// window.popGLStates();
+    /// winSize.pushGLStates();
+    /// winSize.draw(...);
+    /// winSize.draw(...);
+    /// winSize.popGLStates();
     /// // OpenGL code here...
     /// \endcode
     ///
@@ -313,9 +313,9 @@ public:
     /// \code
     /// // OpenGL code here...
     /// glPushAttrib(...);
-    /// window.resetGLStates();
-    /// window.draw(...);
-    /// window.draw(...);
+    /// winSize.resetGLStates();
+    /// winSize.draw(...);
+    /// winSize.draw(...);
     /// glPopAttrib(...);
     /// // OpenGL code here...
     /// \endcode
