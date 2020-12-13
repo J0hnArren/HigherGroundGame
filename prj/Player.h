@@ -28,6 +28,7 @@ private:
     bool turnLeft = false;
     void Controls(float& deltaTime, sf::Vector2f& currPos); //Keyboard
     void Jump(float& x, float& y);
+    void Initialize(const std::string& file_1, const std::string& file_2);
 
     float accX = 0, accY = 0;
     int X = 0, Y = 0, W = 0, H = 0, skin = 0;

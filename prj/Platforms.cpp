@@ -7,7 +7,6 @@ Platforms::Platforms(const sf::Vector2u &windowSize, const std::string& File) {
     for (std::size_t i = 0; i < numPlatforms; ++i) {
         sprite.setPosition(RandCoordinateX(winSize.x), RandCoordinateY(winSize.y));
         platformsList.push_back(sprite);
-        std::cout << platformsList[i].getPosition().x << " " <<  platformsList[i].getPosition().y << "\n";
     }
 }
 
@@ -15,8 +14,8 @@ void Platforms::AddTextures(const std::string& File, sf::Sprite &spr,
                             const int& X, const int& Y,
                             const int& W, const int& H,
                             const int& platformSkin){
-    FilesBank::getInstance().AddTexture("platform", File);
-    spr.setTexture(FilesBank::getInstance().singletonTextures["platform"][platformSkin]);
+    FilesBank::getInstance().AddFiles("platform", File);
+    spr.setTexture(*FilesBank::getInstance().GetFile("platform", platformSkin));
     spr.setTextureRect(sf::IntRect(X, Y, W, H));
 }
 
@@ -33,7 +32,7 @@ float Platforms::RandCoordinateY(const float &coord){
 
 void Platforms::PlatformMover(const float &deltaTime) noexcept(false){
     for (sf::Sprite &platform : platformsList){
-        platform.move(0, deltaTime / 15.f);
+        platform.move(0, deltaTime / platformSpeed);
 
         if (platform.getPosition().y > winSize.y + 128.f) {
             platform.setPosition(RandCoordinateX(winSize.x), -128.f);
@@ -43,4 +42,8 @@ void Platforms::PlatformMover(const float &deltaTime) noexcept(false){
 
 const std::vector<sf::Sprite>* Platforms::GetPlatform() const{
 	return &platformsList;
+}
+
+float* Platforms::GetPlatformSpeed(){
+    return &platformSpeed;
 }

@@ -3,6 +3,10 @@
 #include "Platforms.h"
 #include <SFML/Audio/Music.hpp>
 
+void PlaySound(const std::string &path){
+
+}
+
 int main()
 {
     sf::RenderWindow window(
@@ -11,31 +15,40 @@ int main()
             sf::Style::Fullscreen
             );
     window.setVerticalSyncEnabled(true);
-    window.setFramerateLimit(60);
+    window.setFramerateLimit(120);
 
-    //winSize size
+    // winSize size
     sf::Vector2u windowSize = window.getSize();
 
-    //Music
+    // Music
     sf::Music music;
-    music.openFromFile("src/audio/Track-01_-Assassin_s-Creed-2-OST-Jesper-Kyd-Earth.ogg");
+    music.openFromFile("src/audio/Track_0" + std::to_string(3) + ".ogg");
+    music.setVolume(30);
     music.play();
-    //std::size_t numberOfSongs = 1;
+    const int numberOfSongs = 4;
+
+    // Sounds
+    FilesBank::getInstance().AddSounds("jump", "hopper_jump.ogg"); // 0 - usual jump
+    FilesBank::getInstance().AddSounds("jump", "thud_jump.ogg"); // 1 - louder jump
+    sf::Sound sound0(*FilesBank::getInstance().getSounds("jump", 0));
+    sf::Sound sound1(*FilesBank::getInstance().getSounds("jump", 1));
+    sound0.setVolume(40);
 
     //main hero sprite
     Player player1(windowSize, "hero.png", "hero1.png");
-    player1.GetSprite()->setScale(sf::Vector2f(3, 3));
+    const float scaleValue = 3;
+    player1.GetSprite()->setScale(sf::Vector2f(scaleValue, scaleValue));
 
     //Platforms
     Platforms platforms(windowSize, "platforms.png"); // stone platform
 
     //background image
     sf::Sprite bgSprite;
-    FilesBank::getInstance().AddTexture("bg", "bg0.png");
-    FilesBank::getInstance().AddTexture("bg", "bg1.png");
-    FilesBank::getInstance().AddTexture("bg", "bg2.png");
-    bgSprite.setTexture(FilesBank::getInstance().singletonTextures["bg"][2]);
-    sf::Vector2u bgSize = FilesBank::getInstance().singletonTextures["bg"][2].getSize();
+    FilesBank::getInstance().AddFiles("bg", "bg0.png");
+    FilesBank::getInstance().AddFiles("bg", "bg1.png");
+    FilesBank::getInstance().AddFiles("bg", "bg2.png");
+    bgSprite.setTexture(*FilesBank::getInstance().GetFile("bg", 2));
+    sf::Vector2u bgSize = FilesBank::getInstance().GetFile("bg", 2)->getSize();
 
     sf::Vector2f scale;
     scale.x = windowSize.x * 1.0f / bgSize.x,
@@ -43,7 +56,7 @@ int main()
     bgSprite.setScale(scale);
 
     // Collision
-    Collision collision;
+    Collision collision("hopper_jump");
 
     int fps = 0; // need for player animation update
     sf::Clock clock;
@@ -80,7 +93,13 @@ int main()
         window.draw(*player1.GetSprite());
 
         // Checking for collisions
-        collision.CollisionCheck(*player1.GetSprite(), *player1.GetAcceleration(), *platforms.GetPlatform());
+        if (collision.CollisionCheck(
+                *player1.GetSprite(), *player1.GetAcceleration(), *platforms.GetPlatform(), scaleValue
+                )){
+            sound0.play();
+        }
+
+        //Collision::PlatformAcceleration(*platforms.GetPlatformSpeed(), currPos.y, windowSize.y);
 
         window.display();
     }

@@ -4,11 +4,7 @@ Player::Player(const sf::Vector2u &windowSize, const std::string& file_1, const 
     : Player(windowSize, file_1, file_2, 17, 12, 44, 40, 0) {
     winSize = windowSize;
 
-    FilesBank::getInstance().AddTexture("player", file_1);
-    FilesBank::getInstance().AddTexture("player", file_2);
-    sprite.setTexture(FilesBank::getInstance().singletonTextures["player"][0]);
-    sprite.setTextureRect(sf::IntRect(X, Y, W, H));
-    sprite.setPosition(windowSize.x * 2.3f / 5.f, windowSize.y * 4.f / 5.f);
+    Initialize(file_1, file_2);
 }
 
 Player::Player(
@@ -20,12 +16,17 @@ Player::Player(
     winSize = windowSize;
     X = x; Y = y; W = w; H = h; skin = playerSkin;
 
-    FilesBank::getInstance().AddTexture("player", file_1);
-    FilesBank::getInstance().AddTexture("player", file_2);
-    sprite.setTexture(FilesBank::getInstance().singletonTextures["player"][skin]);
-    sprite.setTextureRect(sf::IntRect(X, Y, H, W));
-    sprite.setPosition(windowSize.x * 2.3f / 5.f, windowSize.y * 4.f / 5.f);
+    Initialize(file_1, file_2);
 }
+
+void Player::Initialize(const std::string& file_1, const std::string& file_2){
+    FilesBank::getInstance().AddFiles("player", file_1);
+    FilesBank::getInstance().AddFiles("player", file_2);
+    sprite.setTexture(*FilesBank::getInstance().GetFile("player", skin));
+    sprite.setTextureRect(sf::IntRect(X, Y, H, W));
+    sprite.setPosition(winSize.x * 2.3f / 5.f, winSize.y * 4.f / 5.f);
+}
+
 
 void Player::Controls(float& deltaTime, sf::Vector2f& currPos) {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) || sf::Keyboard::isKeyPressed(sf::Keyboard::A))
@@ -60,7 +61,7 @@ void Player::Update(float& deltaTime, sf::Vector2f& currPos) {
 
 void Player::Jump(float& x, float& y){
     accY += 0.5f; // acceleration
-    std::cout << accY << std::endl;
+    //std::cout << accY << std::endl;
     y += accY;
     if (y > winSize.y - sprite.getTextureRect().width * 3.f){
         accY = -20; // high
@@ -70,7 +71,7 @@ void Player::Jump(float& x, float& y){
 void Player::UpdatePlayerAnimation(int& fps) {
     int spritePos = 0;
     if (turnLeft) {
-        sprite.setTexture(FilesBank::getInstance().singletonTextures["player"][skin + 1]);
+        sprite.setTexture(*FilesBank::getInstance().GetFile("player", skin + 1));
         //choose a correct part of sprite to make an animation
         if (fps > 70) { spritePos = 938; fps = 0; }
         else if (fps > 60) { spritePos = 838; }
@@ -83,7 +84,7 @@ void Player::UpdatePlayerAnimation(int& fps) {
 
         sprite.setTextureRect(sf::IntRect(spritePos, Y, W, H));
     } else{
-        sprite.setTexture(FilesBank::getInstance().singletonTextures["player"][skin]);
+        sprite.setTexture(*FilesBank::getInstance().GetFile("player", skin));
         if (fps > 70) { spritePos = 17; fps = 0; }
         else if (fps > 60) { spritePos = 116; }
         else if (fps > 50) { spritePos = 215; }
