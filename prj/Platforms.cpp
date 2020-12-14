@@ -21,7 +21,7 @@ void Platforms::AddTextures(const std::string& File, sf::Sprite &spr,
 
 float Platforms::RandCoordinateX(const float &coord){
     std::mt19937 gen(rd());
-    std::uniform_real_distribution<float> urd(0, coord);
+    std::uniform_real_distribution<float> urd(0, coord - sprite.getTextureRect().width);
     return urd(gen);
 }
 float Platforms::RandCoordinateY(const float &coord){
@@ -30,9 +30,10 @@ float Platforms::RandCoordinateY(const float &coord){
     return urd(gen);
 }
 
-void Platforms::PlatformMover(const float &deltaTime) noexcept(false){
+void Platforms::PlatformMover(const float &deltaTime, const float &accY) noexcept(false){
     for (sf::Sprite &platform : platformsList){
-        platform.move(0, deltaTime / platformSpeed);
+        platform.move(0, -accY);
+        //platform.setPosition(platform.getPosition().x, platform.getPosition().y - accY);
 
         if (platform.getPosition().y > winSize.y + 128.f) {
             platform.setPosition(RandCoordinateX(winSize.x), -128.f);

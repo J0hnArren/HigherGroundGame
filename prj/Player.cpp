@@ -31,12 +31,12 @@ void Player::Initialize(const std::string& file_1, const std::string& file_2){
 void Player::Controls(float& deltaTime, sf::Vector2f& currPos) {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) || sf::Keyboard::isKeyPressed(sf::Keyboard::A))
     {
-        currPos.x -= deltaTime;
+        currPos.x -= deltaTime / 1.5f;
         turnLeft = true;
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) || sf::Keyboard::isKeyPressed(sf::Keyboard::D))
     {
-        currPos.x += deltaTime;
+        currPos.x += deltaTime/ 1.5f;
         turnLeft = false;
     }
 }
@@ -51,11 +51,11 @@ void Player::Update(float& deltaTime, sf::Vector2f& currPos) {
     // Checks player's position at the both borders of the map
     // left side
     if (currPos.x < -sprite.getTextureRect().width) {
-        sprite.setPosition(winSize.x + sprite.getTextureRect().width * 0.8f, currPos.y);
+        sprite.setPosition(winSize.x, currPos.y);
     }
     // right side
-    else if (currPos.x > winSize.x * 1.f + sprite.getTextureRect().width) {
-        sprite.setPosition(-sprite.getTextureRect().width * 0.8f, currPos.y);
+    else if (currPos.x > winSize.x) {
+        sprite.setPosition(0, currPos.y);
     }
 }
 
@@ -64,7 +64,7 @@ void Player::Jump(float& x, float& y){
     //std::cout << accY << std::endl;
     y += accY;
     if (y > winSize.y - sprite.getTextureRect().width * 3.f){
-        accY = -20; // high
+        accY = -15; // high
     }
 }
 

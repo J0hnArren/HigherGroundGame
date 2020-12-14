@@ -13,7 +13,7 @@ public:
 	Platforms(const sf::Vector2u &windowSize, const std::string& File);
 	~Platforms() = default;
 
-	void PlatformMover(const float &deltaTime) noexcept(false);
+	void PlatformMover(const float &deltaTime, const float &accY) noexcept(false);
     float RandCoordinateX(const float &coord);
     float RandCoordinateY(const float &coord);
 
@@ -30,7 +30,7 @@ private:
     sf::Sprite sprite;
 	sf::Vector2u winSize;
 	std::vector<sf::Sprite> platformsList;
-	const int numPlatforms = 15;
-	float platformSpeed = 15.f;
+	const int numPlatforms = 25;
+	float platformSpeed = 1.f;
 };
 #endif // PLATFORMS

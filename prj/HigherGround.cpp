@@ -79,8 +79,11 @@ int main()
         ++fps;
         //std::cout << fps << "\n";
 
-        // Platforms creating
-        platforms.PlatformMover(deltaTime);
+        // Platforms drawing
+        if (player1.GetSprite()->getPosition().y < windowSize.y / 2.f) {
+            player1.GetSprite()->setPosition(currPos.x, windowSize.y / 2.f);
+            platforms.PlatformMover(deltaTime, *player1.GetAcceleration());
+        }
         for (const sf::Sprite &sp : *platforms.GetPlatform()) {
             window.draw(sp);
         }
@@ -99,7 +102,7 @@ int main()
             sound0.play();
         }
 
-        //Collision::PlatformAcceleration(*platforms.GetPlatformSpeed(), currPos.y, windowSize.y);
+        collision.PlatformAcceleration(*platforms.GetPlatformSpeed(), currPos.y, windowSize.y);
 
         window.display();
     }
