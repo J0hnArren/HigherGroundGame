@@ -22,7 +22,7 @@ public:
     void UpdatePlayerAnimation(int& fps);
     void Update(float& deltaTime, sf::Vector2f& currPos);
 
-    sf::Sprite* GetSprite();
+    sf::RectangleShape* GetSprite();
     float* GetAcceleration();
 private:
     bool turnLeft = false;
@@ -32,7 +32,7 @@ private:
 
     float accX = 0, accY = 0;
     int X = 0, Y = 0, W = 0, H = 0, skin = 0;
-    sf::Sprite sprite;
+    sf::RectangleShape sprite;
     sf::Vector2u winSize = {0, 0};
 };
 #endif

@@ -1,11 +1,6 @@
 ﻿#include "Player.h"
 #include "Collision.h"
 #include "Platforms.h"
-#include <SFML/Audio/Music.hpp>
-
-void PlaySound(const std::string &path){
-
-}
 
 int main()
 {
@@ -15,7 +10,7 @@ int main()
             sf::Style::Fullscreen
             );
     window.setVerticalSyncEnabled(true);
-    window.setFramerateLimit(120);
+    window.setFramerateLimit(60);
 
     // winSize size
     sf::Vector2u windowSize = window.getSize();
@@ -24,8 +19,8 @@ int main()
     sf::Music music;
     music.openFromFile("src/audio/Track_0" + std::to_string(3) + ".ogg");
     music.setVolume(30);
-    music.play();
-    const int numberOfSongs = 4;
+    //music.play();
+    //const int numberOfSongs = 4;
 
     // Sounds
     FilesBank::getInstance().AddSounds("jump", "hopper_jump.ogg"); // 0 - usual jump
@@ -101,8 +96,6 @@ int main()
                 )){
             sound0.play();
         }
-
-        collision.PlatformAcceleration(*platforms.GetPlatformSpeed(), currPos.y, windowSize.y);
 
         window.display();
     }

@@ -22,7 +22,8 @@ Player::Player(
 void Player::Initialize(const std::string& file_1, const std::string& file_2){
     FilesBank::getInstance().AddFiles("player", file_1);
     FilesBank::getInstance().AddFiles("player", file_2);
-    sprite.setTexture(*FilesBank::getInstance().GetFile("player", skin));
+    sprite.setSize(sf::Vector2f(winSize.x / 43.64f, winSize.y / 26.f));
+    sprite.setTexture(FilesBank::getInstance().GetFile("player", skin));
     sprite.setTextureRect(sf::IntRect(X, Y, H, W));
     sprite.setPosition(winSize.x * 2.3f / 5.f, winSize.y * 4.f / 5.f);
 }
@@ -64,14 +65,14 @@ void Player::Jump(float& x, float& y){
     //std::cout << accY << std::endl;
     y += accY;
     if (y > winSize.y - sprite.getTextureRect().width * 3.f){
-        accY = -15; // high
+        accY = -17; // high
     }
 }
 
 void Player::UpdatePlayerAnimation(int& fps) {
     int spritePos = 0;
     if (turnLeft) {
-        sprite.setTexture(*FilesBank::getInstance().GetFile("player", skin + 1));
+        sprite.setTexture(FilesBank::getInstance().GetFile("player", skin + 1));
         //choose a correct part of sprite to make an animation
         if (fps > 70) { spritePos = 938; fps = 0; }
         else if (fps > 60) { spritePos = 838; }
@@ -84,7 +85,7 @@ void Player::UpdatePlayerAnimation(int& fps) {
 
         sprite.setTextureRect(sf::IntRect(spritePos, Y, W, H));
     } else{
-        sprite.setTexture(*FilesBank::getInstance().GetFile("player", skin));
+        sprite.setTexture(FilesBank::getInstance().GetFile("player", skin));
         if (fps > 70) { spritePos = 17; fps = 0; }
         else if (fps > 60) { spritePos = 116; }
         else if (fps > 50) { spritePos = 215; }
@@ -98,7 +99,7 @@ void Player::UpdatePlayerAnimation(int& fps) {
     }
 }
 
-sf::Sprite* Player::GetSprite() {
+sf::RectangleShape* Player::GetSprite() {
     return &sprite;
 }
 

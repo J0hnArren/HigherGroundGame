@@ -5,7 +5,7 @@ Collision::Collision(const std::string &file1) {
 }
 
 bool Collision::CollisionCheck(
-        sf::Sprite &player, float &accY, const std::vector<sf::Sprite> &platforms, const float &scaleValue) {
+        sf::RectangleShape &player, float &accY, const std::vector<sf::Sprite> &platforms, const float &scaleValue) {
     isCollided = false;
     const float playerX = player.getPosition().x;
     const float playerY = player.getPosition().y;
@@ -17,7 +17,7 @@ bool Collision::CollisionCheck(
             && (playerX + (44 - swordSize) * scaleValue  > platform.getPosition().x)
             && (playerY + 40 * scaleValue > platform.getPosition().y)
             && (playerY + 40 * scaleValue < platform.getPosition().y + 32) && (accY > 0)){
-                accY = -15;
+                accY = -17;
                 isCollided = true;
             }
         }
@@ -28,7 +28,7 @@ bool Collision::CollisionCheck(
              && (playerX + 44 * scaleValue > platform.getPosition().x)
              && (playerY + 40 * scaleValue > platform.getPosition().y)
              && (playerY + 40 * scaleValue < platform.getPosition().y + 32) && (accY > 0)){
-                accY = -15;
+                accY = -17;
                 isCollided = true;
             }
         }
@@ -38,17 +38,4 @@ bool Collision::CollisionCheck(
     }
 
     return isCollided;
-}
-
-// All positions are in Y coordinates
-void Collision::PlatformAcceleration(float& platformSpeed, const float &currPos, const float &winSize){
-    if (currPos > winSize - (winSize / 3)){
-        platformSpeed = 15;
-    } else if (currPos < winSize - (winSize / 3)){
-        platformSpeed -= 0.1f;
-    } else if (currPos > winSize - (winSize * 2 / 3)){
-        platformSpeed -= 0.2f;
-    } else if (currPos > winSize / 8){
-        platformSpeed -= 0.3f;
-    }
 }
