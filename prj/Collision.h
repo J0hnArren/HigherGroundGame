@@ -14,7 +14,9 @@ public:
 	~Collision() = default;
 
 	bool CollisionCheck(
-	        sf::RectangleShape &player, float &accY, const std::vector<sf::Sprite> &platforms, const float &scaleValue
+	        sf::RectangleShape &player, float &accY,
+	        const std::vector<sf::RectangleShape> &platforms,
+	        const float &scaleValue
 	        );
 private:
     std::string file;

@@ -20,7 +20,7 @@ public:
     ~Player() = default;
 
     void UpdatePlayerAnimation(int& fps);
-    void Update(float& deltaTime, sf::Vector2f& currPos);
+    void Update(float& deltaTime, sf::Vector2f &currPos);
 
     sf::RectangleShape* GetSprite();
     float* GetAcceleration();

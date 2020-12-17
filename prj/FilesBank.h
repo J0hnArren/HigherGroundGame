@@ -13,9 +13,11 @@ class FilesBank
 public:
 	static FilesBank& getInstance();
 	void AddFiles(const std::string& fileType, const std::string& fileName) noexcept(false);
-    void AddSounds(const std::string& fileType, const std::string& fileName) noexcept(false);
+    void AddSound(const std::string& fileType, const std::string& fileName) noexcept(false);
+    void AddFont(const std::string& fileType, const std::string& fileName) noexcept(false);
     sf::Texture* GetFile(const std::string& fileType, const int &fileNumber);
     sf::SoundBuffer* getSounds(const std::string& fileType, const int &musicNumber);
+    sf::Font* getFonts(const std::string& fileType, const int &fontNumber);
 private:
 	FilesBank() = default;
 	FilesBank(const FilesBank&) = delete;
@@ -24,14 +26,17 @@ private:
 
     std::map<std::string, std::vector<sf::Texture>> singletonTextures;
     std::map<std::string, std::vector<sf::SoundBuffer>> sounds;
+    std::map<std::string, std::vector<sf::Font>> fonts;
 
 	static void FileFormatCheck(const std::string& fileName);
-	static void FileTypeCheck(const std::string &ST_FileType);
+	static void TexturesTypeCheck(const std::string &ST_FileType);
     static void SoundTypeCheck(const std::string &ST_FileType);
+    static void FontTypeCheck(const std::string &ST_FileType);
     static void FileLoadCheck(const std::string& fileName);
 
 	sf::Texture texture;
     sf::SoundBuffer sound;
+    sf::Font font;
 };
 
 #endif // !FILESBANK

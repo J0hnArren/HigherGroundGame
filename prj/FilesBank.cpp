@@ -2,7 +2,7 @@
 
 void FilesBank::AddFiles(const std::string& fileType, const std::string& fileName) noexcept(false){
     try {
-        FileTypeCheck(fileType);
+        TexturesTypeCheck(fileType);
         FileFormatCheck(fileName);
         if (!texture.loadFromFile("src/images/" + fileName)) {
             FileLoadCheck(fileName);
@@ -26,7 +26,7 @@ sf::Texture* FilesBank::GetFile(const std::string& fileType, const int &fileNumb
     return &singletonTextures[fileType][fileNumber];
 }
 
-void FilesBank::AddSounds(const std::string& fileType, const std::string& fileName) noexcept(false){
+void FilesBank::AddSound(const std::string& fileType, const std::string& fileName) noexcept(false){
     try {
         SoundTypeCheck(fileType);
         FileFormatCheck(fileName);
@@ -38,11 +38,30 @@ void FilesBank::AddSounds(const std::string& fileType, const std::string& fileNa
     } catch (std::invalid_argument &e) {
         std::cout << e.what() << "\n";
     } catch (...) {
-        std::cout << "Something went wrong in FilesBank.cpp FilesBank::AddSounds()" << "\n";
+        std::cout << "Something went wrong in FilesBank.cpp FilesBank::AddSound()" << "\n";
     }
 
     FilesBank::getInstance().sounds[fileType];
     FilesBank::getInstance().sounds[fileType].push_back(sound);
+}
+
+void FilesBank::AddFont(const std::string& fileType, const std::string& fileName) noexcept(false){
+    try {
+        FontTypeCheck(fileType);
+        FileFormatCheck(fileName);
+        if (!font.loadFromFile("src/fonts/" + fileName)) {
+            FileLoadCheck(fileName);
+        }
+    } catch (std::runtime_error &e) {
+        std::cout << e.what() << "\n";
+    } catch (std::invalid_argument &e) {
+        std::cout << e.what() << "\n";
+    } catch (...) {
+        std::cout << "Something went wrong in FilesBank.cpp FilesBank::AddFont()" << "\n";
+    }
+
+    FilesBank::getInstance().fonts[fileType];
+    FilesBank::getInstance().fonts[fileType].push_back(font);
 }
 
 sf::SoundBuffer* FilesBank::getSounds(const std::string &fileType, const int &musicNumber){
@@ -54,17 +73,21 @@ FilesBank& FilesBank::getInstance() {
 	return instance;
 }
 
+sf::Font* FilesBank::getFonts(const std::string& fileType, const int &fontNumber){
+    return &fonts[fileType][fontNumber];
+}
+
 void FilesBank::FileFormatCheck(const std::string& fileName) {
 	int size = fileName.size();
 	std::string fileFormat = fileName;
 	fileFormat.erase(0, size - 3);
 
-	if (fileFormat != "png" && fileFormat != "jpg" && fileFormat != "ogg") {
+	if (fileFormat != "png" && fileFormat != "jpg" && fileFormat != "ogg" && fileFormat != "otf") {
 		throw std::invalid_argument("Wrong file format! Added file format: " + fileFormat);
 	}
 }
 
-void FilesBank::FileTypeCheck(const std::string &ST_FileType){
+void FilesBank::TexturesTypeCheck(const std::string &ST_FileType){
     if (ST_FileType != "player" && ST_FileType != "bg" && ST_FileType != "platform"){
         throw std::invalid_argument(
                 "Wrong type for singletonTextures!"
@@ -79,6 +102,16 @@ void FilesBank::SoundTypeCheck(const std::string &ST_FileType){
         throw std::invalid_argument(
                 "Wrong type for singletonTextures!"
                 "\nIt can contain only 'jump' or 'trampoline'."
+                "\nYou added: " + ST_FileType + ". Check for the typo."
+        );
+    }
+}
+
+void FilesBank::FontTypeCheck(const std::string &ST_FileType){
+    if (ST_FileType != "menu" && ST_FileType != "timer"){
+        throw std::invalid_argument(
+                "Wrong type for singletonTextures!"
+                "\nIt can contain only 'menu' or 'timer'."
                 "\nYou added: " + ST_FileType + ". Check for the typo."
         );
     }

@@ -812,6 +812,16 @@ SFML/Config.hpp
 
 ../libs/SFML/include/SFML/Window/WindowStyle.hpp
 
+C:/Users/Rauf/CLionProjects/HigherGround/prj/Collision.h
+iostream
+-
+iosfwd
+-
+SFML/Graphics.hpp
+-
+FilesBank.h
+C:/Users/Rauf/CLionProjects/HigherGround/prj/FilesBank.h
+
 C:/Users/Rauf/CLionProjects/HigherGround/prj/FilesBank.h
 iosfwd
 -
@@ -828,9 +838,15 @@ stdexcept
 iostream
 -
 
-C:/Users/Rauf/CLionProjects/HigherGround/prj/Platforms.cpp
+C:/Users/Rauf/CLionProjects/HigherGround/prj/HigherGround.cpp
+Player.h
+C:/Users/Rauf/CLionProjects/HigherGround/prj/Player.h
+Collision.h
+C:/Users/Rauf/CLionProjects/HigherGround/prj/Collision.h
 Platforms.h
 C:/Users/Rauf/CLionProjects/HigherGround/prj/Platforms.h
+sstream
+-
 
 C:/Users/Rauf/CLionProjects/HigherGround/prj/Platforms.h
 SFML/Graphics.hpp
@@ -845,4 +861,14 @@ iterator
 -
 ctime
 -
+
+C:/Users/Rauf/CLionProjects/HigherGround/prj/Player.h
+string
+-
+SFML/Graphics.hpp
+-
+iosfwd
+-
+FilesBank.h
+C:/Users/Rauf/CLionProjects/HigherGround/prj/FilesBank.h
 

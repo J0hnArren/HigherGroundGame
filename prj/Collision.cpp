@@ -5,14 +5,16 @@ Collision::Collision(const std::string &file1) {
 }
 
 bool Collision::CollisionCheck(
-        sf::RectangleShape &player, float &accY, const std::vector<sf::Sprite> &platforms, const float &scaleValue) {
+        sf::RectangleShape &player, float &accY,
+        const std::vector<sf::RectangleShape> &platforms,
+        const float &scaleValue) {
     isCollided = false;
     const float playerX = player.getPosition().x;
     const float playerY = player.getPosition().y;
     const int swordSize = 17;
     // if player's texture turn to left side
     if (player.getTextureRect().left % 10 == 8){
-        for (const sf::Sprite &platform : platforms){
+        for (const sf::RectangleShape &platform : platforms){
             if ((playerX < platform.getPosition().x + 192)
             && (playerX + (44 - swordSize) * scaleValue  > platform.getPosition().x)
             && (playerY + 40 * scaleValue > platform.getPosition().y)
@@ -23,7 +25,7 @@ bool Collision::CollisionCheck(
         }
         // right side
     } else {
-        for (const sf::Sprite &platform : platforms){
+        for (const sf::RectangleShape &platform : platforms){
             if ((playerX + swordSize * scaleValue < platform.getPosition().x + 192)
              && (playerX + 44 * scaleValue > platform.getPosition().x)
              && (playerY + 40 * scaleValue > platform.getPosition().y)
