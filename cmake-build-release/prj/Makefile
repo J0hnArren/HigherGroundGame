@@ -144,6 +144,33 @@ HigherGround/fast:
 	cd /d C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-release && $(MAKE) $(MAKESILENT) -f prj\CMakeFiles\HigherGround.dir\build.make prj/CMakeFiles/HigherGround.dir/build
 .PHONY : HigherGround/fast
 
+Button.obj: Button.cpp.obj
+
+.PHONY : Button.obj
+
+# target to build an object file
+Button.cpp.obj:
+	cd /d C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-release && $(MAKE) $(MAKESILENT) -f prj\CMakeFiles\HigherGround.dir\build.make prj/CMakeFiles/HigherGround.dir/Button.cpp.obj
+.PHONY : Button.cpp.obj
+
+Button.i: Button.cpp.i
+
+.PHONY : Button.i
+
+# target to preprocess a source file
+Button.cpp.i:
+	cd /d C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-release && $(MAKE) $(MAKESILENT) -f prj\CMakeFiles\HigherGround.dir\build.make prj/CMakeFiles/HigherGround.dir/Button.cpp.i
+.PHONY : Button.cpp.i
+
+Button.s: Button.cpp.s
+
+.PHONY : Button.s
+
+# target to generate assembly for a file
+Button.cpp.s:
+	cd /d C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-release && $(MAKE) $(MAKESILENT) -f prj\CMakeFiles\HigherGround.dir\build.make prj/CMakeFiles/HigherGround.dir/Button.cpp.s
+.PHONY : Button.cpp.s
+
 Collision.obj: Collision.cpp.obj
 
 .PHONY : Collision.obj
@@ -197,6 +224,33 @@ FilesBank.s: FilesBank.cpp.s
 FilesBank.cpp.s:
 	cd /d C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-release && $(MAKE) $(MAKESILENT) -f prj\CMakeFiles\HigherGround.dir\build.make prj/CMakeFiles/HigherGround.dir/FilesBank.cpp.s
 .PHONY : FilesBank.cpp.s
+
+GameMenu.obj: GameMenu.cpp.obj
+
+.PHONY : GameMenu.obj
+
+# target to build an object file
+GameMenu.cpp.obj:
+	cd /d C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-release && $(MAKE) $(MAKESILENT) -f prj\CMakeFiles\HigherGround.dir\build.make prj/CMakeFiles/HigherGround.dir/GameMenu.cpp.obj
+.PHONY : GameMenu.cpp.obj
+
+GameMenu.i: GameMenu.cpp.i
+
+.PHONY : GameMenu.i
+
+# target to preprocess a source file
+GameMenu.cpp.i:
+	cd /d C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-release && $(MAKE) $(MAKESILENT) -f prj\CMakeFiles\HigherGround.dir\build.make prj/CMakeFiles/HigherGround.dir/GameMenu.cpp.i
+.PHONY : GameMenu.cpp.i
+
+GameMenu.s: GameMenu.cpp.s
+
+.PHONY : GameMenu.s
+
+# target to generate assembly for a file
+GameMenu.cpp.s:
+	cd /d C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-release && $(MAKE) $(MAKESILENT) -f prj\CMakeFiles\HigherGround.dir\build.make prj/CMakeFiles/HigherGround.dir/GameMenu.cpp.s
+.PHONY : GameMenu.cpp.s
 
 HigherGround.obj: HigherGround.cpp.obj
 
@@ -288,12 +342,18 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... HigherGround
+	@echo ... Button.obj
+	@echo ... Button.i
+	@echo ... Button.s
 	@echo ... Collision.obj
 	@echo ... Collision.i
 	@echo ... Collision.s
 	@echo ... FilesBank.obj
 	@echo ... FilesBank.i
 	@echo ... FilesBank.s
+	@echo ... GameMenu.obj
+	@echo ... GameMenu.i
+	@echo ... GameMenu.s
 	@echo ... HigherGround.obj
 	@echo ... HigherGround.i
 	@echo ... HigherGround.s

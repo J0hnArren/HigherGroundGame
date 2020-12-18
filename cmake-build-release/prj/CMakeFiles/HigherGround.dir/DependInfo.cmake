@@ -4,8 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "C:/Users/Rauf/CLionProjects/HigherGround/prj/Button.cpp" "C:/Users/Rauf/CLionProjects/HigherGround/cmake-build-release/prj/CMakeFiles/HigherGround.dir/Button.cpp.obj"
   "C:/Users/Rauf/CLionProjects/HigherGround/prj/Collision.cpp" "C:/Users/Rauf/CLionProjects/HigherGround/cmake-build-release/prj/CMakeFiles/HigherGround.dir/Collision.cpp.obj"
   "C:/Users/Rauf/CLionProjects/HigherGround/prj/FilesBank.cpp" "C:/Users/Rauf/CLionProjects/HigherGround/cmake-build-release/prj/CMakeFiles/HigherGround.dir/FilesBank.cpp.obj"
+  "C:/Users/Rauf/CLionProjects/HigherGround/prj/GameMenu.cpp" "C:/Users/Rauf/CLionProjects/HigherGround/cmake-build-release/prj/CMakeFiles/HigherGround.dir/GameMenu.cpp.obj"
   "C:/Users/Rauf/CLionProjects/HigherGround/prj/HigherGround.cpp" "C:/Users/Rauf/CLionProjects/HigherGround/cmake-build-release/prj/CMakeFiles/HigherGround.dir/HigherGround.cpp.obj"
   "C:/Users/Rauf/CLionProjects/HigherGround/prj/Platforms.cpp" "C:/Users/Rauf/CLionProjects/HigherGround/cmake-build-release/prj/CMakeFiles/HigherGround.dir/Platforms.cpp.obj"
   "C:/Users/Rauf/CLionProjects/HigherGround/prj/Player.cpp" "C:/Users/Rauf/CLionProjects/HigherGround/cmake-build-release/prj/CMakeFiles/HigherGround.dir/Player.cpp.obj"

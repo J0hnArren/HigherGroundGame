@@ -1,6 +1,7 @@
 ﻿#include "Player.h"
 #include "Collision.h"
 #include "Platforms.h"
+#include "GameMenu.h"
 #include <sstream>
 
 int main()
@@ -16,6 +17,24 @@ int main()
     // winSize size
     sf::Vector2u windowSize = window.getSize();
     std::cout << windowSize.x << " X " << windowSize.y;
+
+
+    //background image
+    sf::Sprite bgSprite;
+    FilesBank::getInstance().AddFiles("bg", "bg0.png");
+    FilesBank::getInstance().AddFiles("bg", "bg1.png");
+    FilesBank::getInstance().AddFiles("bg", "bg2.png");
+    bgSprite.setTexture(*FilesBank::getInstance().GetFile("bg", 2));
+    sf::Vector2u bgSize = FilesBank::getInstance().GetFile("bg", 2)->getSize();
+
+    sf::Vector2f scale;
+    scale.x = windowSize.x * 1.0f / bgSize.x,
+            scale.y = windowSize.y * 1.0f / bgSize.y;
+    bgSprite.setScale(scale);
+
+    // Menu
+    GameMenu gameMenu(windowSize);
+    gameMenu.Menu(window, bgSprite);
 
     // Font & Text
     FilesBank::getInstance().AddFont("timer", "nightmare.otf");
@@ -46,19 +65,6 @@ int main()
 
     //Platforms
     Platforms platforms(windowSize, "platforms.png"); // stone platform
-
-    //background image
-    sf::Sprite bgSprite;
-    FilesBank::getInstance().AddFiles("bg", "bg0.png");
-    FilesBank::getInstance().AddFiles("bg", "bg1.png");
-    FilesBank::getInstance().AddFiles("bg", "bg2.png");
-    bgSprite.setTexture(*FilesBank::getInstance().GetFile("bg", 2));
-    sf::Vector2u bgSize = FilesBank::getInstance().GetFile("bg", 2)->getSize();
-
-    sf::Vector2f scale;
-    scale.x = windowSize.x * 1.0f / bgSize.x,
-    scale.y = windowSize.y * 1.0f / bgSize.y;
-    bgSprite.setScale(scale);
 
     // Collision
     Collision collision("hopper_jump");

@@ -146,13 +146,43 @@ prj/CMakeFiles/HigherGround.dir/FilesBank.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HigherGround.dir/FilesBank.cpp.s"
 	cd /d C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-debug\prj && C:\PROGRA~1\JETBRA~1\Colpiler\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Rauf\CLionProjects\HigherGround\prj\FilesBank.cpp -o CMakeFiles\HigherGround.dir\FilesBank.cpp.s
 
+prj/CMakeFiles/HigherGround.dir/GameMenu.cpp.obj: prj/CMakeFiles/HigherGround.dir/flags.make
+prj/CMakeFiles/HigherGround.dir/GameMenu.cpp.obj: prj/CMakeFiles/HigherGround.dir/includes_CXX.rsp
+prj/CMakeFiles/HigherGround.dir/GameMenu.cpp.obj: ../prj/GameMenu.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object prj/CMakeFiles/HigherGround.dir/GameMenu.cpp.obj"
+	cd /d C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-debug\prj && C:\PROGRA~1\JETBRA~1\Colpiler\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\HigherGround.dir\GameMenu.cpp.obj -c C:\Users\Rauf\CLionProjects\HigherGround\prj\GameMenu.cpp
+
+prj/CMakeFiles/HigherGround.dir/GameMenu.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HigherGround.dir/GameMenu.cpp.i"
+	cd /d C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-debug\prj && C:\PROGRA~1\JETBRA~1\Colpiler\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Rauf\CLionProjects\HigherGround\prj\GameMenu.cpp > CMakeFiles\HigherGround.dir\GameMenu.cpp.i
+
+prj/CMakeFiles/HigherGround.dir/GameMenu.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HigherGround.dir/GameMenu.cpp.s"
+	cd /d C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-debug\prj && C:\PROGRA~1\JETBRA~1\Colpiler\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Rauf\CLionProjects\HigherGround\prj\GameMenu.cpp -o CMakeFiles\HigherGround.dir\GameMenu.cpp.s
+
+prj/CMakeFiles/HigherGround.dir/Button.cpp.obj: prj/CMakeFiles/HigherGround.dir/flags.make
+prj/CMakeFiles/HigherGround.dir/Button.cpp.obj: prj/CMakeFiles/HigherGround.dir/includes_CXX.rsp
+prj/CMakeFiles/HigherGround.dir/Button.cpp.obj: ../prj/Button.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object prj/CMakeFiles/HigherGround.dir/Button.cpp.obj"
+	cd /d C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-debug\prj && C:\PROGRA~1\JETBRA~1\Colpiler\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\HigherGround.dir\Button.cpp.obj -c C:\Users\Rauf\CLionProjects\HigherGround\prj\Button.cpp
+
+prj/CMakeFiles/HigherGround.dir/Button.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HigherGround.dir/Button.cpp.i"
+	cd /d C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-debug\prj && C:\PROGRA~1\JETBRA~1\Colpiler\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Rauf\CLionProjects\HigherGround\prj\Button.cpp > CMakeFiles\HigherGround.dir\Button.cpp.i
+
+prj/CMakeFiles/HigherGround.dir/Button.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HigherGround.dir/Button.cpp.s"
+	cd /d C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-debug\prj && C:\PROGRA~1\JETBRA~1\Colpiler\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Rauf\CLionProjects\HigherGround\prj\Button.cpp -o CMakeFiles\HigherGround.dir\Button.cpp.s
+
 # Object files for target HigherGround
 HigherGround_OBJECTS = \
 "CMakeFiles/HigherGround.dir/Collision.cpp.obj" \
 "CMakeFiles/HigherGround.dir/HigherGround.cpp.obj" \
 "CMakeFiles/HigherGround.dir/Platforms.cpp.obj" \
 "CMakeFiles/HigherGround.dir/Player.cpp.obj" \
-"CMakeFiles/HigherGround.dir/FilesBank.cpp.obj"
+"CMakeFiles/HigherGround.dir/FilesBank.cpp.obj" \
+"CMakeFiles/HigherGround.dir/GameMenu.cpp.obj" \
+"CMakeFiles/HigherGround.dir/Button.cpp.obj"
 
 # External object files for target HigherGround
 HigherGround_EXTERNAL_OBJECTS =
@@ -162,6 +192,8 @@ HigherGround_EXTERNAL_OBJECTS =
 ../HigherGround.exe: prj/CMakeFiles/HigherGround.dir/Platforms.cpp.obj
 ../HigherGround.exe: prj/CMakeFiles/HigherGround.dir/Player.cpp.obj
 ../HigherGround.exe: prj/CMakeFiles/HigherGround.dir/FilesBank.cpp.obj
+../HigherGround.exe: prj/CMakeFiles/HigherGround.dir/GameMenu.cpp.obj
+../HigherGround.exe: prj/CMakeFiles/HigherGround.dir/Button.cpp.obj
 ../HigherGround.exe: prj/CMakeFiles/HigherGround.dir/build.make
 ../HigherGround.exe: ../libs/SFML/lib/libsfml-audio-s-d.a
 ../HigherGround.exe: ../libs/SFML/lib/libsfml-graphics-s-d.a
@@ -184,7 +216,7 @@ HigherGround_EXTERNAL_OBJECTS =
 ../HigherGround.exe: prj/CMakeFiles/HigherGround.dir/linklibs.rsp
 ../HigherGround.exe: prj/CMakeFiles/HigherGround.dir/objects1.rsp
 ../HigherGround.exe: prj/CMakeFiles/HigherGround.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ..\..\HigherGround.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable ..\..\HigherGround.exe"
 	cd /d C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-debug\prj && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\HigherGround.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

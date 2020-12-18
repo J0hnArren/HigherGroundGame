@@ -812,6 +812,26 @@ SFML/Config.hpp
 
 ../libs/SFML/include/SFML/Window/WindowStyle.hpp
 
+../prj/Button.h
+SFML/Graphics.hpp
+-
+SFML/Audio.hpp
+-
+iosfwd
+-
+
+C:/Users/Rauf/CLionProjects/HigherGround/prj/Button.cpp
+Button.h
+C:/Users/Rauf/CLionProjects/HigherGround/prj/Button.h
+
+C:/Users/Rauf/CLionProjects/HigherGround/prj/Button.h
+SFML/Graphics.hpp
+-
+SFML/Audio.hpp
+-
+iosfwd
+-
+
 C:/Users/Rauf/CLionProjects/HigherGround/prj/Collision.h
 iostream
 -
@@ -838,6 +858,22 @@ stdexcept
 iostream
 -
 
+C:/Users/Rauf/CLionProjects/HigherGround/prj/GameMenu.cpp
+GameMenu.h
+C:/Users/Rauf/CLionProjects/HigherGround/prj/GameMenu.h
+
+C:/Users/Rauf/CLionProjects/HigherGround/prj/GameMenu.h
+iostream
+-
+iosfwd
+-
+SFML/Graphics.hpp
+-
+FilesBank.h
+C:/Users/Rauf/CLionProjects/HigherGround/prj/FilesBank.h
+Button.h
+-
+
 C:/Users/Rauf/CLionProjects/HigherGround/prj/HigherGround.cpp
 Player.h
 C:/Users/Rauf/CLionProjects/HigherGround/prj/Player.h
@@ -845,6 +881,8 @@ Collision.h
 C:/Users/Rauf/CLionProjects/HigherGround/prj/Collision.h
 Platforms.h
 C:/Users/Rauf/CLionProjects/HigherGround/prj/Platforms.h
+GameMenu.h
+C:/Users/Rauf/CLionProjects/HigherGround/prj/GameMenu.h
 sstream
 -
 

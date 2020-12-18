@@ -88,10 +88,10 @@ void FilesBank::FileFormatCheck(const std::string& fileName) {
 }
 
 void FilesBank::TexturesTypeCheck(const std::string &ST_FileType){
-    if (ST_FileType != "player" && ST_FileType != "bg" && ST_FileType != "platform"){
+    if (ST_FileType != "player" && ST_FileType != "bg" && ST_FileType != "platform" && ST_FileType != "button"){
         throw std::invalid_argument(
                 "Wrong type for singletonTextures!"
-                "\nIt can contain only 'player', 'bg' and 'platform'."
+                "\nIt can contain only 'player', 'bg', 'button' and 'platform'."
                 "\nYou added: " + ST_FileType + ". Check for the typo."
                 );
     }

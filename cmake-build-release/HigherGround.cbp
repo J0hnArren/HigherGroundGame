@@ -88,6 +88,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/Rauf/CLionProjects/HigherGround/prj/Button.cpp">
+			<Option target="HigherGround"/>
+		</Unit>
+		<Unit filename="C:/Users/Rauf/CLionProjects/HigherGround/prj/Button.h">
+			<Option target="HigherGround"/>
+		</Unit>
 		<Unit filename="C:/Users/Rauf/CLionProjects/HigherGround/prj/Collision.cpp">
 			<Option target="HigherGround"/>
 		</Unit>
@@ -98,6 +104,12 @@
 			<Option target="HigherGround"/>
 		</Unit>
 		<Unit filename="C:/Users/Rauf/CLionProjects/HigherGround/prj/FilesBank.h">
+			<Option target="HigherGround"/>
+		</Unit>
+		<Unit filename="C:/Users/Rauf/CLionProjects/HigherGround/prj/GameMenu.cpp">
+			<Option target="HigherGround"/>
+		</Unit>
+		<Unit filename="C:/Users/Rauf/CLionProjects/HigherGround/prj/GameMenu.h">
 			<Option target="HigherGround"/>
 		</Unit>
 		<Unit filename="C:/Users/Rauf/CLionProjects/HigherGround/prj/HigherGround.cpp">

@@ -19,7 +19,7 @@ bool Collision::CollisionCheck(
             && (playerX + (44 - swordSize) * scaleValue  > platform.getPosition().x)
             && (playerY + 40 * scaleValue > platform.getPosition().y)
             && (playerY + 40 * scaleValue < platform.getPosition().y + 32) && (accY > 0)){
-                accY = -17;
+                accY = -18;
                 isCollided = true;
             }
         }
@@ -30,7 +30,7 @@ bool Collision::CollisionCheck(
              && (playerX + 44 * scaleValue > platform.getPosition().x)
              && (playerY + 40 * scaleValue > platform.getPosition().y)
              && (playerY + 40 * scaleValue < platform.getPosition().y + 32) && (accY > 0)){
-                accY = -17;
+                accY = -18;
                 isCollided = true;
             }
         }

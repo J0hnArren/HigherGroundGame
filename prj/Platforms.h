@@ -15,7 +15,7 @@ public:
 	Platforms(const sf::Vector2u &windowSize, const std::string& File);
 	~Platforms() = default;
 
-	void PlatformMover(const float &deltaTime, const float &accY, const float &currTime) noexcept(false);
+	void PlatformMover(const float &deltaTime, const float &accY, const int &currTime) noexcept(false);
     float RandCoordinateX(const float &coord, const float &prevCoord = 0);
     float RandCoordinateY(const float &coord, const float &prevCoord = 0);
     bool RandBool();
@@ -36,7 +36,7 @@ private:
     std::vector<sf::RectangleShape>::iterator it;
 	const int numPlatforms = 20; // maximum number of existing platforms
 	unsigned int lineX = 0, lineY = 0, moverCount = 0;
-	int W = 0, H = 0;
+	int W = 0, cW = 0, H = 0, cH = 0;
     sf::Vector2f startPos;
     float coordX = 0, p1 = 0;
     float coordY = 0, p2 = 0;
