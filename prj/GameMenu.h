@@ -5,29 +5,28 @@
 #include <SFML/Graphics.hpp>
 #include "FilesBank.h"
 #include <Button.h>
-
-enum Buttons {
-    Play,
-    Settings,
-    Exit
-};
+#include "Player.h"
 
 class GameMenu {
 public:
     GameMenu() = default;
-    GameMenu(const sf::Vector2u &windowSize);
+    explicit GameMenu(const sf::Vector2u &windowSize);
     GameMenu(const GameMenu&) = default;
     ~GameMenu() = default;
 
-    bool Menu(sf::RenderWindow &window, const sf::Sprite &bgImage);
+    bool Menu(sf::RenderWindow &window, const sf::Sprite &bgImage, Player &player);
+    bool Exit();
 
 private:
     sf::Vector2u winSize;
 
-    Button button_1, button_2, button_3;
+    sf::Clock clock;
+    sf::Text text;
+    bool exit = false;
+
+    Button playButton, settingsButton, exitButton;
+    std::vector<Button> buttons;
     sf::RectangleShape menuSquare;
-    sf::RectangleShape button1;
-    sf::RectangleShape button2;
 };
 
 

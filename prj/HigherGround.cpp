@@ -4,6 +4,10 @@
 #include "GameMenu.h"
 #include <sstream>
 
+void GameProcess(sf::RenderWindow &window, Player &player1, Collision &collision,
+                 Platforms &platforms, sf::Text &timerText, const sf::Vector2u &windowSize,
+                 sf::Sprite &bgSprite, sf::Sound &sound0, const float &scaleValue);
+
 int main()
 {
     sf::RenderWindow window(
@@ -18,6 +22,14 @@ int main()
     sf::Vector2u windowSize = window.getSize();
     std::cout << windowSize.x << " X " << windowSize.y;
 
+    // Music
+    sf::Music track1, track2, track3, track4;
+    track1.openFromFile("src/audio/Track_01.ogg");
+//    track2.openFromFile("src/audio/Track_02.ogg");
+//    track3.openFromFile("src/audio/Track_03.ogg");
+//    track4.openFromFile("src/audio/Track_04.ogg");
+    //track1.play();
+    track1.setLoop(true);
 
     //background image
     sf::Sprite bgSprite;
@@ -29,12 +41,8 @@ int main()
 
     sf::Vector2f scale;
     scale.x = windowSize.x * 1.0f / bgSize.x,
-            scale.y = windowSize.y * 1.0f / bgSize.y;
+    scale.y = windowSize.y * 1.0f / bgSize.y;
     bgSprite.setScale(scale);
-
-    // Menu
-    GameMenu gameMenu(windowSize);
-    gameMenu.Menu(window, bgSprite);
 
     // Font & Text
     FilesBank::getInstance().AddFont("timer", "nightmare.otf");
@@ -44,16 +52,11 @@ int main()
     timerText.setCharacterSize(50);
     timerText.setStyle(sf::Text::Regular);
 
-    // Music
-    sf::Music music;
-    music.openFromFile("src/audio/Track_0" + std::to_string(3) + ".ogg");
-    music.setVolume(30);
-    //music.play();
-    //const int numberOfSongs = 4;
-
     // Sounds
     FilesBank::getInstance().AddSound("jump", "hopper_jump.ogg"); // 0 - usual jump
     FilesBank::getInstance().AddSound("jump", "thud_jump.ogg"); // 1 - louder jump
+    FilesBank::getInstance().AddSound("button", "ui_button_confirm.wav"); // 0 - rolling buttons
+    FilesBank::getInstance().AddSound("button", "button.ogg"); // 1 - click
     sf::Sound sound0(*FilesBank::getInstance().getSounds("jump", 0));
     sf::Sound sound1(*FilesBank::getInstance().getSounds("jump", 1));
     sound0.setVolume(40);
@@ -63,12 +66,27 @@ int main()
     const float scaleValue = 3;
     player1.GetSprite()->setScale(sf::Vector2f(scaleValue, scaleValue));
 
+    // Menu
+    GameMenu gameMenu(windowSize);
+
     //Platforms
     Platforms platforms(windowSize, "platforms.png"); // stone platform
 
     // Collision
     Collision collision("hopper_jump");
 
+    while (gameMenu.Exit()){
+        gameMenu.Menu(window, bgSprite, player1);
+        GameProcess(window, player1, collision,platforms,
+                    timerText, windowSize,bgSprite, sound0, scaleValue);
+    }
+
+    return 0;
+}
+
+void GameProcess(sf::RenderWindow &window, Player &player1, Collision &collision,
+                 Platforms &platforms, sf::Text &timerText, const sf::Vector2u &windowSize,
+                 sf::Sprite &bgSprite, sf::Sound &sound0, const float &scaleValue){
     int fps = 0; // need for player animation update
     sf::Clock clock, gameTimeClock;
     sf::Vector2f currPos;
@@ -76,7 +94,6 @@ int main()
     {
         float deltaTime = clock.getElapsedTime().asMicroseconds() / 750.f;
         int gameTime = int(gameTimeClock.getElapsedTime().asSeconds());
-        //std::cout << deltaTime << "\n";
         clock.restart();
 
         sf::Event event{};
@@ -110,7 +127,7 @@ int main()
         // Checking for collisions
         if (collision.CollisionCheck(
                 *player1.GetSprite(), *player1.GetAcceleration(), *platforms.GetPlatform(), scaleValue
-                )){
+        )){
             sound0.play();
         }
 
@@ -123,6 +140,4 @@ int main()
 
         window.display();
     }
-
-    return 0;
 }

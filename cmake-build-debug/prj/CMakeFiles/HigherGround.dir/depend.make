@@ -91,6 +91,7 @@ prj/CMakeFiles/HigherGround.dir/Button.cpp.obj: ../libs/SFML/include/SFML/Window
 prj/CMakeFiles/HigherGround.dir/Button.cpp.obj: ../libs/SFML/include/SFML/Window/WindowStyle.hpp
 prj/CMakeFiles/HigherGround.dir/Button.cpp.obj: ../prj/Button.cpp
 prj/CMakeFiles/HigherGround.dir/Button.cpp.obj: ../prj/Button.h
+prj/CMakeFiles/HigherGround.dir/Button.cpp.obj: ../prj/FilesBank.h
 
 prj/CMakeFiles/HigherGround.dir/Collision.cpp.obj: ../libs/SFML/include/SFML/Audio.hpp
 prj/CMakeFiles/HigherGround.dir/Collision.cpp.obj: ../libs/SFML/include/SFML/Audio/AlResource.hpp
@@ -367,6 +368,7 @@ prj/CMakeFiles/HigherGround.dir/GameMenu.cpp.obj: ../prj/Button.h
 prj/CMakeFiles/HigherGround.dir/GameMenu.cpp.obj: ../prj/FilesBank.h
 prj/CMakeFiles/HigherGround.dir/GameMenu.cpp.obj: ../prj/GameMenu.cpp
 prj/CMakeFiles/HigherGround.dir/GameMenu.cpp.obj: ../prj/GameMenu.h
+prj/CMakeFiles/HigherGround.dir/GameMenu.cpp.obj: ../prj/Player.h
 
 prj/CMakeFiles/HigherGround.dir/HigherGround.cpp.obj: ../libs/SFML/include/SFML/Audio.hpp
 prj/CMakeFiles/HigherGround.dir/HigherGround.cpp.obj: ../libs/SFML/include/SFML/Audio/AlResource.hpp

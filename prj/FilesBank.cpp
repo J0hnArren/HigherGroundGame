@@ -82,7 +82,8 @@ void FilesBank::FileFormatCheck(const std::string& fileName) {
 	std::string fileFormat = fileName;
 	fileFormat.erase(0, size - 3);
 
-	if (fileFormat != "png" && fileFormat != "jpg" && fileFormat != "ogg" && fileFormat != "otf") {
+	if (fileFormat != "png" && fileFormat != "jpg" && fileFormat != "ogg"
+	    && fileFormat != "otf" && fileFormat != "wav") {
 		throw std::invalid_argument("Wrong file format! Added file format: " + fileFormat);
 	}
 }
@@ -98,10 +99,10 @@ void FilesBank::TexturesTypeCheck(const std::string &ST_FileType){
 }
 
 void FilesBank::SoundTypeCheck(const std::string &ST_FileType){
-    if (ST_FileType != "jump" && ST_FileType != "trampoline"){
+    if (ST_FileType != "jump" && ST_FileType != "trampoline" && ST_FileType != "button"){
         throw std::invalid_argument(
                 "Wrong type for singletonTextures!"
-                "\nIt can contain only 'jump' or 'trampoline'."
+                "\nIt can contain only 'jump', 'button' or 'trampoline'."
                 "\nYou added: " + ST_FileType + ". Check for the typo."
         );
     }
