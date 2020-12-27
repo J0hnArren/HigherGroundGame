@@ -368,6 +368,7 @@ prj/CMakeFiles/HigherGround.dir/GameMenu.cpp.obj: ../prj/Button.h
 prj/CMakeFiles/HigherGround.dir/GameMenu.cpp.obj: ../prj/FilesBank.h
 prj/CMakeFiles/HigherGround.dir/GameMenu.cpp.obj: ../prj/GameMenu.cpp
 prj/CMakeFiles/HigherGround.dir/GameMenu.cpp.obj: ../prj/GameMenu.h
+prj/CMakeFiles/HigherGround.dir/GameMenu.cpp.obj: ../prj/Platforms.h
 prj/CMakeFiles/HigherGround.dir/GameMenu.cpp.obj: ../prj/Player.h
 
 prj/CMakeFiles/HigherGround.dir/HigherGround.cpp.obj: ../libs/SFML/include/SFML/Audio.hpp

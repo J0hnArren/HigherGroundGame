@@ -21,8 +21,6 @@ public:
             const sf::Font& font);
     ~Button() = default;
 
-    void setPos(Button& buttonAbove, const float &interval);
-    void setPos(sf::RectangleShape& back, const float &interval);
     void setPos(const sf::Vector2f &position);
     void setSizeRelativeText();
     bool Clicked(sf::RenderWindow& window, sf::Sound& soundClick, sf::Sound& soundRoll);

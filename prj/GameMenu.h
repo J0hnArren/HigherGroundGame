@@ -3,9 +3,12 @@
 #include <iostream>
 #include <iosfwd>
 #include <SFML/Graphics.hpp>
+#include <SFML\System.hpp>
+#include <SFML\Window.hpp>
 #include "FilesBank.h"
 #include <Button.h>
 #include "Player.h"
+#include "Platforms.h"
 
 class GameMenu {
 public:
@@ -15,16 +18,16 @@ public:
     ~GameMenu() = default;
 
     bool Menu(sf::RenderWindow &window, const sf::Sprite &bgImage, Player &player);
-    bool Exit();
+    bool Pause(sf::RenderWindow &window, const sf::Sprite &bgImage, Platforms &platforms, Player &player, int &pauseTime);
+    bool Exit(sf::RenderWindow &window) const;
 
 private:
     sf::Vector2u winSize;
 
     sf::Clock clock;
-    sf::Text text;
+    sf::Text textLogo, textPause;
     bool exit = false;
-
-    Button playButton, settingsButton, exitButton;
+    bool MainMenu = true;
     std::vector<Button> buttons;
     sf::RectangleShape menuSquare;
 };

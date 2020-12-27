@@ -9,7 +9,7 @@ class Collision
 {
 public:
 	Collision() = default;
-	Collision(const std::string &file1);
+	explicit Collision(const std::string &file1);
 	Collision(const Collision&) = delete;
 	~Collision() = default;
 
@@ -19,6 +19,9 @@ public:
 	        const float &scaleValue
 	        );
 private:
+    void Acceleration(float &accY, const sf::RectangleShape &platform) const;
+
+    const float speed = -20;
     std::string file;
     bool isCollided = false;
 };

@@ -19,7 +19,7 @@ bool Collision::CollisionCheck(
             && (playerX + (44 - swordSize) * scaleValue  > platform.getPosition().x)
             && (playerY + 40 * scaleValue > platform.getPosition().y)
             && (playerY + 40 * scaleValue < platform.getPosition().y + 32) && (accY > 0)){
-                accY = -18;
+                Acceleration(accY, platform);
                 isCollided = true;
             }
         }
@@ -30,7 +30,7 @@ bool Collision::CollisionCheck(
              && (playerX + 44 * scaleValue > platform.getPosition().x)
              && (playerY + 40 * scaleValue > platform.getPosition().y)
              && (playerY + 40 * scaleValue < platform.getPosition().y + 32) && (accY > 0)){
-                accY = -18;
+                Acceleration(accY, platform);
                 isCollided = true;
             }
         }
@@ -40,4 +40,16 @@ bool Collision::CollisionCheck(
     }
 
     return isCollided;
+}
+
+void Collision::Acceleration(float &accY, const sf::RectangleShape &platform) const{
+    if (platform.getTextureRect().top == 128){
+        accY = speed;
+    } else if (platform.getTextureRect().top == 64){
+        accY = speed * 2.f;
+    } else if (platform.getTextureRect().top == 160){
+        accY = speed * 3.f;
+    } else {
+        accY = speed / 20.f;
+    }
 }

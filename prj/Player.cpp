@@ -61,7 +61,7 @@ void Player::Update(float& deltaTime, sf::Vector2f& currPos) {
 }
 
 void Player::Jump(float& x, float& y){
-    accY += 0.5f; // acceleration
+    accY += 0.7f; // acceleration
     //std::cout << accY << std::endl;
     y += accY;
     if (y > winSize.y - sprite.getTextureRect().width * 3.f){

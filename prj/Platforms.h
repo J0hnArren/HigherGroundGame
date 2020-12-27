@@ -12,21 +12,20 @@ class Platforms
 public:
 	Platforms() = default;
 	Platforms(const Platforms&) = delete;
-	Platforms(const sf::Vector2u &windowSize, const std::string& File);
+	Platforms(const sf::Vector2u &windowSize, const std::string& file);
 	~Platforms() = default;
 
 	void PlatformMover(const float &deltaTime, const float &accY, const int &currTime) noexcept(false);
     float RandCoordinateX(const float &coord, const float &prevCoord = 0);
     float RandCoordinateY(const float &coord, const float &prevCoord = 0);
-    bool RandBool();
+    int RandPlatform(const int& capacity);
+    void Respawn();
 
     const std::vector<sf::RectangleShape>* GetPlatform() const;
 
 private:
-    void AddTextures(const std::string& File, sf::RectangleShape &spr,
-                     const int& X, const int& Y, const int& W, const int& H,
-                     const int& platformSkin
-                     ) const;
+    void AddTextures(sf::RectangleShape &spr, const int& X, const int& Y, const int& platformSkin) const;
+    void StartGeneration();
 
     std::random_device rd;
     sf::RectangleShape sprite;
@@ -40,5 +39,8 @@ private:
     sf::Vector2f startPos;
     float coordX = 0, p1 = 0;
     float coordY = 0, p2 = 0;
+    int randPlatform = 0;
+
+    std::string File;
 };
 #endif // PLATFORMS

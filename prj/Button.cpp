@@ -25,20 +25,8 @@ Button::Button(
     text.setFont(*FilesBank::getInstance().getFonts("timer", 0));
     text.setString(buttonName);
     text.setCharacterSize(80);
-    text.setOrigin(sf::Vector2f(text.getGlobalBounds().width / 2, text.getGlobalBounds().height / 2));
+    text.setOrigin(text.getGlobalBounds().width / 2, text.getGlobalBounds().height / 2);
 }
-
-//void Button::setPos(Button& buttonAbove, const float &interval) {
-//    button.setPosition(buttonAbove.button.getPosition().x, buttonAbove.button.getPosition().y + size1.y + interval);
-//    text.setPosition(button.getPosition().x, button.getPosition().y - interval / 2);
-//    container = sf::IntRect(button.getPosition().x - size1.x / 2, button.getPosition().y - size1.y / 2, size1.x, size1.y);
-//}
-//
-//void Button::setPos(sf::RectangleShape& back, const float &interval) {
-//    button.setPosition(back.getPosition().x, back.getPosition().y - back.getSize().y / 2 + interval + size1.y / 2);
-//    text.setPosition(button.getPosition().x, button.getPosition().y - interval/2);
-//    container = sf::IntRect(button.getPosition().x - size1.x / 2, button.getPosition().y - size1.y / 2, size1.x, size1.y);
-//}
 
 void Button::setPos(const sf::Vector2f &position) {
     button.setPosition(position);
@@ -61,7 +49,6 @@ void Button::setPos(const sf::Vector2f &position) {
 bool Button::Clicked(sf::RenderWindow& window, sf::Sound& soundClick, sf::Sound& soundRoll) {
     int currentFrame = clock.getElapsedTime().asMilliseconds() / 16;
     isClick = false;
-    choose = false;
 
     if (container.contains(sf::Mouse::getPosition(window))) {
         button.setSize(size2);
@@ -69,9 +56,11 @@ bool Button::Clicked(sf::RenderWindow& window, sf::Sound& soundClick, sf::Sound&
         button.setTextureRect(
                 sf::IntRect(nextBeginRect.x, nextBeginRect.y, nextSizeRect.x, nextSizeRect.y)
         );
-        text.setCharacterSize(85);
-        text.setPosition(button.getPosition().x, button.getPosition().y - 20);
-        soundRoll.play();
+        text.setCharacterSize(90);
+        text.setPosition(button.getPosition().x - 20, button.getPosition().y - 40);
+        if (currentFrame > 10){
+            soundRoll.play();
+        }
         if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && currentFrame > 20) {
             isClick = true;
             soundClick.play();
@@ -85,7 +74,6 @@ bool Button::Clicked(sf::RenderWindow& window, sf::Sound& soundClick, sf::Sound&
         );
         text.setCharacterSize(80);
         text.setPosition(button.getPosition().x, button.getPosition().y - 20);
-        choose = false;
     }
 
     return isClick;

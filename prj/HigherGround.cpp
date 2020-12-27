@@ -6,7 +6,7 @@
 
 void GameProcess(sf::RenderWindow &window, Player &player1, Collision &collision,
                  Platforms &platforms, sf::Text &timerText, const sf::Vector2u &windowSize,
-                 sf::Sprite &bgSprite, sf::Sound &sound0, const float &scaleValue);
+                 sf::Sprite &bgSprite, sf::Sound &sound0, const float &scaleValue, GameMenu &gameMenu);
 
 int main()
 {
@@ -16,7 +16,7 @@ int main()
             sf::Style::Fullscreen
             );
     window.setVerticalSyncEnabled(true);
-    window.setFramerateLimit(60);
+    window.setFramerateLimit(120);
 
     // winSize size
     sf::Vector2u windowSize = window.getSize();
@@ -75,10 +75,12 @@ int main()
     // Collision
     Collision collision("hopper_jump");
 
-    while (gameMenu.Exit()){
+    while (gameMenu.Exit(window)){
         gameMenu.Menu(window, bgSprite, player1);
         GameProcess(window, player1, collision,platforms,
-                    timerText, windowSize,bgSprite, sound0, scaleValue);
+                    timerText, windowSize,bgSprite, sound0, scaleValue, gameMenu);
+        platforms.Respawn();
+        player1.GetSprite()->setPosition(windowSize.x * 2.3f / 5.f, windowSize.y * 4.f / 5.f);
     }
 
     return 0;
@@ -86,15 +88,21 @@ int main()
 
 void GameProcess(sf::RenderWindow &window, Player &player1, Collision &collision,
                  Platforms &platforms, sf::Text &timerText, const sf::Vector2u &windowSize,
-                 sf::Sprite &bgSprite, sf::Sound &sound0, const float &scaleValue){
-    int fps = 0; // need for player animation update
+                 sf::Sprite &bgSprite, sf::Sound &sound0, const float &scaleValue, GameMenu &gameMenu){
+    // Music
+    sf::Music track4;
+    track4.openFromFile("src/audio/Track_04.ogg");
+    track4.play();
+    track4.setLoop(true);
+
+    int fps = 0, gameTime = 0, pauseTime = 0; // fps need for player animation update and total time in the game/pause
     sf::Clock clock, gameTimeClock;
     sf::Vector2f currPos;
     while (window.isOpen())
     {
         float deltaTime = clock.getElapsedTime().asMicroseconds() / 750.f;
-        int gameTime = int(gameTimeClock.getElapsedTime().asSeconds());
         clock.restart();
+        gameTime = int(gameTimeClock.getElapsedTime().asSeconds()) - pauseTime;
 
         sf::Event event{};
         while (window.pollEvent(event))
@@ -105,38 +113,48 @@ void GameProcess(sf::RenderWindow &window, Player &player1, Collision &collision
 
         window.clear();
         window.draw(bgSprite);
-        ++fps;
-        //std::cout << fps << "\n";
 
-        // Platforms drawing
-        if (player1.GetSprite()->getPosition().y < windowSize.y / 2.f) {
-            player1.GetSprite()->setPosition(player1.GetSprite()->getPosition().x, windowSize.y / 2.f);
-            platforms.PlatformMover(deltaTime, *player1.GetAcceleration(), gameTime);
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Tab)){
+            track4.pause();
+            if (gameMenu.Pause(window, bgSprite, platforms, player1, pauseTime)){
+                gameTimeClock.restart();
+                return;
+            }
+            track4.play();
+        } else {
+            ++fps;
+            //std::cout << fps << "\n";
+
+            // Platforms drawing
+            if (player1.GetSprite()->getPosition().y < windowSize.y / 2.f) {
+                player1.GetSprite()->setPosition(player1.GetSprite()->getPosition().x, windowSize.y / 2.f);
+                platforms.PlatformMover(deltaTime, *player1.GetAcceleration(), gameTime);
+            }
+            for (const sf::RectangleShape &sp : *platforms.GetPlatform()) {
+                window.draw(sp);
+            }
+            // Checking for movements
+            currPos = player1.GetSprite()->sf::Transformable::getPosition();
+            player1.Update(deltaTime, currPos);
+
+            // Updating animation
+            player1.UpdatePlayerAnimation(fps);
+            window.draw(*player1.GetSprite());
+
+            // Checking for collisions
+            if (collision.CollisionCheck(
+                    *player1.GetSprite(), *player1.GetAcceleration(), *platforms.GetPlatform(), scaleValue
+            )){
+                sound0.play();
+            }
+
+            // Timer
+            std::ostringstream gameTimeString;
+            gameTimeString << gameTime;
+            timerText.setString("Time: " + gameTimeString.str());
+            timerText.setPosition(windowSize.x - timerText.getLocalBounds().width - 30, 20);
+            window.draw(timerText);
         }
-        for (const sf::RectangleShape &sp : *platforms.GetPlatform()) {
-            window.draw(sp);
-        }
-        // Checking for movements
-        currPos = player1.GetSprite()->sf::Transformable::getPosition();
-        player1.Update(deltaTime, currPos);
-
-        // Updating animation
-        player1.UpdatePlayerAnimation(fps);
-        window.draw(*player1.GetSprite());
-
-        // Checking for collisions
-        if (collision.CollisionCheck(
-                *player1.GetSprite(), *player1.GetAcceleration(), *platforms.GetPlatform(), scaleValue
-        )){
-            sound0.play();
-        }
-
-        // Timer
-        std::ostringstream gameTimeString;
-        gameTimeString << gameTime;
-        timerText.setString("Time: " + gameTimeString.str());
-        timerText.setPosition(windowSize.x - timerText.getLocalBounds().width - 30, 20);
-        window.draw(timerText);
 
         window.display();
     }
