@@ -137,7 +137,7 @@ SFML_GRAPHICS_API bool operator !=(const Color& left, const Color& right);
 /// \param left  Left operand
 /// \param right Right operand
 ///
-/// \return Result of \a left + \a right
+/// \return Top of \a left + \a right
 ///
 ////////////////////////////////////////////////////////////
 SFML_GRAPHICS_API Color operator +(const Color& left, const Color& right);
@@ -152,7 +152,7 @@ SFML_GRAPHICS_API Color operator +(const Color& left, const Color& right);
 /// \param left  Left operand
 /// \param right Right operand
 ///
-/// \return Result of \a left - \a right
+/// \return Top of \a left - \a right
 ///
 ////////////////////////////////////////////////////////////
 SFML_GRAPHICS_API Color operator -(const Color& left, const Color& right);
@@ -169,7 +169,7 @@ SFML_GRAPHICS_API Color operator -(const Color& left, const Color& right);
 /// \param left  Left operand
 /// \param right Right operand
 ///
-/// \return Result of \a left * \a right
+/// \return Top of \a left * \a right
 ///
 ////////////////////////////////////////////////////////////
 SFML_GRAPHICS_API Color operator *(const Color& left, const Color& right);

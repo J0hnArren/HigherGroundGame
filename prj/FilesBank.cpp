@@ -99,10 +99,10 @@ void FilesBank::TexturesTypeCheck(const std::string &ST_FileType){
 }
 
 void FilesBank::SoundTypeCheck(const std::string &ST_FileType){
-    if (ST_FileType != "jump" && ST_FileType != "trampoline" && ST_FileType != "button"){
+    if (ST_FileType != "jump" && ST_FileType != "button" && ST_FileType != "other"){
         throw std::invalid_argument(
                 "Wrong type for singletonTextures!"
-                "\nIt can contain only 'jump', 'button' or 'trampoline'."
+                "\nIt can contain only 'jump', 'button', or 'other'."
                 "\nYou added: " + ST_FileType + ". Check for the typo."
         );
     }

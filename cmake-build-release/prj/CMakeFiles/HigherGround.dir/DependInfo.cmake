@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/Rauf/CLionProjects/HigherGround/prj/HigherGround.cpp" "C:/Users/Rauf/CLionProjects/HigherGround/cmake-build-release/prj/CMakeFiles/HigherGround.dir/HigherGround.cpp.obj"
   "C:/Users/Rauf/CLionProjects/HigherGround/prj/Platforms.cpp" "C:/Users/Rauf/CLionProjects/HigherGround/cmake-build-release/prj/CMakeFiles/HigherGround.dir/Platforms.cpp.obj"
   "C:/Users/Rauf/CLionProjects/HigherGround/prj/Player.cpp" "C:/Users/Rauf/CLionProjects/HigherGround/cmake-build-release/prj/CMakeFiles/HigherGround.dir/Player.cpp.obj"
+  "C:/Users/Rauf/CLionProjects/HigherGround/prj/Records.cpp" "C:/Users/Rauf/CLionProjects/HigherGround/cmake-build-release/prj/CMakeFiles/HigherGround.dir/Records.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

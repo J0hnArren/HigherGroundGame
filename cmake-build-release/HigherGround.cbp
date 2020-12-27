@@ -127,6 +127,12 @@
 		<Unit filename="C:/Users/Rauf/CLionProjects/HigherGround/prj/Player.h">
 			<Option target="HigherGround"/>
 		</Unit>
+		<Unit filename="C:/Users/Rauf/CLionProjects/HigherGround/prj/Records.cpp">
+			<Option target="HigherGround"/>
+		</Unit>
+		<Unit filename="C:/Users/Rauf/CLionProjects/HigherGround/prj/Records.h">
+			<Option target="HigherGround"/>
+		</Unit>
 		<Unit filename="C:/Users/Rauf/CLionProjects/HigherGround/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

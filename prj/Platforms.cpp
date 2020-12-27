@@ -79,6 +79,8 @@ void Platforms::PlatformMover(const float &deltaTime, const float &accY, const i
             p1 = coordX, coordX += float(cW);
             p2 = coordY - startPos.y, coordY -= startPos.y;
             ++moverCount;
+
+            // Random adding other types of platforms
             randPlatform = RandPlatform(30);
             if (randPlatform <= 3){
                 platform.setTextureRect(sf::IntRect(0, 64, W, H)); // 2 times higher
@@ -88,6 +90,9 @@ void Platforms::PlatformMover(const float &deltaTime, const float &accY, const i
                 platform.setTextureRect(sf::IntRect(0, 160, W, H)); // 3 times, most higher
             }
         }
+
+        // Accidentally hiding platforms
+
     }
 }
 

@@ -22,7 +22,6 @@ public:
     ~Button() = default;
 
     void setPos(const sf::Vector2f &position);
-    void setSizeRelativeText();
     bool Clicked(sf::RenderWindow& window, sf::Sound& soundClick, sf::Sound& soundRoll);
 
     sf::Text text;
@@ -38,7 +37,6 @@ private:
     sf::Vector2f nextBeginRect;
     sf::Vector2f nextSizeRect;
 
-    bool choose = false;
     bool isClick = true;
 };
 

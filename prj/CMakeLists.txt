@@ -5,7 +5,7 @@ set(
         Platforms.h Platforms.cpp
         Player.h Player.cpp
         FilesBank.h FilesBank.cpp
-        GameMenu.cpp GameMenu.h Button.cpp Button.h)
+        GameMenu.cpp GameMenu.h Button.cpp Button.h Records.cpp Records.h)
 
 if (CMAKE_BUILD_TYPE STREQUAL "Release")
     add_executable(${PROJECT_NAME} WIN32 ${SOURCE_FILES})

@@ -36,16 +36,6 @@ void Button::setPos(const sf::Vector2f &position) {
                             size1.x, size1.y);
 }
 
-//void Button::setSizeRelativeText() {
-//    button.setSize(sf::Vector2f(text.getGlobalBounds().width + 40, text.getGlobalBounds().height + 20));
-//    button.setOrigin(button.getGlobalBounds().width / 2, button.getGlobalBounds().height / 2);
-//    size1 = button.getSize();
-//    container = sf::IntRect(
-//            button.getPosition().x - size1.x / 2,
-//            button.getPosition().y - size1.y / 2,
-//            size1.x, size1.y);
-//}
-
 bool Button::Clicked(sf::RenderWindow& window, sf::Sound& soundClick, sf::Sound& soundRoll) {
     int currentFrame = clock.getElapsedTime().asMilliseconds() / 16;
     isClick = false;

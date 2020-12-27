@@ -1,13 +1,13 @@
 #include "Collision.h"
 
-Collision::Collision(const std::string &file1) {
-    file = file1;
+Collision::Collision(int& score) {
+    totalScore = &score;
 }
 
 bool Collision::CollisionCheck(
         sf::RectangleShape &player, float &accY,
         const std::vector<sf::RectangleShape> &platforms,
-        const float &scaleValue) {
+        const float &scaleValue, sf::Sound &sound0, sf::Sound &sound1, sf::Sound &sound2) {
     isCollided = false;
     const float playerX = player.getPosition().x;
     const float playerY = player.getPosition().y;
@@ -19,7 +19,7 @@ bool Collision::CollisionCheck(
             && (playerX + (44 - swordSize) * scaleValue  > platform.getPosition().x)
             && (playerY + 40 * scaleValue > platform.getPosition().y)
             && (playerY + 40 * scaleValue < platform.getPosition().y + 32) && (accY > 0)){
-                Acceleration(accY, platform);
+                Acceleration(accY, platform, sound0, sound1, sound2);
                 isCollided = true;
             }
         }
@@ -30,7 +30,7 @@ bool Collision::CollisionCheck(
              && (playerX + 44 * scaleValue > platform.getPosition().x)
              && (playerY + 40 * scaleValue > platform.getPosition().y)
              && (playerY + 40 * scaleValue < platform.getPosition().y + 32) && (accY > 0)){
-                Acceleration(accY, platform);
+                Acceleration(accY, platform, sound0, sound1, sound2);
                 isCollided = true;
             }
         }
@@ -42,14 +42,24 @@ bool Collision::CollisionCheck(
     return isCollided;
 }
 
-void Collision::Acceleration(float &accY, const sf::RectangleShape &platform) const{
+void Collision::Acceleration(
+        float &accY, const sf::RectangleShape &platform,
+        sf::Sound &sound0, sf::Sound &sound1, sf::Sound &sound2) const{
     if (platform.getTextureRect().top == 128){
         accY = speed;
+        sound0.play();
+        *totalScore += 10;
     } else if (platform.getTextureRect().top == 64){
         accY = speed * 2.f;
+        sound1.play();
+        *totalScore += 50;
     } else if (platform.getTextureRect().top == 160){
         accY = speed * 3.f;
-    } else {
+        sound2.play();
+        *totalScore += 100;
+    } else if (platform.getTextureRect().top == 96){
         accY = speed / 20.f;
+        sound0.play();
+        *totalScore -= 1;
     }
 }

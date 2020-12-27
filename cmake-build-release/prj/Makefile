@@ -333,6 +333,33 @@ Player.cpp.s:
 	cd /d C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-release && $(MAKE) $(MAKESILENT) -f prj\CMakeFiles\HigherGround.dir\build.make prj/CMakeFiles/HigherGround.dir/Player.cpp.s
 .PHONY : Player.cpp.s
 
+Records.obj: Records.cpp.obj
+
+.PHONY : Records.obj
+
+# target to build an object file
+Records.cpp.obj:
+	cd /d C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-release && $(MAKE) $(MAKESILENT) -f prj\CMakeFiles\HigherGround.dir\build.make prj/CMakeFiles/HigherGround.dir/Records.cpp.obj
+.PHONY : Records.cpp.obj
+
+Records.i: Records.cpp.i
+
+.PHONY : Records.i
+
+# target to preprocess a source file
+Records.cpp.i:
+	cd /d C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-release && $(MAKE) $(MAKESILENT) -f prj\CMakeFiles\HigherGround.dir\build.make prj/CMakeFiles/HigherGround.dir/Records.cpp.i
+.PHONY : Records.cpp.i
+
+Records.s: Records.cpp.s
+
+.PHONY : Records.s
+
+# target to generate assembly for a file
+Records.cpp.s:
+	cd /d C:\Users\Rauf\CLionProjects\HigherGround\cmake-build-release && $(MAKE) $(MAKESILENT) -f prj\CMakeFiles\HigherGround.dir\build.make prj/CMakeFiles/HigherGround.dir/Records.cpp.s
+.PHONY : Records.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -363,6 +390,9 @@ help:
 	@echo ... Player.obj
 	@echo ... Player.i
 	@echo ... Player.s
+	@echo ... Records.obj
+	@echo ... Records.i
+	@echo ... Records.s
 .PHONY : help
 
 

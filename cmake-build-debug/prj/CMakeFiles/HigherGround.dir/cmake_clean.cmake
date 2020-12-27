@@ -10,6 +10,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/HigherGround.dir/HigherGround.cpp.obj"
   "CMakeFiles/HigherGround.dir/Platforms.cpp.obj"
   "CMakeFiles/HigherGround.dir/Player.cpp.obj"
+  "CMakeFiles/HigherGround.dir/Records.cpp.obj"
 )
 
 # Per-language clean rules from dependency scanning.

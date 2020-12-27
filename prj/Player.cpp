@@ -1,8 +1,9 @@
 #include "Player.h"
 
-Player::Player(const sf::Vector2u &windowSize, const std::string& file_1, const std::string& file_2)
-    : Player(windowSize, file_1, file_2, 17, 12, 44, 40, 0) {
+Player::Player(const sf::Vector2u &windowSize, const std::string& file_1, const std::string& file_2, int& score)
+    : Player(windowSize, file_1, file_2, 17, 12, 44, 40, 0, score) {
     winSize = windowSize;
+    totalScore = &score;
 
     Initialize(file_1, file_2);
 }
@@ -12,9 +13,10 @@ Player::Player(
         const std::string& file_1, const std::string& file_2,
         const int& x, const int& y,
         const int& w, const int& h,
-        const int& playerSkin) {
+        const int& playerSkin, int& score) {
     winSize = windowSize;
     X = x; Y = y; W = w; H = h; skin = playerSkin;
+    totalScore = &score;
 
     Initialize(file_1, file_2);
 }
@@ -29,22 +31,37 @@ void Player::Initialize(const std::string& file_1, const std::string& file_2){
 }
 
 
-void Player::Controls(float& deltaTime, sf::Vector2f& currPos) {
+void Player::Controls(float& deltaTime, sf::Vector2f& currPos, int& gameTime) {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) || sf::Keyboard::isKeyPressed(sf::Keyboard::A))
     {
         currPos.x -= deltaTime / 1.5f;
         turnLeft = true;
+        fine = true;
+        stayingTime = gameTime;
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) || sf::Keyboard::isKeyPressed(sf::Keyboard::D))
     {
         currPos.x += deltaTime/ 1.5f;
         turnLeft = false;
+        fine = true;
+        stayingTime = gameTime;
     }
 }
 
-void Player::Update(float& deltaTime, sf::Vector2f& currPos) {
+void Player::Update(float& deltaTime, sf::Vector2f& currPos, int& gameTime, bool &AFK) {
     // Keyboard
-    Controls(deltaTime, currPos);
+    Controls(deltaTime, currPos, gameTime);
+    if (gameTime - stayingTime == 10 && !fine){
+        *totalScore -= 500;
+        fine = true;
+    } else if (gameTime - stayingTime == 20 && !fine){
+        *totalScore -= 1000;
+        fine = true;
+    } else if (gameTime - stayingTime == 30 && !fine){
+        *totalScore -= 3000;
+        fine = true;
+        AFK = true;
+    }
 
     Jump(currPos.x, currPos.y);
     sprite.setPosition(currPos.x, currPos.y);
@@ -64,9 +81,9 @@ void Player::Jump(float& x, float& y){
     accY += 0.7f; // acceleration
     //std::cout << accY << std::endl;
     y += accY;
-    if (y > winSize.y - sprite.getTextureRect().width * 3.f){
-        accY = -17; // high
-    }
+//    if (y > winSize.y - sprite.getTextureRect().width * 3.f){
+//        accY = -17; // high
+//    }
 }
 
 void Player::UpdatePlayerAnimation(int& fps) {
