@@ -367,7 +367,7 @@ private:
 ///
 ///     virtual bool onStart() // optional
 ///     {
-///         // Initialize whatever has to be done before the capture starts
+///         // InitializeText whatever has to be done before the capture starts
 ///         ...
 ///
 ///         // Return true to start playing

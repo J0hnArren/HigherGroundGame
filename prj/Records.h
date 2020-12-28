@@ -1,6 +1,7 @@
 #ifndef HIGHERGROUND_CPP_RECORDS_H
 #define HIGHERGROUND_CPP_RECORDS_H
 #include <SFML/Graphics.hpp>
+#include "FilesBank.h"
 #include <iosfwd>
 #include <iostream>
 #include <fstream>
@@ -12,7 +13,7 @@ struct Top
     bool operator==(const Top &rhs) const;
     bool operator!=(const Top &rhs) const { return !operator==(rhs); }
     std::string name;
-    int points = 0;
+    int scores = 0;
     int time = 0;
 };
 
@@ -22,18 +23,18 @@ public:
     Records() = default;
     Records(const Records&) = default;
 
-    static std::vector<Top> top;
-    static sf::Text text;
-    static bool read(); // считываниеке, сразу после экземпляра
-    static bool write(const std::string &name, const int &point, const int &time); // запись в файл
-    static bool isRecord(const int& point); // после него write
-    static void makeView(int charSize, sf::Font& font, sf::Color color); // выводит
+    bool read(); // reading from data.txt file
+    bool isNewRecord(const int& point, const std::string &name); // if its true, we can write in file
+    bool write(const std::string &name, const int &point, const int &time); // write new line in file
+    sf::Text ShowTable(int charSize, sf::Color color); // show table
 private:
-    static bool write(); // вспомогательная
-    static std::string makeSpace(const int& count);
-    static std::string path;
-    static Top defaultResult;
-    static int sizeTop;
+    std::vector<Top> top;
+    sf::Text text;
+    bool write(); // help method for bool write(const std::string &name, const int &point, const int &time)
+    static std::string AddSpace(const int& count);
+    std::string path;
+    Top defaultTop;
+    int sizeTop = 0;
 };
 
 

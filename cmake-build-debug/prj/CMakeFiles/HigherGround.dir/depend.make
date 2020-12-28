@@ -653,6 +653,23 @@ prj/CMakeFiles/HigherGround.dir/Player.cpp.obj: ../prj/FilesBank.h
 prj/CMakeFiles/HigherGround.dir/Player.cpp.obj: ../prj/Player.cpp
 prj/CMakeFiles/HigherGround.dir/Player.cpp.obj: ../prj/Player.h
 
+prj/CMakeFiles/HigherGround.dir/Records.cpp.obj: ../libs/SFML/include/SFML/Audio.hpp
+prj/CMakeFiles/HigherGround.dir/Records.cpp.obj: ../libs/SFML/include/SFML/Audio/AlResource.hpp
+prj/CMakeFiles/HigherGround.dir/Records.cpp.obj: ../libs/SFML/include/SFML/Audio/Export.hpp
+prj/CMakeFiles/HigherGround.dir/Records.cpp.obj: ../libs/SFML/include/SFML/Audio/InputSoundFile.hpp
+prj/CMakeFiles/HigherGround.dir/Records.cpp.obj: ../libs/SFML/include/SFML/Audio/Listener.hpp
+prj/CMakeFiles/HigherGround.dir/Records.cpp.obj: ../libs/SFML/include/SFML/Audio/Music.hpp
+prj/CMakeFiles/HigherGround.dir/Records.cpp.obj: ../libs/SFML/include/SFML/Audio/OutputSoundFile.hpp
+prj/CMakeFiles/HigherGround.dir/Records.cpp.obj: ../libs/SFML/include/SFML/Audio/Sound.hpp
+prj/CMakeFiles/HigherGround.dir/Records.cpp.obj: ../libs/SFML/include/SFML/Audio/SoundBuffer.hpp
+prj/CMakeFiles/HigherGround.dir/Records.cpp.obj: ../libs/SFML/include/SFML/Audio/SoundBufferRecorder.hpp
+prj/CMakeFiles/HigherGround.dir/Records.cpp.obj: ../libs/SFML/include/SFML/Audio/SoundFileFactory.hpp
+prj/CMakeFiles/HigherGround.dir/Records.cpp.obj: ../libs/SFML/include/SFML/Audio/SoundFileFactory.inl
+prj/CMakeFiles/HigherGround.dir/Records.cpp.obj: ../libs/SFML/include/SFML/Audio/SoundFileReader.hpp
+prj/CMakeFiles/HigherGround.dir/Records.cpp.obj: ../libs/SFML/include/SFML/Audio/SoundFileWriter.hpp
+prj/CMakeFiles/HigherGround.dir/Records.cpp.obj: ../libs/SFML/include/SFML/Audio/SoundRecorder.hpp
+prj/CMakeFiles/HigherGround.dir/Records.cpp.obj: ../libs/SFML/include/SFML/Audio/SoundSource.hpp
+prj/CMakeFiles/HigherGround.dir/Records.cpp.obj: ../libs/SFML/include/SFML/Audio/SoundStream.hpp
 prj/CMakeFiles/HigherGround.dir/Records.cpp.obj: ../libs/SFML/include/SFML/Config.hpp
 prj/CMakeFiles/HigherGround.dir/Records.cpp.obj: ../libs/SFML/include/SFML/Graphics.hpp
 prj/CMakeFiles/HigherGround.dir/Records.cpp.obj: ../libs/SFML/include/SFML/Graphics/BlendMode.hpp
@@ -724,6 +741,7 @@ prj/CMakeFiles/HigherGround.dir/Records.cpp.obj: ../libs/SFML/include/SFML/Windo
 prj/CMakeFiles/HigherGround.dir/Records.cpp.obj: ../libs/SFML/include/SFML/Window/Window.hpp
 prj/CMakeFiles/HigherGround.dir/Records.cpp.obj: ../libs/SFML/include/SFML/Window/WindowHandle.hpp
 prj/CMakeFiles/HigherGround.dir/Records.cpp.obj: ../libs/SFML/include/SFML/Window/WindowStyle.hpp
+prj/CMakeFiles/HigherGround.dir/Records.cpp.obj: ../prj/FilesBank.h
 prj/CMakeFiles/HigherGround.dir/Records.cpp.obj: ../prj/Records.cpp
 prj/CMakeFiles/HigherGround.dir/Records.cpp.obj: ../prj/Records.h
 

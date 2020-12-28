@@ -32,18 +32,16 @@ void Player::Initialize(const std::string& file_1, const std::string& file_2){
 
 
 void Player::Controls(float& deltaTime, sf::Vector2f& currPos, int& gameTime) {
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) || sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-    {
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) || sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
         currPos.x -= deltaTime / 1.5f;
         turnLeft = true;
-        fine = true;
+        fine = false;
         stayingTime = gameTime;
     }
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) || sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-    {
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) || sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
         currPos.x += deltaTime/ 1.5f;
         turnLeft = false;
-        fine = true;
+        fine = false;
         stayingTime = gameTime;
     }
 }
@@ -51,17 +49,18 @@ void Player::Controls(float& deltaTime, sf::Vector2f& currPos, int& gameTime) {
 void Player::Update(float& deltaTime, sf::Vector2f& currPos, int& gameTime, bool &AFK) {
     // Keyboard
     Controls(deltaTime, currPos, gameTime);
-    if (gameTime - stayingTime == 10 && !fine){
-        *totalScore -= 500;
+    if (gameTime - stayingTime == 10 && fine){
+        *totalScore -= 3;
         fine = true;
-    } else if (gameTime - stayingTime == 20 && !fine){
-        *totalScore -= 1000;
+    } else if (gameTime - stayingTime == 20 && fine){
+        *totalScore -= 30;
         fine = true;
-    } else if (gameTime - stayingTime == 30 && !fine){
-        *totalScore -= 3000;
+    } else if (gameTime - stayingTime == 30 && fine){
+        *totalScore -= 300;
         fine = true;
         AFK = true;
     }
+    fine = true;
 
     Jump(currPos.x, currPos.y);
     sprite.setPosition(currPos.x, currPos.y);

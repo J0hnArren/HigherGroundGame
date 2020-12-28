@@ -654,6 +654,23 @@ prj/CMakeFiles/HigherGround.dir/Player.cpp.obj
  C:/Users/Rauf/CLionProjects/HigherGround/prj/Player.cpp
  C:/Users/Rauf/CLionProjects/HigherGround/prj/Player.h
 prj/CMakeFiles/HigherGround.dir/Records.cpp.obj
+ ../libs/SFML/include/SFML/Audio.hpp
+ ../libs/SFML/include/SFML/Audio/AlResource.hpp
+ ../libs/SFML/include/SFML/Audio/Export.hpp
+ ../libs/SFML/include/SFML/Audio/InputSoundFile.hpp
+ ../libs/SFML/include/SFML/Audio/Listener.hpp
+ ../libs/SFML/include/SFML/Audio/Music.hpp
+ ../libs/SFML/include/SFML/Audio/OutputSoundFile.hpp
+ ../libs/SFML/include/SFML/Audio/Sound.hpp
+ ../libs/SFML/include/SFML/Audio/SoundBuffer.hpp
+ ../libs/SFML/include/SFML/Audio/SoundBufferRecorder.hpp
+ ../libs/SFML/include/SFML/Audio/SoundFileFactory.hpp
+ ../libs/SFML/include/SFML/Audio/SoundFileFactory.inl
+ ../libs/SFML/include/SFML/Audio/SoundFileReader.hpp
+ ../libs/SFML/include/SFML/Audio/SoundFileWriter.hpp
+ ../libs/SFML/include/SFML/Audio/SoundRecorder.hpp
+ ../libs/SFML/include/SFML/Audio/SoundSource.hpp
+ ../libs/SFML/include/SFML/Audio/SoundStream.hpp
  ../libs/SFML/include/SFML/Config.hpp
  ../libs/SFML/include/SFML/Graphics.hpp
  ../libs/SFML/include/SFML/Graphics/BlendMode.hpp
@@ -725,5 +742,6 @@ prj/CMakeFiles/HigherGround.dir/Records.cpp.obj
  ../libs/SFML/include/SFML/Window/Window.hpp
  ../libs/SFML/include/SFML/Window/WindowHandle.hpp
  ../libs/SFML/include/SFML/Window/WindowStyle.hpp
+ C:/Users/Rauf/CLionProjects/HigherGround/prj/FilesBank.h
  C:/Users/Rauf/CLionProjects/HigherGround/prj/Records.cpp
  C:/Users/Rauf/CLionProjects/HigherGround/prj/Records.h

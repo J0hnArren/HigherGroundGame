@@ -33,13 +33,13 @@ private:
     std::vector<std::tuple<float, float>> platformsCoords;
 	std::vector<sf::RectangleShape> platformsList;
     std::vector<sf::RectangleShape>::iterator it;
-	const int numPlatforms = 20; // maximum number of existing platforms
-	unsigned int lineX = 0, lineY = 0, moverCount = 0;
+	unsigned int lineX = 0, lineY = 0, moverCount = 0; // lineX * lineY = maximum number of existing platforms
 	int W = 0, cW = 0, H = 0, cH = 0;
     sf::Vector2f startPos;
     float coordX = 0, p1 = 0;
     float coordY = 0, p2 = 0;
-    int randPlatform = 0;
+    int randPlatform = 0, timeToHide = 10;
+    std::vector<int> randLines;
 
     std::string File;
 };

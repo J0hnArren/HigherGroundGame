@@ -351,7 +351,7 @@ private:
 ///         unsigned int channelCount = ...;
 ///         unsigned int sampleRate = ...;
 ///
-///         // Initialize the stream -- important!
+///         // InitializeText the stream -- important!
 ///         initialize(channelCount, sampleRate);
 ///     }
 ///

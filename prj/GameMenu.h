@@ -2,8 +2,6 @@
 #define HIGHERGROUND_CPP_GAMEMENU_H
 #include "Records.h"
 #include <SFML/Graphics.hpp>
-#include <SFML\System.hpp>
-#include <SFML\Window.hpp>
 #include "FilesBank.h"
 #include <Button.h>
 #include "Player.h"
@@ -12,7 +10,7 @@
 class GameMenu {
 public:
     GameMenu() = default;
-    explicit GameMenu(const sf::Vector2u &windowSize);
+    GameMenu(const sf::Vector2u &windowSize, Records &records_);
     GameMenu(const GameMenu&) = delete;
     ~GameMenu() = default;
 
@@ -23,11 +21,16 @@ public:
 
     std::string GetNickName();
 private:
+    void inline InitializeText();
+    void inline InitializeButtons();
+    void inline InitializeLogos();
+
     void ShowRecords(sf::RenderWindow &window, const sf::Sprite &bgImage, Player &player);
 
     static sf::IntRect NickNameArea(sf::Text& text);
-    static bool enterText(sf::RenderWindow& window, sf::Event& event, sf::Text& text);
-    void write(sf::Text &tempNick);
+    static bool enterText(sf::Event& event, sf::Text& text);
+    void write();
+    void writeName(sf::Text &tempNick);
     const std::string path = "src/top/";
     sf::Text NickName;
     Records records;
@@ -41,6 +44,5 @@ private:
     std::vector<Button> buttons;
     sf::RectangleShape menuSquare;
 };
-
 
 #endif //HIGHERGROUND_CPP_GAMEMENU_H

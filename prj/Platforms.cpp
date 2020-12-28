@@ -7,6 +7,10 @@ Platforms::Platforms(const sf::Vector2u &windowSize, const std::string& file) {
     lineX = winSize.x / cW;
     lineY = winSize.y / cH;
     StartGeneration();
+
+    for (std::ptrdiff_t i = 0; i < lineX; ++i){
+        randLines.emplace_back(RandPlatform(int(lineX - 1)));
+    }
 }
 
 void Platforms::StartGeneration(){
@@ -68,14 +72,35 @@ void Platforms::PlatformMover(const float &deltaTime, const float &accY, const i
         coordY = 0, p2 = -float(cH);
         moverCount = 0;
     }
-    for (sf::RectangleShape &platform : platformsList){
-        platform.move(0, -accY);
+    if(currTime > timeToHide){
+        timeToHide = currTime + 20;
+        randLines.clear();
+        for (std::ptrdiff_t i = 0; i < lineX; ++i){
+            randLines.emplace_back(RandPlatform(int(lineX - 1)));
+        }
+    }
+    for (std::ptrdiff_t i = 0; i < platformsList.size(); ++i){
+        platformsList[i].move(0, -accY);
 
-        if (platform.getPosition().y > winSize.y) {
-            platform.setTextureRect(sf::IntRect(0, 128, W, H)); // usual platform
+        // If platform went under screen
+        if (platformsList[i].getPosition().y > winSize.y) {
+            // Accidentally hiding platforms
+            for (int& rLine : randLines){
+                if (i == rLine || i == rLine - lineX || i == rLine + lineX){
+                    // makes it invisible
+                    platformsList[i].setSize(sf::Vector2f(0,0));
+                    platformsList[i].setTextureRect(sf::IntRect(0, 0, 0, 0));
+                    rLine += int(lineX - 1);
+                } else {
+                    // return platform's default view
+                    platformsList[i].setSize(sf::Vector2f(winSize.x / 10.f, winSize.y / 33.75f));
+                    platformsList[i].setTextureRect(sf::IntRect(0, 128, W, H)); // usual platform
+                }
+            }
+
             std::rotate(platformsCoords.rbegin(), platformsCoords.rbegin() + 1, platformsCoords.rend());
             platformsCoords[0] = std::tuple(RandCoordinateX(coordX, p1), RandCoordinateY(coordY, p2));
-            platform.setPosition(std::get<0>(platformsCoords[0]), std::get<1>(platformsCoords[0]));
+            platformsList[i].setPosition(std::get<0>(platformsCoords[0]), std::get<1>(platformsCoords[0]));
             p1 = coordX, coordX += float(cW);
             p2 = coordY - startPos.y, coordY -= startPos.y;
             ++moverCount;
@@ -83,16 +108,13 @@ void Platforms::PlatformMover(const float &deltaTime, const float &accY, const i
             // Random adding other types of platforms
             randPlatform = RandPlatform(30);
             if (randPlatform <= 3){
-                platform.setTextureRect(sf::IntRect(0, 64, W, H)); // 2 times higher
+                platformsList[i].setTextureRect(sf::IntRect(0, 64, W, H)); // 2 times higher
             } else if (randPlatform > 5 && randPlatform < 8){
-                platform.setTextureRect(sf::IntRect(0, 96, W, H)); // least higher
+                platformsList[i].setTextureRect(sf::IntRect(0, 96, W, H)); // least higher
             } else if (randPlatform  == 13){
-                platform.setTextureRect(sf::IntRect(0, 160, W, H)); // 3 times, most higher
+                platformsList[i].setTextureRect(sf::IntRect(0, 160, W, H)); // 3 times, most higher
             }
         }
-
-        // Accidentally hiding platforms
-
     }
 }
 

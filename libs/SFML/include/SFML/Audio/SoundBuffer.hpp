@@ -228,7 +228,7 @@ private:
     friend class Sound;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Initialize the internal state after loading a new sound
+    /// \brief InitializeText the internal state after loading a new sound
     ///
     /// \param file Sound file providing access to the new loaded sound
     ///

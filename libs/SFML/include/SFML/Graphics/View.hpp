@@ -314,7 +314,7 @@ private:
 /// sf::RenderWindow winSize;
 /// sf::View view;
 ///
-/// // Initialize the view to a rectangle located at (100, 100) and with a size of 400x200
+/// // InitializeText the view to a rectangle located at (100, 100) and with a size of 400x200
 /// view.reset(sf::FloatRect(100, 100, 400, 200));
 ///
 /// // Rotate it by 45 degrees

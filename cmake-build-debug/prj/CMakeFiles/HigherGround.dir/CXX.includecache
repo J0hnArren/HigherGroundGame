@@ -847,10 +847,6 @@ Records.h
 C:/Users/Rauf/CLionProjects/HigherGround/prj/Records.h
 SFML/Graphics.hpp
 -
-SFML/System.hpp
--
-SFML/Window.hpp
--
 FilesBank.h
 C:/Users/Rauf/CLionProjects/HigherGround/prj/FilesBank.h
 Button.h
@@ -884,9 +880,17 @@ iosfwd
 FilesBank.h
 C:/Users/Rauf/CLionProjects/HigherGround/prj/FilesBank.h
 
+C:/Users/Rauf/CLionProjects/HigherGround/prj/Records.cpp
+Records.h
+C:/Users/Rauf/CLionProjects/HigherGround/prj/Records.h
+utility
+-
+
 C:/Users/Rauf/CLionProjects/HigherGround/prj/Records.h
 SFML/Graphics.hpp
 -
+FilesBank.h
+C:/Users/Rauf/CLionProjects/HigherGround/prj/FilesBank.h
 iosfwd
 -
 iostream

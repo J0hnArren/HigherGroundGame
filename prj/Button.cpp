@@ -47,10 +47,10 @@ bool Button::Clicked(sf::RenderWindow& window, sf::Sound& soundClick, sf::Sound&
                 sf::IntRect(nextBeginRect.x, nextBeginRect.y, nextSizeRect.x, nextSizeRect.y)
         );
         text.setCharacterSize(90);
-        text.setPosition(button.getPosition().x - 20, button.getPosition().y - 40);
         if (currentFrame > 10){
             soundRoll.play();
         }
+        text.setPosition(button.getPosition().x - 20, button.getPosition().y - 40);
         if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && currentFrame > 20) {
             isClick = true;
             soundClick.play();

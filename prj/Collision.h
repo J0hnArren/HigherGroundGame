@@ -1,7 +1,5 @@
 #ifndef COLLISION
 #define COLLISION
-#include <iostream>
-#include <iosfwd>
 #include <SFML/Graphics.hpp>
 #include "FilesBank.h"
 

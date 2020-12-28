@@ -160,7 +160,7 @@ protected:
 private:
 
     ////////////////////////////////////////////////////////////
-    /// \brief Initialize the internal state after loading a new music
+    /// \brief InitializeText the internal state after loading a new music
     ///
     ////////////////////////////////////////////////////////////
     void initialize();

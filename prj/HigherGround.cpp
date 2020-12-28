@@ -2,14 +2,13 @@
 #include "Collision.h"
 #include "Platforms.h"
 #include "GameMenu.h"
-#include "Records.h"
 #include <sstream>
 
 bool isAlive = true; // the status of the player
 bool AFK = false; // if player doing nothing for 30 seconds
 int score = 0; // total score from the game
 
-void GameProcess(sf::RenderWindow &window, Player &player1, Collision &collision,
+void GameProcess(sf::RenderWindow &window, Player &player1, Collision &collision, Records &records,
                  Platforms &platforms, sf::Text &timerText, sf::Text &scoreText, const sf::Vector2u &windowSize,
                  sf::Sprite &bgSprite, const float &scaleValue, GameMenu &gameMenu,
                  sf::Sound &sound0, sf::Sound &sound1, sf::Sound &sound2, sf::Sound &deathSound);
@@ -71,6 +70,7 @@ int main()
     FilesBank::getInstance().AddSound("button", "ui_button_confirm.wav"); // 0 - rolling buttons
     FilesBank::getInstance().AddSound("button", "button.ogg"); // 1 - click
     FilesBank::getInstance().AddSound("other", "hit3.ogg"); // death sound
+    FilesBank::getInstance().AddSound("other", "The-Witcher-3-Quest-complete-sound.ogg"); // records table sound
     sf::Sound sound0(*FilesBank::getInstance().getSounds("jump", 0));
     sf::Sound sound1(*FilesBank::getInstance().getSounds("jump", 1));
     sf::Sound sound2(*FilesBank::getInstance().getSounds("jump", 2));
@@ -84,8 +84,11 @@ int main()
     const float scaleValue = 3;
     player1.GetSprite()->setScale(sf::Vector2f(scaleValue, scaleValue));
 
+    // ShowRecords
+    Records records("src/top/", 5);
+
     // Menu
-    GameMenu gameMenu(windowSize);
+    GameMenu gameMenu(windowSize, records);
 
     //Platforms
     Platforms platforms(windowSize, "platforms.png"); // all platforms texture
@@ -97,7 +100,7 @@ int main()
     while (gameMenu.Exit(window)){
         if (isAlive) {
             gameMenu.Menu(window, bgSprite, player1);
-            GameProcess(window, player1, collision, platforms, timerText, scoreText, windowSize,
+            GameProcess(window, player1, collision, records, platforms, timerText, scoreText, windowSize,
                         bgSprite, scaleValue, gameMenu, sound0, sound1, sound2, deathSound);
             ReloadScreen(platforms, windowSize, player1);
         } else {
@@ -106,7 +109,7 @@ int main()
                 ReloadScreen(platforms, windowSize, player1);
             } else {
                 ReloadScreen(platforms, windowSize, player1);
-                GameProcess(window, player1, collision, platforms, timerText, scoreText, windowSize,
+                GameProcess(window, player1, collision, records, platforms, timerText, scoreText, windowSize,
                             bgSprite, scaleValue,gameMenu, sound0, sound1, sound2, deathSound);
                 ReloadScreen(platforms, windowSize, player1);
             }
@@ -116,18 +119,15 @@ int main()
     return 0;
 }
 
-void GameProcess(sf::RenderWindow &window, Player &player1, Collision &collision,
+void GameProcess(sf::RenderWindow &window, Player &player1, Collision &collision, Records &records,
                  Platforms &platforms, sf::Text &timerText, sf::Text &scoreText, const sf::Vector2u &windowSize,
                  sf::Sprite &bgSprite, const float &scaleValue, GameMenu &gameMenu,
                  sf::Sound &sound0, sf::Sound &sound1, sf::Sound &sound2, sf::Sound &deathSound){
     // Music
     sf::Music track4;
     track4.openFromFile("src/audio/Track_04.ogg");
-    //track4.play();
+    track4.play();
     track4.setLoop(true);
-
-    // ShowRecords
-    Records records("src/top/data.txt", 5);
 
     int fps = 0; // fps need for player animation update
     int gameTime = 0, pauseTime = 0; // total time in the game/pause
@@ -198,9 +198,15 @@ void GameProcess(sf::RenderWindow &window, Player &player1, Collision &collision
 
             // Are the character alive?
             if (!DeathCheck(player1, windowSize, gameTime)){
-                if (Records::isRecord(score))
-                    Records::write(gameMenu.GetNickName(), score, gameTime);
-
+                if (records.isNewRecord(score, gameMenu.GetNickName())) {
+                    try {
+                        records.read();
+                        if (!records.write(gameMenu.GetNickName(), score, gameTime))
+                            throw std::runtime_error("HigherGround.cpp: line 202: could not load from file");
+                    } catch (std::runtime_error &e) {
+                        std::cout << e.what() << "\n";
+                    }
+                }
                 deathSound.play();
                 return;
             }
@@ -213,7 +219,7 @@ void GameProcess(sf::RenderWindow &window, Player &player1, Collision &collision
 bool DeathCheck(Player &player, const sf::Vector2u &windowSize, const int &gameTime){
     isAlive = true;
 
-    if (gameTime < 5) {
+    if (gameTime < 3) {
         if (player.GetSprite()->getPosition().y > windowSize.y - player.GetSprite()->getTextureRect().width * 3.f){
             *player.GetAcceleration() = -17.f; // high
         }
