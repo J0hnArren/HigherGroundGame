@@ -198,7 +198,7 @@ void GameProcess(sf::RenderWindow &window, Player &player1, Collision &collision
 
             // Are the character alive?
             if (!DeathCheck(player1, windowSize, gameTime)){
-                if (records.isNewRecord(score, gameMenu.GetNickName())) {
+                if (records.isNewRecord(score, gameMenu.GetNickName(), gameTime)) {
                     try {
                         records.read();
                         if (!records.write(gameMenu.GetNickName(), score, gameTime))

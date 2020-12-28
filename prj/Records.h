@@ -24,8 +24,8 @@ public:
     Records(const Records&) = default;
 
     bool read(); // reading from data.txt file
-    bool isNewRecord(const int& point, const std::string &name); // if its true, we can write in file
-    bool write(const std::string &name, const int &point, const int &time); // write new line in file
+    bool isNewRecord(const int& score, const std::string &name, const int& gameTime); // if its true, we can write in file
+    bool write(const std::string &name, const int &score, const int& gameTime); // write new line in file
     sf::Text ShowTable(int charSize, sf::Color color); // show table
 private:
     std::vector<Top> top;

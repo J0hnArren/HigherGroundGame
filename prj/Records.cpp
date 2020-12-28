@@ -45,7 +45,8 @@ sf::Text Records::ShowTable(int charSize, sf::Color color) {
             stream << std::to_string(i + 1) << AddSpace(2) << top[i].name <<
                    AddSpace(difference + int(name.size()) + 1 + lName + maxName - int(top[i].name.length() + 1)) <<
                    std::to_string(top[i].scores) <<
-                   AddSpace(difference + int(points.size()) + 1 + lPoint + maxPoint - int(std::to_string(top[i].scores).length() + 1)) <<
+                   AddSpace(difference + int(points.size()) + 1 + lName + lPoint +
+                   + maxPoint - int(std::to_string(top[i].scores).length() + 1)) <<
                    std::to_string(top[i].time);
 
             if (i != top.size() - 1)
@@ -83,8 +84,18 @@ bool Records::read() {
     return false;
 }
 
-bool Records::write(const std::string &name, const int &point, const int &time) {
-    top.push_back({ name, point, time });
+bool Records::write(const std::string &name, const int& score, const int &gameTime) {
+    bool isNewPlayer = true;
+    for (Top& i : top) {
+        if (i.scores < score && i.name == name) {
+            i.scores = score;
+            i.time = gameTime;
+            isNewPlayer = false;
+        }
+    }
+    if (isNewPlayer)
+        top.push_back({ name, score, gameTime });
+
     std::sort(top.begin(), top.end(), [](const Top& lhs, const Top& rhs) {
         return lhs.scores > rhs.scores;
     });
@@ -109,16 +120,11 @@ bool Records::write() {
 }
 
 
-bool Records::isNewRecord(const int& point, const std::string &name) {
+bool Records::isNewRecord(const int& score, const std::string& name, const int& gameTime) {
     for (const Top& i : top) {
-        if (i.scores < point && i.name != name) {
+        if (i.scores < score) {
             return true; // will add new record
-        }
-        else if (i.scores < point && i.name == name) {
-            top.erase(std::remove(top.begin(), top.end(), i), top.end());
-            return true; // will add new record and erase old one
-        }
-        else {
+        } else {
             return false; // will not be added
         }
     }
