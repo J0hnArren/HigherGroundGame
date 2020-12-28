@@ -165,9 +165,9 @@ bool GameMenu::enterText(sf::Event& event, sf::Text& text) {
 }
 
 sf::IntRect GameMenu::NickNameArea(sf::Text& text) {
-    return sf::IntRect(text.getPosition().x - text.getGlobalBounds().width / 2,
+    return sf::IntRect(text.getPosition().x - text.getGlobalBounds().width,
                        text.getPosition().y - text.getGlobalBounds().height / 2,
-                       text.getLocalBounds().width, text.getLocalBounds().height);
+                       text.getLocalBounds().width * 2, text.getLocalBounds().height);
 }
 
 std::string GameMenu::GetNickName() {

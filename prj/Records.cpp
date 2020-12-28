@@ -41,13 +41,12 @@ sf::Text Records::ShowTable(int charSize, sf::Color color) {
 
     if(top[0] != defaultTop)
         for (ptrdiff_t i = 0; i < top.size(); i++) {
-            int difference = maxName - int(top[i].name.length());
+            int space1 = maxName - int(top[i].name.length()) + int(name.size()) + 1 + lName + maxName - int(top[i].name.length() + 1);
+            int space2 = maxName + int(points.size()) + 1 + lPoint + maxPoint - int(std::to_string(top[i].scores).length() + 1);
+
             stream << std::to_string(i + 1) << AddSpace(2) << top[i].name <<
-                   AddSpace(difference + int(name.size()) + 1 + lName + maxName - int(top[i].name.length() + 1)) <<
-                   std::to_string(top[i].scores) <<
-                   AddSpace(difference + int(points.size()) + 1 + lName + lPoint +
-                   + maxPoint - int(std::to_string(top[i].scores).length() + 1)) <<
-                   std::to_string(top[i].time);
+                      AddSpace(space1) << std::to_string(top[i].scores) <<
+                      AddSpace(space2) << std::to_string(top[i].time);
 
             if (i != top.size() - 1)
                 stream << "\n";
