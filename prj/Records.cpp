@@ -10,12 +10,12 @@ Records::Records(std::string Path, const int& SizeTop)
     : path(std::move(Path)), sizeTop(SizeTop), defaultTop({"", 0, 0}){
 }
 
-sf::Text Records::ShowTable(int charSize, sf::Color color) {
+sf::Text Records::ShowTable(const int& textSize, const sf::Color &color) {
     text.setFont(*FilesBank::getInstance().getFonts("timer", 0));
     text.setFillColor(color);
-    text.setCharacterSize(charSize);
+    text.setCharacterSize(textSize);
     int lName = 0, lPoint = 0, lTime = 0;
-    std::string name = " NAME ", points = " POINTS ", time = " TIME";
+    std::string name = " NAME ", points = " SCORES ", time = " TIME";
     int maxName = name.length();
     int maxPoint = points.length();
     for (const auto & i : top) {
@@ -86,7 +86,7 @@ bool Records::read() {
 bool Records::write(const std::string &name, const int& score, const int &gameTime) {
     bool isNewPlayer = true;
     for (Top& i : top) {
-        if (i.scores < score && i.name == name) {
+        if (i.name == name) {
             i.scores = score;
             i.time = gameTime;
             isNewPlayer = false;
@@ -119,7 +119,7 @@ bool Records::write() {
 }
 
 
-bool Records::isNewRecord(const int& score, const std::string& name, const int& gameTime) {
+bool Records::isNewRecord(const int& score) {
     for (const Top& i : top) {
         if (i.scores < score) {
             return true; // will add new record

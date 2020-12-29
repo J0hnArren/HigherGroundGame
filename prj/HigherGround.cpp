@@ -4,18 +4,64 @@
 #include "GameMenu.h"
 #include <sstream>
 
-bool isAlive = true; // the status of the player
-bool AFK = false; // if player doing nothing for 30 seconds
-int score = 0; // total score from the game
+/**
+ @brief Булевая переменная для хранения состояния игрока (true - можно играть, false - проиграл)
+*/
+bool isAlive = true;
+/**
+ @brief Булевая переменная для проверки активности игрока; после 30 секунд бездействия, игрок проигрывает
+*/
+bool AFK = false;
+/**
+ @brief Глобальная переменная для хранения набранных игроком очков за одну игровую сессию
+*/
+int score = 0;
 
+/**
+ @brief Главная функция отрисовки игрового процесса
+ @details Отрисовывает игровой процесс, обновляя анимацию игрока, следя за его передвижениями,
+ его коллизиями с платформами, соответствующими звуками, передвижениями платформ, отрисовкой игрового времени и
+ количества очков в одной игровой сессии. Также проверяет не проиграл ли игрок, в случае поражения выдает специальное
+ меню и сохраняет данные игровой сессии: никнейм, время игры, количество очков.
+ @param window окно приложения в fullscreen
+ @param player1 объект класса Player, содержащий его текстуру, отрисовку его анимаций и обработку его движений
+ @param collision проверка коллизий игрока и платформ, а также соответстсующие им звуки
+ @param records проверка необходимости записи нового рекорда
+ @param platforms осуществляет генерацию платформ и их перемещение
+ @param timerText игровой таймер, который выводится на экран
+ @param scaleText количество очков, выводимых на экран
+ @param windowSize размер окна
+ @param bgSprite текстура игрового фона
+ @param scaleValue значение на котрое будет увеличена текстура игрока, также нужна в классе Collision
+ @param gameMenu содержит основное меню, меню с таблицей рекордов и меню паузы
+ @param sound0, sound1, sound2, deathSound игровые звуки
+*/
 void GameProcess(sf::RenderWindow &window, Player &player1, Collision &collision, Records &records,
                  Platforms &platforms, sf::Text &timerText, sf::Text &scoreText, const sf::Vector2u &windowSize,
                  sf::Sprite &bgSprite, const float &scaleValue, GameMenu &gameMenu,
                  sf::Sound &sound0, sf::Sound &sound1, sf::Sound &sound2, sf::Sound &deathSound);
+/**
+ @brief Проверка состояния игрока
+ @details Проверяет состояние игрока, если isAlive = false или AFK = true, то выводит из функции GameProcess() и выдает меню
+ @param player1 объект класса Player, содержащий его текстуру, отрисовку его анимаций и обработку его движений
+ @param windowSize размер окна
+ @param gameTime текущее время игровой сессии
+*/
 bool DeathCheck(Player &player, const sf::Vector2u &windowSize, const int &gameTime);
-
+/**
+ @brief Перезагрузка уровня
+ @details Возвращяет игрока на исходную позиции, заново генерирует платформы, обнуляет заработанные за игровую сессию очки
+ @param platforms осуществляет генерацию платформ и их перемещение
+ @param windowSize размер окна
+ @param player1 объект класса Player, содержащий его текстуру, отрисовку его анимаций и обработку его движений
+*/
 void ReloadScreen(Platforms &platforms, const sf::Vector2u &windowSize, Player &player1);
 
+/** @file */
+/**
+@brief Стартовая функция всего проекта
+@details Создает отрисовываемое впоследствии окно, подгружает текстуры, шрифт, звуки, музыку, и делегирует всеми меню
+*/
 int main()
 {
     sf::RenderWindow window(
@@ -198,7 +244,7 @@ void GameProcess(sf::RenderWindow &window, Player &player1, Collision &collision
 
             // Are the character alive?
             if (!DeathCheck(player1, windowSize, gameTime)){
-                if (records.isNewRecord(score, gameMenu.GetNickName(), gameTime)) {
+                if (records.isNewRecord(score)) {
                     try {
                         records.read();
                         if (!records.write(gameMenu.GetNickName(), score, gameTime))
