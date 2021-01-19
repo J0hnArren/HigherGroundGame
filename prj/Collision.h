@@ -3,9 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "FilesBank.h"
 
-/**
- @class Класс обработки коллизий
-*/
+ ///@brief Класс обработки коллизий
 class Collision
 {
 public:

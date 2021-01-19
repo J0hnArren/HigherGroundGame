@@ -6,7 +6,7 @@
 #include "FilesBank.h"
 
 /**
- @class Класс игрока
+ @brief Класс игрока
  @details Создает объект игрока, делегирует его анимацией и движениями
 */
 class Player {
